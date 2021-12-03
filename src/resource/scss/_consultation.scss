@@ -1,0 +1,30 @@
+.homeConsultation{
+    .form_title{
+        h2{
+            display: block;
+            text-align: center;
+            font-size: 3rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: $lightBlueColor;
+            padding: 1.5rem 0;
+        }
+    }
+    .form_warning{
+        display: flex;
+        justify-content: center;
+        p{
+            font-size: 1.6rem;
+            color: $redColor;
+            font-style: italic;
+            padding: 0 1.57%;
+            text-transform: none;
+            a{
+                color: $lightBlueColor;
+                cursor: pointer;
+            }
+        }
+    }
+    .dog{
+    }
+}
