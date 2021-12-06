@@ -5,9 +5,11 @@ const engine = require('express-handlebars');
 const path = require('path');
 const app = express();
 const port = 3000;
+const db = require('./config/database');
 
 const route = require('./routes');
 
+db.connect();
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(morgan('combined'));
