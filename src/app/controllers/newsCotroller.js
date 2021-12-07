@@ -1,7 +1,9 @@
+const student = require('../models/news');
+
 class NewsController{
 
     index(req, res){
-        res.send('news');
+        res.send(student);
     }
 
     detail(req, res){

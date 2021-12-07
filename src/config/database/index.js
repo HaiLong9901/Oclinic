@@ -1,9 +1,10 @@
 const {Sequelize} = require('sequelize');
 
-const sequelize = new Sequelize('learndb', 'root', 'toiyeutoan9901', {
+const sequelize = new Sequelize('longdh', 'root', null, {
     host: 'localhost',
     dialect: 'mysql'
 });
+
 
 async function connect(){
     try{
@@ -14,4 +15,4 @@ async function connect(){
     }
 }
 
-module.exports = { connect };
+module.exports = {sequelize, connect};
