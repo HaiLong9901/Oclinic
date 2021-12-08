@@ -1,9 +1,18 @@
-const student = require('../models/news');
+
+const student = require('../config');
 
 class NewsController{
 
-    index(req, res){
-        res.send(student);
+    index = async (req, res) => {
+        try{
+            let data = await student.news.findAll();
+            console.log('--------------------');
+            console.log(data);
+            console.log('--------------------');
+            res.json(data);
+        }catch(e){
+            console.log(e);
+        }
     }
 
     detail(req, res){
