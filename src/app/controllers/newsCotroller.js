@@ -9,7 +9,8 @@ class NewsController{
             console.log('--------------------');
             console.log(data);
             console.log('--------------------');
-            res.json(data);
+            res.render('news', {data});
+            // res.send(typeof(data))
         }catch(e){
             console.log(e);
         }

@@ -15,7 +15,7 @@ app.use(morgan('combined'));
 
 app.engine('handlebars', engine.engine());
 app.set('view engine', 'handlebars');
-app.set('views', path.join(__dirname, 'resource/views'));
+app.set('views', path.join(__dirname, 'resource','views'));
 db.connect();
 route(app);
 
