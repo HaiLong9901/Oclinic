@@ -5,12 +5,13 @@ class NewsController{
 
     index = async (req, res) => {
         try{
-            let data = await student.news.findAll();
+            let user = await student.news.findAll();
+            let user2 = user[0].dataValues;
             console.log('--------------------');
-            console.log(data);
+            console.log(user2);
             console.log('--------------------');
-            res.render('news', {data});
-            // res.send(typeof(data))
+            // let data = user.dataValues;
+            res.render('news');
         }catch(e){
             console.log(e);
         }
