@@ -1,7 +1,7 @@
 class IntroController{
 
     index(req, res){
-        res.send('news');
+        res.render('intro');
     }
 
     detail(req, res){

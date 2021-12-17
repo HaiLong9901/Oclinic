@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/font/fontawesome-free-5.15.4/css/all.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+    <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
+    <link rel="stylesheet" href="./assets/sass/style.css">
+</head>
+<body>
+
+    <!-- login form -->
+    <div class="loginForm">
+        <form action="" id="loginContainer" class="loginContainer">
+            <header><h3>Đăng nhập</h3></header>
+            <div class="name">
+                <input type="text" id="id" name="id">
+                <label for="id">ID/email</label>
+            </div>
+            <div class="password">
+                <input type="password" name="pass" id="pass">
+                <label for="pass">Mật khẩu</label>
+                <i class="far fa-eye-slash"></i>
+            </div>
+            <p class="announcement">Sai mật khẩu hoặc tài khoản không tồn tại</p>
+            <div class="forgetPass">
+                <a href="#">Quên mật khẩu/</a>
+                <a href="#" class="regist">Đăng ký</a>
+            </div>
+            <div class="buttonBox">
+                <button type="submit" form="loginContainer" value="submit">Đăng nhập</button>
+            </div>
+            <i class="fas fa-times"></i>
+        </form>
+    </div>
+
+    <!-- Register form -->
+    <div class="registerForm">
+        <form action="" id="registerContainer" class="registerContainer">
+            <header><h3>Đăng ký tài khoản</h3></header>
+            <div class="name">
+                <input type="text" id="name" name="name">
+                <label for="name">Họ và tên (Đúng với CCCD)</label>
+            </div>
+            <div class="IDnumber">
+                <input type="text" id="IDnum" name="IDnum">
+                <label for="IDnum">Số CCCD</label>
+            </div>
+            <div class="IDinsurance">
+                <input type="text" id="IDinsurance" name="IDinsurance">
+                <label for="IDinsurance">Mã BHYT</label>
+            </div>
+            <div class="DoB">
+                <input type="time" id="Dob" name="Dob">
+                <label for="Dob">Ngày sinh</label>
+            </div>
+            <div class="sex">
+                <label for="" class="sex__tit">Giới tính: </label>
+                <input type="radio" id="male" name="male">
+                <label for="male">Nam</label>
+                <input type="radio" id="female" name="female">
+                <label for="female">Nữ</label>
+            </div>
+            <div class="email">
+                <input type="email" id="email" name="email">
+                <label for="email">Email</label>
+            </div>
+            <div class="phoneNum">
+                <input type="text" id="phoneNum" name="phoneNum">
+                <label for="phoneNum">Di động</label>
+            </div>
+            <div class="password">
+                <input type="password" name="pass" id="pass">
+                <label for="pass">Mật khẩu</label>
+                <i class="far fa-eye-slash"></i>
+            </div>
+            <div class="retype">
+                <input type="password" name="retype" id="retype">
+                <label for="retype">Mật khẩu</label>
+                <i class="far fa-eye-slash"></i>
+            </div>
+            <div class="buttonBox">
+                <button type="submit" form="registerContainer" value="submit">Đăng ký</button>
+            </div>
+            <i class="fas fa-times"></i>
+        </form>
+    </div>
+
+
+
+    <main>
+        <!-- header starts -->
+
+        <header class="header">
+
+            <div class="taskbar">
+                <div class="taskbar__name">
+                    <!-- <form action="" ></form> -->
+                    <input type="search" name="searchBox" id="searchBox" class="taskbar__search">
+                    <button class="searchBtn" form="searchBox" value="submit"><i class="fas fa-search"></i></button>
+                    
+                    <div href="#" class="taskbar__bell">
+                        <i class="fas fa-bell">
+                        </i>
+                        <ul class="annouce_list">
+                            <li><a href="#">Thông báo 1</a></li>
+                            <li><a href="#">Thông báo 2</a></li>
+                            <li><a href="#">Thông báo 3</a></li>
+                            <li><a href="#">Thông báo 4</a></li>
+                            <a href="#"><span>XEM TẤT CẢ</span></a>
+                        </ul>
+                    </div>
+                    <div class="taskbar__user">
+                        <!-- <img src="./assets/img/9long.png" alt="" class="taskbar__user__img"> -->
+                        <!-- <ul class="taskbar__account">
+                        
+                        </ul> -->
+                        <a href="#" class="user">
+                            <i class="fas fa-user"></i>
+                            <ul class="user__options">
+                                <li><a href="#" class="login">Đăng nhập</a></li>
+                                <li><a href="#" class="regist">Đăng ký</a></li>
+                            </ul>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu">
+                <div class="menu__main">                                              
+                    <a href="#" class="logo"><i class="fas fa-capsules"></i><span>O</span>Clinic</a>
+                    <ul class="menu__list">
+                        <li class="menu__item active"><a href="./index.html">Trang chủ</a></li>
+                        <li class="menu__item"><a href="./_intro.html">Giới thiệu</a></li>
+                        <li class="menu__item"><a href="./_news.html">Tin tức</a></li>
+                        <li class="menu__item doctors"><a href="./_doctor.html">Bác sĩ
+                            <ul class="doctor">
+                                <li><a href="#">Ngoại khoa</a></li>
+                                <li><a href="#">Nội Khoa</a></li>
+                                <li><a href="#">Nhi Khoa</a></li>
+                            </ul>
+                        </a></li>
+                        <li class="menu__item large"><a href="#">Bài viết chuyên môn</a></li>
+                        <li class="menu__item"><a href="./_consultation.html">Tư vấn</a></li>
+                        <li class="menu__item"><a href="#">Liên hệ</a></li>
+                    </ul>
+                </div>
+            </div>
+
+        </header>
+
+        <!-- header ends -->
+
+
+        <!-- home starts -->
+
+        <section class="home">
+
+            <div class="slider">
+                <div class="swipper container">
+                    <div class="swiper-wrapper wrapper">
+                        <div class="swiper-slide slide">
+                            <div class="slide__content">
+                                <img src="./assets/img/banner1.png" alt="">
+                            </div>
+                        </div>
+                        <!-- <div class="swiper-slide slide">
+                            <div class="slide__content">
+                                <img src="./assets/img/banner2.png" alt="">
+                            </div>
+                        </div>
+                        <div class="swiper-slide slide">
+                            <div class="slide__content">
+                                <img src="./assets/img/banner3.png" alt="">
+                            </div>
+                        </div> -->
+                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+
+            <div class="news">
+                <div class="news__content">
+                    <div class="news__title title"><span>Tin tức</span></div>
+                    <div class="news__list">
+                        <div class="news__main">
+                            <div class="news__img"><img src="./assets/img/news1.jpg" alt=""></div>
+                            <a href="#" class="tit">Các nhà nghiên cứu tại viện Nghiên cứu vi sinh vật (ABC) thông báo đã tìm ra một loại kháng thể mới có thể chống lại virus sar covi2</a>
+                            <span>12 phút trước</span>
+                            <p>Mới đây, tại hội nghị khoa học quốc gia thường niên lần thư 20 được tổ chức tại trung tâm nghiên cứu ABC, các nhà khoa học ....</p>
+                        </div>
+                        <div class="news__sublist">
+                            <div class="news__item">
+                                <div class="news__img subnews"><img src="./assets/img/news2.jpg" alt=""></div>
+                                <div class="content">
+                                    <a href="#" class="tit">Thực hiện khai báo y tế toàn dân đối với các địa phương có ca bệnh covid19</a>
+                                    <span>2h trước</span>
+                                </div>
+                            </div>
+                            <div class="news__item">
+                                <div class="news__img subnews"><img src="./assets/img/news3.jpg" alt=""></div>
+                                <div class="content">
+                                    <a href="#" class="tit">Thủ tướng chính phủ yêu cầu cần hoàn thành việc tiêm vaccine covid19 mũi 2 đối với các địa phương có dịch trước ngày 30/10</a>
+                                    <span>3h trước</span>
+                                </div>
+                            </div>
+                            <div class="news__item">
+                                <div class="news__img subnews"><img src="./assets/img/news4.jpg" alt=""></div>
+                                    <div class="content">
+                                        <a href="#" class="tit">Áp dụng khoa học công nghệ trong việc khám sàng lọc các yếu tố có khả năng gây ung thư</a>
+                                        <span>5h trước</span>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="article">
+                <div class="article__content">
+                    <div class="article__title title"><span>BÀI VIẾT CHUYÊN MÔN</span></div>
+                    <div class="article__list">
+                        <div class="swipper article__container">
+                            <div class="swiper-wrapper wrapper">
+                                <div class="swiper-slide article__box">
+                                    <div class="article__item">
+                                        <div class="item__image">
+                                            <img src="./assets/img/art1.jpg" alt="">
+                                        </div>
+                                        <p>Lối sống lành mạnh phòng tránh nguy cơ đột quỵ</p>
+                                        <div class="article__btn">
+                                            <p>XEM</p>
+                                            <div class="btn"><i class="fas fa-arrow-right"></i></div>
+                                        </div>
+                                    </div>
+                                    <div class="article__item">
+                                        <div class="item__image">
+                                            <img src="./assets/img/art2.jpg" alt="">
+                                        </div>
+                                        <p>Súc họng - xịt mũi: Củng cố phòng tuyến ngừa COVID-19</p>
+                                        <div class="article__btn">
+                                            <p>XEM</p>
+                                            <div class="btn"><i class="fas fa-arrow-right"></i></div>
+                                        </div>
+                                    </div>
+                                    <div class="article__item">
+                                        <div class="item__image">
+                                            <img src="./assets/img/art3.jpg" alt="">
+                                        </div>
+                                        <p>3 lưu ý ăn uống để khỏe hơn trong mùa COVID-19</p>
+                                        <div class="article__btn">
+                                            <p>XEM</p>
+                                            <div class="btn"><i class="fas fa-arrow-right"></i></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide article__box">
+                                    <div class="article__item">
+                                        <div class="item__image">
+                                            <img src="./assets/img/art4.jpg" alt="">
+                                        </div>
+                                        <p>Đột quỵ - mối nguy mọi thời đại</p>
+                                        <div class="article__btn">
+                                            <p>XEM</p>
+                                            <div class="btn"><i class="fas fa-arrow-right"></i></div>
+                                        </div>
+                                    </div>
+                                    <div class="article__item">
+                                        <div class="item__image">
+                                            <img src="./assets/img/art5.jpg" alt="">
+                                        </div>
+                                        <p>10 điều người dân cần 'nằm lòng' để phòng chống COVID-19</p>
+                                        <div class="article__btn">
+                                            <p>XEM</p>
+                                            <div class="btn"><i class="fas fa-arrow-right"></i></div>
+                                        </div>
+                                    </div>
+                                    <div class="article__item">
+                                        <div class="item__image">
+                                            <img src="./assets/img/art6.jpg" alt="">
+                                        </div>
+                                        <p>Vượt qua stress, trầm cảm mùa COVID-19</p>
+                                        <div class="article__btn">
+                                            <p>XEM</p>
+                                            <div class="btn"><i class="fas fa-arrow-right"></i></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-button-next"></div>
+                            <div class="swiper-button-prev"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="services">
+                <div class="services__content">
+                    <div class="services__title title"><span>CÁc dịch vụ</span></div>
+                    <div class="services__list">
+                        <a href="#" class="services__link">
+                            <div class="services__item">
+                                <i class="fas fa-clinic-medical"></i>
+                                <p>Tư vấn các vấn đề sức khoẻ</p>
+                            </div>
+                        </a>
+                        <a href="#" class="services__link">
+                            <div class="services__item">
+                                <i class="fas fa-user-nurse"></i>
+                                <p>Đội ngũ y bác sĩ có chuyên môn cao</p>
+                            </div>
+                        </a>
+                        <a href="#" class="services__link">                       
+                            <div class="services__item">
+                                <i class="fas fa-phone"></i>
+                                <p>Sẵn sàng hỗ trợ 24/7</p>
+                            </div>
+                        </a>
+                        <a href="#" class="services__link">   
+                            <div class="services__item">
+                                <i class="fas fa-user"></i>
+                                <p>Dễ dàng tạo tài khoản</p>
+                            </div>
+                        </a>
+                        <a href="#" class="services__link">   
+                            <div class="services__item">
+                                <i class="fas fa-credit-card"></i>
+                                <p>Dễ dàng thanh toán</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="reviews">
+                <div class="reviews__content">
+                    <div class="reviews__title title"><span>Đánh giá từ bệnh nhân</span></div>
+                    <div class="swipper reviews__container">
+                        <div class="swiper-wrapper reviews__wrapper">
+                            <div class="swiper-slide reviews__slide">
+                                <div class="reviews__box">
+                                    <div class="reviews__header">
+                                        <div class="name">
+                                            <div class="name__img">
+                                                <img src="./assets/img/avt1.jpg" alt="">
+                                            </div>
+                                            <div class="name__name">
+                                                <p>Nguyễn Văn A</p>
+                                                <div class="name__stars">
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star-half-alt"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <i class="fas fa-quote-right"></i>
+                                    </div>
+                                    <p class="content">
+                                        Tôi bị đau lưng, do dãn cách xã hội theo chỉ thị 16 tôi chưa thể đi khám, may mắn được người bạn giới thiệu tôi đã đăng kí tư vấn khám bệnh online tại Oclinic. Sau 1 tháng bệnh đau lưng của tôi đã hết.
+                                    </p>
+                                </div>
+                                <div class="reviews__box">
+                                    <div class="reviews__header">
+                                        <div class="name">
+                                            <div class="name__img">
+                                                <img src="./assets/img/avt3.jpg" alt="">
+                                            </div>
+                                            <div class="name__name">
+                                                <p>Nguyễn Văn Mỹ</p>
+                                                <div class="name__stars">
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star-half-alt"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <i class="fas fa-quote-right"></i>
+                                    </div>
+                                    <p class="content">
+                                        Các bác sĩ có chuyên môn cao và tư vấn rất nhiệt tình. 5 sao cho Oclinic
+                                    </p>
+                                </div>
+                                <div class="reviews__box">
+                                    <div class="reviews__header">
+                                        <div class="name">
+                                            <div class="name__img">
+                                                <img src="./assets/img/avt5.jpg" alt="">
+                                            </div>
+                                            <div class="name__name">
+                                                <p>Phụ Thị Đen</p>
+                                                <div class="name__stars">
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star-half-alt"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <i class="fas fa-quote-right"></i>
+                                    </div>
+                                    <p class="content">
+                                        Dịch vụ tư vấn rất tuyệt vời, bệnh dị ứng da của tôi đã giảm đi nhiều. Thật sự cảm ơn Oclinic
+                                    </p>
+                                </div>
+                                
+                            </div>
+                            <div class="swiper-slide reviews__slide">
+                                <div class="reviews__box">
+                                    <div class="reviews__header">
+                                        <div class="name">
+                                            <div class="name__img">
+                                                <img src="./assets/img/avt2.jpg" alt="">
+                                            </div>
+                                            <div class="name__name">
+                                                <p>Trần Văn Sao</p>
+                                                <div class="name__stars">
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star-half-alt"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <i class="fas fa-quote-right"></i>
+                                    </div>
+                                    <p class="content">
+                                        Thực sự dịch vụ rất tốt, nhưng có lúc tôi không gửi được câu hỏi cho bác sĩ. Khi ấn Gửi tôi bị out ra trang chủ. Mong web sớm cải thiện.
+                                    </p>
+                                </div>
+                                <div class="reviews__box">
+                                    <div class="reviews__header">
+                                        <div class="name">
+                                            <div class="name__img">
+                                                <img src="./assets/img/avt4.jpg" alt="">
+                                            </div>
+                                            <div class="name__name">
+                                                <p>Hoàng Thị Na</p>
+                                                <div class="name__stars">
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star-half-alt"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <i class="fas fa-quote-right"></i>
+                                    </div>
+                                    <p class="content">
+                                        Tôi hay khám bệnh tại phòng khám ABC, được biết bên phòng khám mới có dự án website tư vấn khám bệnh online Oclinic, tôi đã đăng kí tài khoản để tránh việc đi lại trong mùa dịch. Việc này thật sự giúp tôi tránh việc đi lại khám bệnh đối với các bệnh nhẹ như ho, sốt của gia đình tôi.
+                                    </p>
+                                </div>
+                                <div class="reviews__box">
+                                    <div class="reviews__header">
+                                        <div class="name">
+                                            <div class="name__img">
+                                                <img src="./assets/img/avt6.jpg" alt="">
+                                            </div>
+                                            <div class="name__name">
+                                                <p>Phạm Thu Chan</p>
+                                                <div class="name__stars">
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star-half-alt"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <i class="fas fa-quote-right"></i>
+                                    </div>
+                                    <p class="content">
+                                        Tôi lần đầu có em bé nên chưa có nhiều kinh nghiệm trong việc ăn uống đầy đủ dinh dưỡng bà bầu. Được các bác sĩ tư vấn nhiệt tình, tôi đã biết nhiều hơn.
+                                    </p>
+                                </div>
+                                
+                            </div>
+                            <div class="swiper-slide reviews__slide">
+                                <div class="reviews__box">
+                                    <div class="reviews__header">
+                                        <div class="name">
+                                            <div class="name__img">
+                                                <img src="./assets/img/avt8.jpg" alt="">
+                                            </div>
+                                            <div class="name__name">
+                                                <p>Nguyễn Thị Sần</p>
+                                                <div class="name__stars">
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star-half-alt"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <i class="fas fa-quote-right"></i>
+                                    </div>
+                                    <p class="content">
+                                        Rất có ích cho việc khám bệnh, đặc biệt trong mùa dịch này ❤ ❤ ❤
+                                    </p>
+                                </div>
+                                <div class="reviews__box">
+                                    <div class="reviews__header">
+                                        <div class="name">
+                                            <div class="name__img">
+                                                <img src="./assets/img/avt7.jpg" alt="">
+                                            </div>
+                                            <div class="name__name">
+                                                <p>Nguyễn Văn Mỹ</p>
+                                                <div class="name__stars">
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star-half-alt"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <i class="fas fa-quote-right"></i>
+                                    </div>
+                                    <p class="content">
+                                        Các bác sĩ có chuyên môn cao và tư vấn rất nhiệt tình. 5 sao cho Oclinic
+                                    </p>
+                                </div>
+                                <div class="reviews__box">
+                                    <div class="reviews__header">
+                                        <div class="name">
+                                            <div class="name__img">
+                                                <img src="./assets/img/avt5.jpg" alt="">
+                                            </div>
+                                            <div class="name__name">
+                                                <p>Phụ Thị Đen</p>
+                                                <div class="name__stars">
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star-half-alt"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <i class="fas fa-quote-right"></i>
+                                    </div>
+                                    <p class="content">
+                                        Dịch vụ tư vấn rất tuyệt vời, bệnh dị ứng da của tôi đã giảm đi nhiều. Thật sự cảm ơn Oclinic
+                                    </p>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="free_consultant">
+                <div class="free_consultant__content">
+                    <div class="free_consultant__title title"><span>Tư vấn miễn phí</span></div>
+                    <form action="#" class="mainform" id="form">
+                        <div class="mainform__main">
+                            <div class="mainform__left">
+                                <div class="mainform__left__name input">
+                                    <input type="text" placeholder="Nhập tên của bạn" id="name" name="name">
+                                    <label for="name">Họ và tên</label>
+                                </div>
+                                <div class="mainform__left__phonenum input">
+                                    <input type="text" placeholder="(+84)" id="phone" name="phone">
+                                    <label for="phone">Số điện thoại</label>
+                                </div>
+                                <div class="mainform__left__mail input">
+                                    <input type="email" placeholder="Nhập email của bạn" id="mail" name="mail">
+                                    <label for="mail">Email</label>
+                                </div>
+                                <div class="mainform__left__sensitive input">
+                                    <textarea name="sensitive" id="sensitive" cols="30" rows="10" ></textarea>
+                                    <label for="sensitive">Tiền sử mẫn cảm</label>
+                                </div>
+                            </div>
+                            <div class="mainform__right input">
+                                <textarea name="symptom" id="symptom" cols="30" rows="10"></textarea>
+                                <label for="sympton">Triệu chứng</label>
+                            </div>
+                        </div>
+                        <div class="mainform__submit">
+                            <button type="submit" form="form" value="submit">Gửi</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- home ends -->
+
+
+        <!-- footer starts -->
+    
+        <footer class="footer">
+    
+            <div class="footer__top">
+                <div class="footer__content">
+                    <div class="footer__support footer__column">
+                        <h3>Hỗ trợ chăm sóc khách hàng</h3>
+                        <ul class="list">
+                            <li><a href="#">Hotline chăm sóc khác hàng 0123456789</a></li>
+                            <li><a href="#">Các câu hỏi thường gặp</a></li>
+                            <li><a href="#">Gửi yêu cầu hỗ trợ</a></li>
+                            <li><a href="#">Hướng dẫn đăng kí tài khoản</a></li>
+                            <li><a href="#">Chính sách thanh toán chi phí</a></li>
+                            <li><a href="#">Hỗ trợ khách hàng: hotro@oclinic.vn</a></li>
+                            <li><a href="#">Báo lỗi bảo mật: security@oclinic.vn</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer__about footer__column">
+                        <h3>Về chúng tôi</h3>
+                        <ul class="list">
+                            <li><a href="#">Nhóm thực hiện</a></li>
+                            <li><a href="#">Đỗ Hải Long</a></li>
+                            <li><a href="#">Lê Văn Nhật</a></li>
+                            <li><a href="#">Hoàng Văn Nam</a></li>
+                            <li><a href="#">Nguyễn Mạnh Duy</a></li>
+                            <li><a href="#">Nguyễn Văn Thắng</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer__contact footer__column">
+                        <h3>Liên Hệ với chúng tôi</h3>
+                        <ul class="list">
+                            <li><a href="#"><i class="fab fa-facebook"></i>https://facebook.com/oclinic _fanpage</a></li>
+                            <li><a href="#"><i class="fab fa-google"></i>oclinic@gmail.com</a></li>
+                            <li><a href="#"><i class="fab fa-twitter"></i>https://twitter.com/oclinic</a></li>
+                            <li><a href="#"><i class="fab fa-instagram"></i>https://instagram.com/oclinic</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p>© 2021 - Bản quyền thuộc nhóm 7 KTPMUD - Oclinic.vn</p>
+            </div>
+    
+        </footer>
+    
+        <!-- footer ends -->
+    </main>
+
+
+    
+    <script
+    src="https://code.jquery.com/jquery-3.1.1.min.js"
+    integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+    crossorigin="anonymous"></script>
+    <script src="semantic/dist/semantic.min.js"></script>
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+    <script src="./script/app.js"></script>
+</body>
+</html>

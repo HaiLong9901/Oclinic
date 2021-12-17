@@ -249,6 +249,7 @@ main{
                 display: flex;
                 justify-content: center;
                 overflow: hidden;
+                cursor: pointer;
                 @include transision-ease;
                 a{
                     color: $whiteColor;
@@ -302,7 +303,7 @@ main{
     background: $whiteColor;
     width: 111.5rem;
     margin: 0 auto;
-    padding-top: 9.5rem;
+    padding-top: 4.5rem;
     .slider{
         width: 100%;
         height: 45rem;
@@ -765,9 +766,12 @@ main{
         background: $darkBlueColor;
         display: flex;
         justify-content: center;
+        height: 4rem;
         p{
             font-size: 1.6rem;
             color: $whiteColor;
+            margin: 0;
+            line-height: 4rem;
         }
     }
 }

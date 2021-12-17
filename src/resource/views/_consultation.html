@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/font/fontawesome-free-5.15.4/css/all.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="./assets/sass/style.css">
+</head>
+<body>
+
+    <!-- login form -->
+    <div class="loginForm">
+        <form action="" id="loginContainer" class="loginContainer">
+            <header><h3>Đăng nhập</h3></header>
+            <div class="name">
+                <input type="text" id="id" name="id">
+                <label for="id">ID/email</label>
+            </div>
+            <div class="password">
+                <input type="password" name="pass" id="pass">
+                <label for="pass">Mật khẩu</label>
+                <i class="far fa-eye-slash"></i>
+            </div>
+            <p class="announcement">Sai mật khẩu hoặc tài khoản không tồn tại</p>
+            <div class="forgetPass">
+                <a href="#">Quên mật khẩu/</a>
+                <a href="#" class="regist">Đăng ký</a>
+            </div>
+            <div class="buttonBox">
+                <button type="submit" form="loginContainer" value="submit">Đăng nhập</button>
+            </div>
+            <i class="fas fa-times"></i>
+        </form>
+    </div>
+
+    <!-- Register form -->
+    <div class="registerForm">
+        <form action="" id="registerContainer" class="registerContainer">
+            <header><h3>Đăng ký tài khoản</h3></header>
+            <div class="name">
+                <input type="text" id="name" name="name">
+                <label for="name">Họ và tên (Đúng với CCCD)</label>
+            </div>
+            <div class="IDnumber">
+                <input type="text" id="IDnum" name="IDnum">
+                <label for="IDnum">Số CCCD</label>
+            </div>
+            <div class="IDinsurance">
+                <input type="text" id="IDinsurance" name="IDinsurance">
+                <label for="IDinsurance">Mã BHYT</label>
+            </div>
+            <div class="DoB">
+                <input type="time" id="Dob" name="Dob">
+                <label for="Dob">Ngày sinh</label>
+            </div>
+            <div class="sex">
+                <label for="" class="sex__tit">Giới tính: </label>
+                <input type="radio" id="male" name="male">
+                <label for="male">Nam</label>
+                <input type="radio" id="female" name="female">
+                <label for="female">Nữ</label>
+            </div>
+            <div class="email">
+                <input type="email" id="email" name="email">
+                <label for="email">Email</label>
+            </div>
+            <div class="phoneNum">
+                <input type="text" id="phoneNum" name="phoneNum">
+                <label for="phoneNum">Di động</label>
+            </div>
+            <div class="password">
+                <input type="password" name="pass" id="pass">
+                <label for="pass">Mật khẩu</label>
+                <i class="far fa-eye-slash"></i>
+            </div>
+            <div class="retype">
+                <input type="password" name="retype" id="retype">
+                <label for="retype">Mật khẩu</label>
+                <i class="far fa-eye-slash"></i>
+            </div>
+            <div class="buttonBox">
+                <button type="submit" form="registerContainer" value="submit">Đăng ký</button>
+            </div>
+            <i class="fas fa-times"></i>
+        </form>
+    </div>
+
+
+
+    <main>
+        <!-- header starts -->
+
+        <header class="header">
+
+            <div class="taskbar">
+                <div class="taskbar__name">
+                    <!-- <form action="" ></form> -->
+                    <input type="search" name="searchBox" id="searchBox" class="taskbar__search">
+                    <button class="searchBtn" form="searchBox" value="submit"><i class="fas fa-search"></i></button>
+                    
+                    <div href="#" class="taskbar__bell">
+                        <i class="fas fa-bell">
+                        </i>
+                        <ul class="annouce_list">
+                            <li><a href="#">Thông báo 1</a></li>
+                            <li><a href="#">Thông báo 2</a></li>
+                            <li><a href="#">Thông báo 3</a></li>
+                            <li><a href="#">Thông báo 4</a></li>
+                            <a href="#"><span>XEM TẤT CẢ</span></a>
+                        </ul>
+                    </div>
+                    <div class="taskbar__user">
+                        <!-- <img src="./assets/img/9long.png" alt="" class="taskbar__user__img"> -->
+                        <!-- <ul class="taskbar__account">
+                        
+                        </ul> -->
+                        <a href="#" class="user">
+                            <i class="fas fa-user"></i>
+                            <ul class="user__options">
+                                <li><a href="#" class="login">Đăng nhập</a></li>
+                                <li><a href="#" class="regist">Đăng ký</a></li>
+                            </ul>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu">
+                <div class="menu__main">                                              
+                    <a href="#" class="logo"><i class="fas fa-capsules"></i><span>O</span>Clinic</a>
+                    <ul class="menu__list">
+                        <li class="menu__item"><a href="./index.html">Trang chủ</a></li>
+                        <li class="menu__item"><a href="./_intro.html">Giới thiệu</a></li>
+                        <li class="menu__item"><a href="./_news.html">Tin tức</a></li>
+                        <li class="menu__item doctors"><a href="./_doctor.html">Bác sĩ
+                            <ul class="doctor">
+                                <li><a href="#">Ngoại khoa</a></li>
+                                <li><a href="#">Nội Khoa</a></li>
+                                <li><a href="#">Nhi Khoa</a></li>
+                            </ul>
+                        </a></li>
+                        <li class="menu__item large"><a href="#">Bài viết chuyên môn</a></li>
+                        <li class="menu__item active"><a href="./_consultation.html">Tư vấn</a></li>
+                        <li class="menu__item"><a href="#">Liên hệ</a></li>
+                    </ul>
+                </div>
+            </div>
+
+        </header>
+
+        <!-- header ends -->
+
+
+        <!-- home starts -->
+
+        <section class="home homeConsultation">
+            <div class="form_title">
+                <h2>
+                    Tư vấn khám bệnh
+                </h2>
+            </div>
+            <div class="form_warning">
+                <p>*Hãy đọc kỹ hướng dẫn tại <a href="#">ĐÂY</a> và điền thông tin chính xác để yêu cầu tư vấn đến các bác sĩ của chúng tôi. Do có nhiều yêu cầu tư vấn nên phản hồi tư vấn có thể có sau ít nhất 3 giờ.</p>
+            </div>
+            <div class="dog">
+                <form class="content" id="consultation">
+                    <div class="form-floating">
+                        <input type="text" class="form-control focus" id="name-form" placeholder="name@example.com" name="name">
+                        <label for="name-form">Họ và tên</label>
+                    </div>
+                </form>
+                <p>122533</p>
+            </div>
+            <!-- <div class="main_form dog">
+                <form class="content" id="consultation">
+                    <div class="form-floating">
+                        <input type="text" class="form-control focus" id="name-form" placeholder="name@example.com" name="name">
+                        <label for="name-form">Họ và tên</label>
+                    </div> -->
+                    <!-- <div class="form-row">
+                        <div class="form-floating">
+                            <input type="text" class="form-control" id="floatingInputValue" placeholder="name@example.com">
+                            <label for="floatingInputValue">Tuổi</label>
+                        </div>
+                        <div class="form-floating">
+                            <input type="text" class="form-control" id="floatingInputValue" placeholder="name@example.com">
+                            <label for="floatingInputValue">Số điện thoại</label>
+                        </div>
+                        <div class="radio">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                                <label class="form-check-label" for="flexRadioDefault1">
+                                  Nam
+                                </label>
+                              </div>
+                              <div class="form-check">
+                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                                <label class="form-check-label" for="flexRadioDefault2">
+                                  Nữ
+                                </label>
+                              </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-sm-3">
+                            <label class="visually-hidden" for="specificSizeSelect">Preference</label>
+                            <select class="form-select" id="specificSizeSelect">
+                              <option selected>Khoa khám</option>
+                              <option value="1">Nội khoa</option>
+                              <option value="2">Ngoại khoa</option>
+                              <option value="3">Nhi khoa</option>
+                            </select>
+                          </div>
+                        <div class="col-sm-3">
+                            <label class="visually-hidden" for="specificSizeSelect">Preference</label>
+                            <select class="form-select" id="specificSizeSelect">
+                              <option selected>Học vị bác sĩ</option>
+                              <option value="1">Giáo sư, tiến sĩ</option>
+                              <option value="2">Thạc sĩ</option>
+                            </select>
+                          </div>
+                        <div class="col-sm-3">
+                            <label class="visually-hidden" for="specificSizeSelect">Bác sĩ</label>
+                            <select class="form-select" id="specificSizeSelect">
+                              <option selected>Bác sĩ</option>
+                              <option value="1">Nguyễn Văn A</option>
+                              <option value="2">Nguyễn Văn B</option>
+                              <option value="3">Nguyễn Văn C</option>
+                            </select>
+                          </div>
+                    </div> -->
+                    <!-- <div class="form-floating">
+                        <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+                        <label for="floatingTextarea">Mô tả triệu chứng bệnh</label>
+                      </div>
+                    <button type="button" class="btn btn-outline-primary">Primary</button>
+                    <div class="form-img">
+                        <img src="#" alt="">
+                    </div>
+                    <div class="form-toContact">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="check" id="flexRadioDefault1">
+                            <label class="form-check-label" for="flexRadioDefault1">
+                              Tư vấn qua văn bản
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <input class="form-check-input" type="radio" name="check" id="check" checked>
+                            <label class="form-check-label" for="check">
+                              Gọi điện tư vấn
+                            </label>
+                          </div>
+                    </div>
+                    <div class="form-submit">
+                        <button type="submit" class="btn btn-primary btn-lg" form="consultation" value="submit">Large button</button>
+                    </div> -->
+                <!-- </form>
+            </div> -->
+
+        </section>
+        <!-- home ends -->
+
+
+        <!-- footer starts -->
+    
+        <footer class="footer">
+    
+            <div class="footer__top">
+                <div class="footer__content">
+                    <div class="footer__support footer__column">
+                        <h3>Hỗ trợ chăm sóc khách hàng</h3>
+                        <ul class="list">
+                            <li><a href="#">Hotline chăm sóc khác hàng 0123456789</a></li>
+                            <li><a href="#">Các câu hỏi thường gặp</a></li>
+                            <li><a href="#">Gửi yêu cầu hỗ trợ</a></li>
+                            <li><a href="#">Hướng dẫn đăng kí tài khoản</a></li>
+                            <li><a href="#">Chính sách thanh toán chi phí</a></li>
+                            <li><a href="#">Hỗ trợ khách hàng: hotro@oclinic.vn</a></li>
+                            <li><a href="#">Báo lỗi bảo mật: security@oclinic.vn</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer__about footer__column">
+                        <h3>Về chúng tôi</h3>
+                        <ul class="list">
+                            <li><a href="#">Nhóm thực hiện</a></li>
+                            <li><a href="#">Đỗ Hải Long</a></li>
+                            <li><a href="#">Lê Văn Nhật</a></li>
+                            <li><a href="#">Hoàng Văn Nam</a></li>
+                            <li><a href="#">Nguyễn Mạnh Duy</a></li>
+                            <li><a href="#">Nguyễn Văn Thắng</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer__contact footer__column">
+                        <h3>Liên Hệ với chúng tôi</h3>
+                        <ul class="list">
+                            <li><a href="#"><i class="fab fa-facebook"></i>https://facebook.com/oclinic _fanpage</a></li>
+                            <li><a href="#"><i class="fab fa-google"></i>oclinic@gmail.com</a></li>
+                            <li><a href="#"><i class="fab fa-twitter"></i>https://twitter.com/oclinic</a></li>
+                            <li><a href="#"><i class="fab fa-instagram"></i>https://instagram.com/oclinic</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p>© 2021 - Bản quyền thuộc nhóm 7 KTPMUD - Oclinic.vn</p>
+            </div>
+    
+        </footer>
+    
+        <!-- footer ends -->
+    </main>
+
+
+
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+    <script src="./script/app.js"></script>
+</body>
+</html>
