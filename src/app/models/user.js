@@ -14,7 +14,6 @@ module.exports = (sequelize, Sequelize) => {
         },
         img: {
             type: Sequelize.STRING,
-            notNull: true
         },
         phone: {
             type: Sequelize.STRING,
@@ -26,15 +25,7 @@ module.exports = (sequelize, Sequelize) => {
         pass: {
             type: Sequelize.STRING,
             notNULL: true
-        },
-        // createdAt: {
-        //     type: Sequelize.DATE,
-        //     notNULL: true
-        // },
-        // updatedAt: {
-        //     type: Sequelize.DATE,
-        //     notNULL: true
-        // }
+        }
     }, {
         tableName: 'user'
     });

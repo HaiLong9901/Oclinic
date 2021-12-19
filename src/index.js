@@ -9,6 +9,8 @@ const db = require('./app/config');
 
 const route = require('./routes');
 
+app.use(express.urlencoded());// sử dụng middleware để sử dụng req.body
+app.use(express.json());
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(morgan('combined'));

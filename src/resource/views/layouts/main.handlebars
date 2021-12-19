@@ -43,7 +43,7 @@
 
     <!-- Register form -->
     <div class="registerForm">
-        <form action="" id="registerContainer" class="registerContainer">
+        <form action="/regist" method="POST" id="registerContainer" class="registerContainer">
             <header><h3>Đăng ký tài khoản</h3></header>
             <div class="name">
                 <input type="text" id="name" name="name">
@@ -53,12 +53,12 @@
                 <input type="text" id="IDnum" name="IDnum">
                 <label for="IDnum">Số CCCD</label>
             </div>
-            <div class="IDinsurance">
+            {{!-- <div class="IDinsurance">
                 <input type="text" id="IDinsurance" name="IDinsurance">
                 <label for="IDinsurance">Mã BHYT</label>
-            </div>
+            </div> --}}
             <div class="DoB">
-                <input type="time" id="Dob" name="Dob">
+                <input type="date" id="Dob" name="Dob">
                 <label for="Dob">Ngày sinh</label>
             </div>
             <div class="sex">

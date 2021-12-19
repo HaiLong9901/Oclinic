@@ -24,6 +24,7 @@ class NewsController{
     detail(req, res){
         res.send('news detail');
     }
+
 }
 
 module.exports = new NewsController;
