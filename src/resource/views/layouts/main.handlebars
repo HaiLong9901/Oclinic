@@ -45,46 +45,69 @@
     <div class="registerForm">
         <form action="/regist" method="POST" id="registerContainer" class="registerContainer">
             <header><h3>Đăng ký tài khoản</h3></header>
-            <div class="name">
-                <input type="text" id="name" name="name">
-                <label for="name">Họ và tên (Đúng với CCCD)</label>
+            <div class="form-group">
+                <div class="name">
+                    <input type="text" id="name" name="name">
+                    <label for="name">Họ và tên (Đúng với CCCD)</label>
+                </div>
+                <span class="form-message"><i class="fas fa-exclamation-triangle"></i> Không được bỏ trống ô này</span>
             </div>
-            <div class="IDnumber">
-                <input type="text" id="IDnum" name="IDnum">
-                <label for="IDnum">Số CCCD</label>
+            <div class="form-group">
+                <div class="IDnumber">
+                    <input type="text" id="IDnum" name="IDnum">
+                    <label for="IDnum">Số CCCD</label>
+                </div>
+                    <span class="form-message"><i class="fas fa-exclamation-triangle"></i> Không được bỏ trống ô này </span>
             </div>
             {{!-- <div class="IDinsurance">
                 <input type="text" id="IDinsurance" name="IDinsurance">
                 <label for="IDinsurance">Mã BHYT</label>
             </div> --}}
-            <div class="DoB">
-                <input type="date" id="Dob" name="Dob">
-                <label for="Dob">Ngày sinh</label>
+            <div class="form-group">
+                <div class="DoB">
+                    <input type="date" id="Dob" name="Dob">
+                    <label for="Dob">Ngày sinh</label>
+                </div>
+                <span class="form-message"><i class="fas fa-exclamation-triangle"></i> Không được bỏ trống ô này</span>
             </div>
-            <div class="sex">
-                <label for="" class="sex__tit">Giới tính: </label>
-                <input type="radio" id="male" name="male">
-                <label for="male">Nam</label>
-                <input type="radio" id="female" name="female">
-                <label for="female">Nữ</label>
+            <div class="form-group">
+                <div class="sex">
+                    <label for="" class="sex__tit">Giới tính: </label>
+                    <input type="radio" id="male" name="sex" value="1">
+                    <label for="male">Nam</label>
+                    <input type="radio" id="female" name="sex" value="0">
+                    <label for="female">Nữ</label>
+                </div>
             </div>
-            <div class="email">
-                <input type="email" id="email" name="email">
-                <label for="email">Email</label>
+            <div class="form-group">
+                <div class="email">
+                    <input type="email" id="email" name="email">
+                    <label for="email">Email</label>
+                </div>
+                    <span class="form-message"><i class="fas fa-exclamation-triangle"></i> </span>
             </div>
-            <div class="phoneNum">
-                <input type="text" id="phoneNum" name="phoneNum">
-                <label for="phoneNum">Di động</label>
+            <div class="form-group">
+                <div class="phoneNum">
+                    <input type="text" id="phoneNum" name="phoneNum">
+                    <label for="phoneNum">Di động</label>
+                </div>
+                    <span class="form-message"><i class="fas fa-exclamation-triangle"></i> Không được bỏ trống ô này</span>
             </div>
-            <div class="password">
-                <input type="password" name="pass" id="pass">
-                <label for="pass">Mật khẩu</label>
-                <i class="far fa-eye-slash"></i>
+            <div class="form-group">
+                <div class="password">
+                    <input type="password" name="pass" id="pass">
+                    <label for="pass">Mật khẩu</label>
+                    <i class="far fa-eye-slash"></i>
+                </div>
+                    <span class="form-message"><i class="fas fa-exclamation-triangle"></i> Mật khẩu ít nhất 9 ký tự và không bao gồm ký tự đặc biệt</span>
             </div>
-            <div class="retype">
-                <input type="password" name="retype" id="retype">
-                <label for="retype">Mật khẩu</label>
-                <i class="far fa-eye-slash"></i>
+            <div class="form-group">
+                <div class="retype">
+                    <input type="password" name="retype" id="retype">
+                    <label for="retype">Mật khẩu</label>
+                    <i class="far fa-eye-slash"></i>
+                </div>
+                    <span class="form-message"><i class="fas fa-exclamation-triangle"></i> Nhập sai mật khẩu</span>
             </div>
             <div class="buttonBox">
                 <button type="submit" form="registerContainer" value="submit">Đăng ký</button>
@@ -132,9 +155,15 @@
     
         <!-- footer ends -->
     </main>
-{{!-- <script src="/script/news.js"></script> --}}
-
+<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+<script
+    src="https://code.jquery.com/jquery-3.1.1.min.js"
+    integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+    crossorigin="anonymous"></script>
     
+<script src="/script/register.js"></script>
+<script src="/script/news.js"></script>
+<script src="/script/app.js"></script>
 
 </body>
 </html>

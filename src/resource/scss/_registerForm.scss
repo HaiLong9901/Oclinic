@@ -32,7 +32,7 @@
             }
         }
         .name, .password, .IDnumber, .IDinsurance, .DoB, .phoneNum, .email, .retype{
-            width: 50%;
+            width: 100%;
             display: flex;
             justify-content: center;
             position: relative;
@@ -44,6 +44,7 @@
                 border-radius: 5rem;
                 padding: 1rem 3rem;
                 font-size: 1.6rem;
+                text-transform: none;
             }
 
             label{
@@ -61,17 +62,21 @@
                 top: 1.2rem;
                 font-size: 2rem;
                 right: 4rem;
+                cursor: pointer;
             }
         }
         .sex{
-            width: 50%;
+            // width: 50%;
             display: inline;
             margin: 5rem 0 0;
             padding: 0 3rem;
-            input{
-                padding: 0 3rem;
-                width: 2rem;
-                height: 2rem;
+            .form-check{
+
+                input{
+                    padding: 0 3rem;
+                    width: 2rem;
+                    height: 2rem;
+                }
             }
             label{
                 font-size: 2rem;
@@ -84,7 +89,7 @@
             width: 100%;
             display: flex;
             justify-content: center;
-            margin-top: 5rem;
+            margin-top: 3rem;
             button{
                 margin: auto;
                 padding: 1rem 3rem;
@@ -119,7 +124,7 @@
             color: $redColor;
             padding: .5rem 0;
         }
-        i{
+        .fa-times{
             position: absolute;
             font-size: 3rem;
             color: $redColor;
@@ -134,4 +139,19 @@
 
 .formOpen{
     top: 0;
+}
+.form-group{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    span{
+        width: 100%;
+        padding: 1rem 4rem 0;
+        font-size: 1.4rem;
+        font-style: italic;
+        color: $redColor;
+        text-align: center;
+        text-transform: none;
+    }
 }
