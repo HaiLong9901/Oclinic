@@ -5,8 +5,6 @@ const closeBtn = document.querySelector('.loginForm .fa-times');
 const seeBtn = document.querySelector('.loginForm .fa-eye-slash');
 const passBox = document.querySelector('.loginForm .password input');
 const registerBtn = document.querySelector('.taskbar__user .regist');
-const seeBtn2 = document.querySelectorAll('.registerForm .fa-eye-slash');
-const passBox2 = document.querySelector('.registerForm .password input');
 
 
 
