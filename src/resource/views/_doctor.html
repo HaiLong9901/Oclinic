@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/sass/style.css">
+    <link rel="stylesheet" href="./assets/font/fontawesome-free-5.15.4/css/all.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+</head>
+<body>
+
+    <!-- login form -->
+    <div class="loginForm">
+        <form action="" id="loginContainer" class="loginContainer">
+            <header><h3>Đăng nhập</h3></header>
+            <div class="name">
+                <input type="text" id="id" name="id">
+                <label for="id">ID/email</label>
+            </div>
+            <div class="password">
+                <input type="password" name="pass" id="pass">
+                <label for="pass">Mật khẩu</label>
+                <i class="far fa-eye-slash"></i>
+            </div>
+            <p class="announcement">Sai mật khẩu hoặc tài khoản không tồn tại</p>
+            <div class="forgetPass">
+                <a href="#">Quên mật khẩu/</a>
+                <a href="#">Đăng ký</a>
+            </div>
+            <div class="buttonBox">
+                <button type="submit" form="loginContainer" value="submit">Đăng nhập</button>
+            </div>
+            <i class="fas fa-times"></i>
+        </form>
+    </div>
+
+    <!-- Register form -->
+    <div class="registerForm">
+        <form action="" id="registerContainer" class="registerContainer">
+            <header><h3>Đăng ký tài khoản</h3></header>
+            <div class="name">
+                <input type="text" id="name" name="name">
+                <label for="name">Họ và tên (Đúng với CCCD)</label>
+            </div>
+            <div class="IDnumber">
+                <input type="text" id="IDnum" name="IDnum">
+                <label for="IDnum">Số CCCD</label>
+            </div>
+            <div class="IDinsurance">
+                <input type="text" id="IDinsurance" name="IDinsurance">
+                <label for="IDinsurance">Mã BHYT</label>
+            </div>
+            <div class="DoB">
+                <input type="time" id="Dob" name="Dob">
+                <label for="Dob">Ngày sinh</label>
+            </div>
+            <div class="sex">
+                <label for="" class="sex__tit">Giới tính: </label>
+                <input type="radio" id="male" name="male">
+                <label for="male">Nam</label>
+                <input type="radio" id="female" name="female">
+                <label for="female">Nữ</label>
+            </div>
+            <div class="email">
+                <input type="email" id="email" name="email">
+                <label for="email">Email</label>
+            </div>
+            <div class="phoneNum">
+                <input type="text" id="phoneNum" name="phoneNum">
+                <label for="phoneNum">Di động</label>
+            </div>
+            <div class="password">
+                <input type="password" name="pass" id="pass">
+                <label for="pass">Mật khẩu</label>
+                <i class="far fa-eye-slash"></i>
+            </div>
+            <div class="retype">
+                <input type="password" name="retype" id="retype">
+                <label for="retype">Mật khẩu</label>
+                <i class="far fa-eye-slash"></i>
+            </div>
+            <div class="buttonBox">
+                <button type="submit" form="registerContainer" value="submit">Đăng ký</button>
+            </div>
+            <i class="fas fa-times"></i>
+        </form>
+    </div>
+
+
+
+    <main>
+        <!-- header starts -->
+
+        <header class="header">
+
+            <div class="taskbar">
+                <div class="taskbar__name">
+                    <!-- <form action="" ></form> -->
+                    <input type="search" name="searchBox" id="searchBox" class="taskbar__search">
+                    <button class="searchBtn" form="searchBox" value="submit"><i class="fas fa-search"></i></button>
+                    
+                    <div href="#" class="taskbar__bell">
+                        <i class="fas fa-bell">
+                        </i>
+                        <ul class="annouce_list">
+                            <li><a href="#">Thông báo 1</a></li>
+                            <li><a href="#">Thông báo 2</a></li>
+                            <li><a href="#">Thông báo 3</a></li>
+                            <li><a href="#">Thông báo 4</a></li>
+                            <a href="#"><span>XEM TẤT CẢ</span></a>
+                        </ul>
+                    </div>
+                    <div class="taskbar__user">
+                        <!-- <img src="./assets/img/9long.png" alt="" class="taskbar__user__img"> -->
+                        <!-- <ul class="taskbar__account">
+                        
+                        </ul> -->
+                        <a href="#" class="user">
+                            <i class="fas fa-user"></i>
+                            <ul class="user__options">
+                                <li><a href="#" class="login">Đăng nhập</a></li>
+                                <li><a href="#" class="regist">Đăng ký</a></li>
+                            </ul>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu">
+                <div class="menu__main">                                              
+                    <a href="#" class="logo"><i class="fas fa-capsules"></i><span>O</span>Clinic</a>
+                    <ul class="menu__list">
+                        <li class="menu__item"><a href="./index.html">Trang chủ</a></li>
+                        <li class="menu__item"><a href="./_intro.html">Giới thiệu</a></li>
+                        <li class="menu__item"><a href="./_news.html">Tin tức</a></li>
+                        <li class="menu__item doctors active"><a href="./_doctor.html">Bác sĩ
+                            <ul class="doctor">
+                                <li><a href="#">Ngoại khoa</a></li>
+                                <li><a href="#">Nội Khoa</a></li>
+                                <li><a href="#">Nhi Khoa</a></li>
+                            </ul>
+                        </a></li>
+                        <li class="menu__item large"><a href="#">Bài viết chuyên môn</a></li>
+                        <li class="menu__item"><a href="#">Tư vấn</a></li>
+                        <li class="menu__item"><a href="#">Liên hệ</a></li>
+                    </ul>
+                </div>
+            </div>
+
+        </header>
+
+        <!-- header ends -->
+
+
+        <!-- home starts -->
+
+        <section class="doctorSection home">
+            <div class="doctorSection__container">
+                <select class="form-select" aria-label="Default select example">
+                    <option selected>Tất cả bác sĩ</option>
+                    <option value="1">Ngoại khoa</option>
+                    <option value="2">Nội khoa</option>
+                    <option value="3">Nhi khoa</option>
+                  </select>
+                  <div class="container">
+                      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
+                        <div class="col">
+                            <div class="card" style="width: 25rem;">
+                                <div class="card__img">
+                                    <img src="./assets/img/doc1.png" class="card-img-top" alt="...">
+                                </div>
+                                <div class="card-body">
+                                  <h5 class="card-title">Ts Nguyễn Hoàng Lệ Quyên</h5>
+                                  <a href="#" class="btn btn-primary">Profile</a>
+                                </div>
+                              </div>
+                        </div>
+                        <div class="col">
+                            <div class="card" style="width: 25rem;">
+                                <div class="card__img">
+                                    <img src="./assets/img/doc2.png" class="card-img-top" alt="...">
+                                </div>
+                                <div class="card-body">
+                                  <h5 class="card-title">Card title</h5>
+                                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                                </div>
+                              </div>
+                        </div>
+                        <div class="col">
+                            <div class="card" style="width: 25rem;">
+                                <div class="card__img">
+                                    <img src="./assets/img/doc3.png" class="card-img-top" alt="...">
+                                </div>
+                                <div class="card-body">
+                                  <h5 class="card-title">Card title</h5>
+                                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                                </div>
+                              </div>
+                        </div>
+                        <div class="col">
+                            <div class="card" style="width: 25rem;">
+                                <div class="card__img">
+                                    <img src="./assets/img/doc4.png" class="card-img-top" alt="...">
+                                </div>
+                                <div class="card-body">
+                                  <h5 class="card-title">Card title</h5>
+                                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                                </div>
+                              </div>
+                        </div>
+                        <div class="col">
+                            <div class="card" style="width: 25rem;">
+                                <div class="card__img">
+                                    <img src="./assets/img/doc5.png" class="card-img-top" alt="...">
+                                </div>
+                                <div class="card-body">
+                                  <h5 class="card-title">Card title</h5>
+                                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                                </div>
+                              </div>
+                        </div>
+                        <div class="col">
+                            <div class="card" style="width: 25rem;">
+                                <div class="card__img">
+                                    <img src="./assets/img/doc6.png" class="card-img-top" alt="...">
+                                </div>
+                                <div class="card-body">
+                                  <h5 class="card-title">Card title</h5>
+                                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                                </div>
+                              </div>
+                        </div>
+                        <div class="col">
+                            <div class="card" style="width: 25rem;">
+                                <div class="card__img">
+                                    <img src="./assets/img/doc7.png" class="card-img-top" alt="...">
+                                </div>
+                                <div class="card-body">
+                                  <h5 class="card-title">Card title</h5>
+                                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                                </div>
+                              </div>
+                        </div>
+                        <div class="col">
+                            <div class="card" style="width: 25rem;">
+                                <div class="card__img">
+                                    <img src="./assets/img/doc8.png" class="card-img-top" alt="...">
+                                </div>
+                                <div class="card-body">
+                                  <h5 class="card-title">Card title</h5>
+                                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                                </div>
+                              </div>
+                        </div>
+                        <div class="col">
+                            <div class="card" style="width: 25rem;">
+                                <div class="card__img">
+                                    <img src="./assets/img/doc9.png" class="card-img-top" alt="...">
+                                </div>
+                                <div class="card-body">
+                                  <h5 class="card-title">Card title</h5>
+                                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                                </div>
+                              </div>
+                        </div>
+                        <div class="col">
+                            <div class="card" style="width: 25rem;">
+                                <div class="card__img">
+                                    <img src="./assets/img/doc1.png" class="card-img-top" alt="...">
+                                </div>
+                                <div class="card-body">
+                                  <h5 class="card-title">Card title</h5>
+                                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                                </div>
+                              </div>
+                        </div>
+                        <div class="col">
+                            <div class="card" style="width: 25rem;">
+                                <div class="card__img">
+                                    <img src="./assets/img/doc1.png" class="card-img-top" alt="...">
+                                </div>
+                                <div class="card-body">
+                                  <h5 class="card-title">Card title</h5>
+                                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                                </div>
+                              </div>
+                        </div>
+                      </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- home ends -->
+
+
+        <!-- footer starts -->
+    
+        <footer class="footer">
+    
+            <div class="footer__top">
+                <div class="footer__content">
+                    <div class="footer__support footer__column">
+                        <h3>Hỗ trợ chăm sóc khách hàng</h3>
+                        <ul class="list">
+                            <li><a href="#">Hotline chăm sóc khác hàng 0123456789</a></li>
+                            <li><a href="#">Các câu hỏi thường gặp</a></li>
+                            <li><a href="#">Gửi yêu cầu hỗ trợ</a></li>
+                            <li><a href="#">Hướng dẫn đăng kí tài khoản</a></li>
+                            <li><a href="#">Chính sách thanh toán chi phí</a></li>
+                            <li><a href="#">Hỗ trợ khách hàng: hotro@oclinic.vn</a></li>
+                            <li><a href="#">Báo lỗi bảo mật: security@oclinic.vn</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer__about footer__column">
+                        <h3>Về chúng tôi</h3>
+                        <ul class="list">
+                            <li><a href="#">Nhóm thực hiện</a></li>
+                            <li><a href="#">Đỗ Hải Long</a></li>
+                            <li><a href="#">Lê Văn Nhật</a></li>
+                            <li><a href="#">Hoàng Văn Nam</a></li>
+                            <li><a href="#">Nguyễn Mạnh Duy</a></li>
+                            <li><a href="#">Nguyễn Văn Thắng</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer__contact footer__column">
+                        <h3>Liên Hệ với chúng tôi</h3>
+                        <ul class="list">
+                            <li><a href="#"><i class="fab fa-facebook"></i>https://facebook.com/oclinic _fanpage</a></li>
+                            <li><a href="#"><i class="fab fa-google"></i>oclinic@gmail.com</a></li>
+                            <li><a href="#"><i class="fab fa-twitter"></i>https://twitter.com/oclinic</a></li>
+                            <li><a href="#"><i class="fab fa-instagram"></i>https://instagram.com/oclinic</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p>© 2021 - Bản quyền thuộc nhóm 7 KTPMUD - Oclinic.vn</p>
+            </div>
+    
+        </footer>
+    
+        <!-- footer ends -->
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+    <script src="./script/app.js"></script>
+</body>
+</html>

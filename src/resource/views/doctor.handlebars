@@ -1,0 +1,28 @@
+        <section class="doctorSection home">
+            <div class="doctorSection__container">
+                <select class="form-select" aria-label="Default select example">
+                    <option selected>Tất cả bác sĩ</option>
+                    <option value="1">Ngoại khoa</option>
+                    <option value="2">Nội khoa</option>
+                    <option value="3">Nhi khoa</option>
+                  </select>
+                  <div class="container">
+                      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
+                          {{#each display}}
+                        <div class="col">
+                            <div class="card" style="width: 25rem;">
+                                <div class="card__img">
+                                    <img src="{{this.img}}" class="card-img-top" alt="...">
+                                </div>
+                                <div class="card-body">
+                                  <h5 class="card-title">{{this.name}}</h5>
+                                  <a href="#" class="btn btn-primary">Profile</a>
+                                </div>
+                              </div>
+                        </div>
+                        {{/each}}
+                      </div>
+                </div>
+            </div>
+
+        </section>
