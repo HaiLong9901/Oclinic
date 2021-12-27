@@ -8,6 +8,7 @@ const port = 3000;
 const db = require('./app/config');
 
 const route = require('./routes');
+const googleAPIS = require('./app/apis');
 
 app.use(express.urlencoded());// sử dụng middleware để sử dụng req.body
 app.use(express.json());
