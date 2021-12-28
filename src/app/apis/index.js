@@ -25,15 +25,15 @@ oauth2Client.setCredentials({
     refresh_token: REFREST_TOKEN,
 })
 
-console.log('path is', path.join(__dirname, 'eternals.jpg'));
-const filePath = path.join(__dirname, 'eternals.jpg');
+console.log('path is', path.join('D:\\Oclinic_project\\src\\public\\img', 'doc3.png'));
+const filePath = path.join('D:\\Oclinic_project\\src\\public\\img', 'doc3.png');
 
 async function uploadFile(){
     try {
         
         const response = await drive.files.create({
             requestBody: {
-                name: 'test.jpg',
+                name: 'doc3.jpg',
                 mimeType: 'image/jpg'
             },
             media: {
@@ -85,4 +85,4 @@ async function generatePublicUrl(){
         console.log(error.message);
     }
 }
-generatePublicUrl();
+// generatePublicUrl();
