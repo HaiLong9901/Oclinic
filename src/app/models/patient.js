@@ -1,6 +1,6 @@
 
 module.exports = (sequelize, Sequelize) => {
-    const doctor = sequelize.define('doctor',{
+    const patient = sequelize.define('patient',{
         id_doc: {
             type: Sequelize.STRING,
             primaryKey: true
@@ -47,11 +47,11 @@ module.exports = (sequelize, Sequelize) => {
             type: Sequelize.STRING,
         }
     }, {
-        tableName: 'doctor',
+        tableName: 'patient',
         timestamp: false,
         createdAt: false,
         updatedAt: false
     });
     
-    return doctor;
+    return patient;
 }

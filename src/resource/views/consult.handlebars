@@ -1,0 +1,136 @@
+{{!-- header starts --}}
+<header class="header">
+    <div class="taskbar">
+    <div class="taskbar__name">
+        <!-- <form action="" ></form> -->
+        <input type="search" name="searchBox" id="searchBox" class="taskbar__search">
+        <button class="searchBtn" form="searchBox" value="submit"><i class="fas fa-search"></i></button>
+        
+        <div href="#" class="taskbar__bell">
+            <i class="fas fa-bell">
+            </i>
+            <ul class="annouce_list">
+                <li><a href="#">Thông báo 1</a></li>
+                <li><a href="#">Thông báo 2</a></li>
+                <li><a href="#">Thông báo 3</a></li>
+                <li><a href="#">Thông báo 4</a></li>
+                <a href="#"><span>XEM TẤT CẢ</span></a>
+            </ul>
+        </div>
+        <div class="taskbar__user">
+            <!-- <img src="./assets/img/9long.png" alt="" class="taskbar__user__img"> -->
+            <!-- <ul class="taskbar__account">
+            
+            </ul> -->
+            <a href="#" class="user">
+                <i class="fas fa-user"></i>
+                <ul class="user__options">
+                    <li><a href="#" class="login">Đăng nhập</a></li>
+                    <li><a href="#" class="regist">Đăng ký</a></li>
+                </ul>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="menu">
+    <div class="menu__main">                                              
+        <a href="/" class="logo"><i class="fas fa-capsules"></i><span>O</span>Clinic</a>
+        <ul class="menu__list">
+            <li class="menu__item"><a href="/">Trang chủ</a></li>
+            <li class="menu__item"><a href="/intro">Giới thiệu</a></li>
+            <li class="menu__item news"><a href="/news">Tin tức</a></li>
+            <li class="menu__item doctors active"><a href="/doctors">Bác sĩ
+                <ul class="doctor">
+                    <li><a href="/doctors/surgery">Ngoại khoa</a></li>
+                    <li><a href="#">Nội Khoa</a></li>
+                    <li><a href="#">Nhi Khoa</a></li>
+                </ul>
+            </a></li>
+            <li class="menu__item large"><a href="#">Bài viết chuyên môn</a></li>
+            <li class="menu__item"><a href="/consultation">Tư vấn</a></li>
+            <li class="menu__item"><a href="#">Liên hệ</a></li>
+        </ul>
+    </div>
+</div>
+</header>
+
+{{!-- header ends --}}
+
+<!-- home starts -->
+
+<section class="home cltHome">
+    <div class="consultation" id="consultation">
+        <div class="content">
+            <div class="clt-title">
+                <h2 class="logo"><i class="fas fa-capsules"></i><span>O</span>Clinic</h2>
+                <h2 class="tit">Gửi yêu cầu tư vấn khám bệnh</h2>
+            </div>
+            <form action="/" method="POST" class="clt-form" id="clt-form">
+                <div class="form-group">
+                    <div class="name">
+                        <label for="name">Họ và tên</label>
+                        <input type="text" id="name" name="name" placeholder="haha">
+                    </div>
+                </div>
+                <div class="age-sex">
+                    <div class="form-group">
+                        <div class="age">
+                            <label for="age">Tuổi</label>
+                            <input type="text" id="age" name="age">
+                        </div>
+                        <span></span>
+                    </div>
+                    <div class="form-group">
+                        <div class="sex">
+                            <label for="" class="sex__tit">Giới tính: </label>
+                            <input type="radio" id="male" name="sex" value="1">
+                            <label for="male">Nam</label>
+                            <input type="radio" id="female" name="sex" value="0">
+                            <label for="female">Nữ</label>
+                        </div>
+                        <span></span>
+                    </div>
+                </div>
+                <div class="service">
+                    <div class="form-group">
+                        <div class="department">
+                            <select class="form-select" aria-label="Default select example">
+                                <option selected>Khoa khám</option>
+                                <option value="1">Ngoại Khoa</option>
+                                <option value="2">Nội Khoa</option>
+                                <option value="3">Nhi Khoa</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="degree">
+                            <select class="form-select" aria-label="Default select example">
+                                <option selected>Học vị bác sĩ</option>
+                                <option value="1">Tiến sĩ</option>
+                                <option value="2">Bác sĩ</option>
+                                <option value="3">Thạc sĩ</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="doctor">
+                            <select class="form-select" aria-label="Default select example">
+                                <option selected>chọn bác sĩ</option>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="sensitive">
+                        <label for="sensitive">Tiền sử dị ứng</label>
+                        <textarea name="sensitive" id="sensitive"></textarea>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>

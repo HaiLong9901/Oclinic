@@ -22,7 +22,7 @@ class NewsController{
     }
 
     detail(req, res){
-        res.send('news detail');
+        res.render('news');
     }
 
 }
