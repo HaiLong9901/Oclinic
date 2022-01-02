@@ -10,6 +10,9 @@ class ConsultController{
     detail(req, res){
         res.render('news');
     }
+    sent = (req, res) => {
+        res.render('sent');
+    }
 
 }
 

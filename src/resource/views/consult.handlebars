@@ -40,7 +40,7 @@
             <li class="menu__item"><a href="/">Trang chủ</a></li>
             <li class="menu__item"><a href="/intro">Giới thiệu</a></li>
             <li class="menu__item news"><a href="/news">Tin tức</a></li>
-            <li class="menu__item doctors active"><a href="/doctors">Bác sĩ
+            <li class="menu__item doctors"><a href="/doctors">Bác sĩ
                 <ul class="doctor">
                     <li><a href="/doctors/surgery">Ngoại khoa</a></li>
                     <li><a href="#">Nội Khoa</a></li>
@@ -48,7 +48,7 @@
                 </ul>
             </a></li>
             <li class="menu__item large"><a href="#">Bài viết chuyên môn</a></li>
-            <li class="menu__item"><a href="/consultation">Tư vấn</a></li>
+            <li class="menu__item active"><a href="/consultation">Tư vấn</a></li>
             <li class="menu__item"><a href="#">Liên hệ</a></li>
         </ul>
     </div>
@@ -66,7 +66,7 @@
                 <h2 class="logo"><i class="fas fa-capsules"></i><span>O</span>Clinic</h2>
                 <h2 class="tit">Gửi yêu cầu tư vấn khám bệnh</h2>
             </div>
-            <form action="/" method="POST" class="clt-form" id="clt-form">
+            <form action="/consultation/sent" method="POST" class="clt-form" id="clt-form">
                 <div class="form-group">
                     <div class="name">
                         <label for="name">Họ và tên</label>
@@ -116,7 +116,7 @@
                     <div class="form-group">
                         <div class="doctor">
                             <select class="form-select" aria-label="Default select example">
-                                <option selected>chọn bác sĩ</option>
+                                <option selected>Chọn bác sĩ</option>
                                 <option value="1">One</option>
                                 <option value="2">Two</option>
                                 <option value="3">Three</option>
@@ -127,10 +127,20 @@
                 <div class="form-group">
                     <div class="sensitive">
                         <label for="sensitive">Tiền sử dị ứng</label>
-                        <textarea name="sensitive" id="sensitive"></textarea>
+                        <textarea name="sensitive" id="sensitive" rows="5"></textarea>
                     </div>
                 </div>
+                <div class="form-group">
+                    <div class="sympton">
+                        <label for="sympton">Tiền sử dị ứng</label>
+                        <textarea name="sympton" id="sympton" rows="5"></textarea>
+                    </div>
+                </div>
+                <button class="upload-img" type="button" formmethod="POST">Tải ảnh lên <i class="fas fa-upload"></i></button>
             </form>
+            <div class="form-submit">
+                <button class="submit-form" type="submit" form="clt-form">Gửi yêu cầu tư vấn <i class="fas fa-paper-plane"></i></button>
+            </div>
         </div>
     </div>
 </section>
