@@ -1,6 +1,6 @@
 
 const student = require('../config');
-
+const multer = require('../multer');
 class ConsultController{
 
     index =  (req, res) => {

@@ -3,12 +3,29 @@ const express = require('express');
 const morgan = require('morgan');
 const engine = require('express-handlebars');
 const path = require('path');
+const multer = require('multer');
 const app = express();
 const port = 3000;
 const db = require('./app/config');
 
 const route = require('./routes');
 const googleAPIS = require('./app/apis');
+
+// const storage = multer.diskStorage({
+//   destination: (req, file, cb) => {
+//     cb(null, './app/public/img');
+//   },
+//   filename: (req, file, cb) => {
+//     console.log(file);
+//     cb(null, Date.now + path.extname(file.originalname));
+//   }
+// });
+// const upload = multer({
+//   storage: storage,
+// })
+
+
+
 
 app.use(express.urlencoded());// sử dụng middleware để sử dụng req.body
 app.use(express.json());

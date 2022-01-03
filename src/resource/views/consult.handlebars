@@ -66,7 +66,7 @@
                 <h2 class="logo"><i class="fas fa-capsules"></i><span>O</span>Clinic</h2>
                 <h2 class="tit">Gửi yêu cầu tư vấn khám bệnh</h2>
             </div>
-            <form action="/consultation/sent" method="POST" class="clt-form" id="clt-form">
+            <form action="/consultation/sent" method="POST" class="clt-form" id="clt-form" enctype="multipart/form-data">
                 <div class="form-group">
                     <div class="name">
                         <label for="name">Họ và tên</label>
@@ -136,7 +136,8 @@
                         <textarea name="sympton" id="sympton" rows="5"></textarea>
                     </div>
                 </div>
-                <button class="upload-img" type="button" formmethod="POST">Tải ảnh lên <i class="fas fa-upload"></i></button>
+                <input type="file" name="image">
+                <button class="upload-img" type="button" formmethod="POST" name="image">Tải ảnh lên <i class="fas fa-upload"></i></button>
             </form>
             <div class="form-submit">
                 <button class="submit-form" type="submit" form="clt-form">Gửi yêu cầu tư vấn <i class="fas fa-paper-plane"></i></button>
