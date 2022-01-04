@@ -3,11 +3,11 @@ const path = require('path');
 const fs = require('fs');
 
 
-const CLIENT_ID = '798560757553-nc2r66aqq848i20v8mpq7it0erkb4j4a.apps.googleusercontent.com';
-const CLIENT_SECRET = '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';
+const CLIENT_ID = '798560757553-gg7dtcootapeqnuun3g2h0dt2ft5qbj4.apps.googleusercontent.com';
+const CLIENT_SECRET = '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';
 const REDIRECT_URI = 'https://developers.google.com/oauthplayground';
 
-const REFREST_TOKEN = '1//04CrSS4Ae89SgCgYIARAAGAQSNwF-L9Irw3anXzRXurdAbiXr5PP5Iu_Y_nzymlw3nEPnbn59h9xB9wRBWRDKRDf1zPizC9_UpZA';
+const REFREST_TOKEN = '1//04rZtsMNUe7YjCgYIARAAGAQSNwF-L9IrHt8QyiIRQGCbqFUnIwAj_34FEb1MR3lUYVkSSDfb-Pxi6qORtX3pXum7IPKELurtNPQ';
 
 const oauth2Client = new google.auth.OAuth2(
     CLIENT_ID,
@@ -23,17 +23,30 @@ const drive = google.drive({
 
 oauth2Client.setCredentials({
     refresh_token: REFREST_TOKEN,
+});
+oauth2Client.generateAuthUrl({
+    access_type: 'offline'
 })
 
-console.log('path is', path.join('D:\\Oclinic_project\\src\\public\\img', 'doc3.png'));
-const filePath = path.join('D:\\Oclinic_project\\src\\public\\img', 'doc3.png');
+const name = 'doc5.png';
+
+console.log('path is', path.join(__dirname, `../../public/img/${name}`));
+const filePath = path.join(__dirname, `../../public/img/${name}`);
+
+const image = {
+    name: '',
+    uploadFile,
+    deleteFile,
+    generatePublicUrl,
+}
+
 
 async function uploadFile(){
     try {
         
         const response = await drive.files.create({
             requestBody: {
-                name: 'doc3.jpg',
+                name:   `${name}`,
                 mimeType: 'image/jpg'
             },
             media: {
@@ -41,7 +54,7 @@ async function uploadFile(){
                 body: fs.createReadStream(filePath)
             }
         })
-
+        image.id = data.id;
         console.log(response.data);
 
     } catch (err) {
@@ -85,4 +98,6 @@ async function generatePublicUrl(){
         console.log(error.message);
     }
 }
+
 // generatePublicUrl();
+module.exports = image;

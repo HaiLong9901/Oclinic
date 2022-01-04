@@ -27,7 +27,7 @@ const googleAPIS = require('./app/apis');
 
 
 
-app.use(express.urlencoded());// sử dụng middleware để sử dụng req.body
+app.use(express.urlencoded({extended: true}));// sử dụng middleware để sử dụng req.body
 app.use(express.json());
 
 app.use(express.static(path.join(__dirname, 'public')));
