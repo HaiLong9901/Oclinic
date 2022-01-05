@@ -1,6 +1,7 @@
 
 const student = require('../config');
 const multer = require('../multer');
+const image = require('../apis');
 class ConsultController{
 
     index =  (req, res) => {
@@ -11,7 +12,10 @@ class ConsultController{
         res.render('news');
     }
     sent = (req, res) => {
-        res.render('sent');
+        image.name = req.file.filename;
+        image.print();
+        image.uploadFile();
+        res.send(req.body);
     }
 
 }

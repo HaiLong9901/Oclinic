@@ -90,15 +90,31 @@
                 }
             }
             .upload-img{
-                border: none;
-                background: $lightBlueColor;
-                color: $whiteColor;
-                font-size: 1.8rem;
+                
                 padding: 2rem 2.5rem;
                 border-radius: .5rem;
-                margin: 2rem 15rem;
+                margin: 2rem 15rem 4rem;
+                position: relative;
+                .labelImg{
+                    position: absolute;
+                    background: $lightBlueColor;
+                    font-size: 2rem;
+                    color: $whiteColor;
+                    padding: 1.5rem 2.5rem;
+                    border-radius: 2rem;
+                    left: 0;
+                    top: 0;
+                    z-index: 1000;
+                    cursor: pointer;
+                }
+                input{
+                    position: absolute;
+                    font-size: 1.8rem;
+                    color: $redColor;
+                    left: 6.5rem;
+                }
+
             }
-        
         }
         .form-submit{
             width: 100%;

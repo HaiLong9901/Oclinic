@@ -1,7 +1,7 @@
+
 const {google} = require('googleapis');
 const path = require('path');
 const fs = require('fs');
-
 
 const CLIENT_ID = '798560757553-gg7dtcootapeqnuun3g2h0dt2ft5qbj4.apps.googleusercontent.com';
 const CLIENT_SECRET = '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';
@@ -28,25 +28,30 @@ oauth2Client.generateAuthUrl({
     access_type: 'offline'
 })
 
-const name = 'doc5.png';
-
-console.log('path is', path.join(__dirname, `../../public/img/${name}`));
-const filePath = path.join(__dirname, `../../public/img/${name}`);
-
 const image = {
     name: '',
+    print,
     uploadFile,
     deleteFile,
     generatePublicUrl,
 }
+console.log('name is sent: ', image.name);
+console.log('path is', path.join(__dirname, `../../public/img/${image.name}`));
+// const filePath = path.join(__dirname, `../../public/img/${image.name}`);
+// console.log('path is', path.join(__dirname, `../../public/img/doc6.png`));
+// const filePath = path.join(__dirname, `../../public/img/doc6.png`);
 
+async function print(){
+    console.log('path img: ', image.name);
+    console.log('path image: ', path.join(__dirname, `../../public/img/${image.name}`));
+}
 
 async function uploadFile(){
     try {
-        
+        const filePath = path.join(__dirname, `../../public/img/${image.name}`);
         const response = await drive.files.create({
             requestBody: {
-                name:   `${name}`,
+                name:   'doc6.jpg',
                 mimeType: 'image/jpg'
             },
             media: {
@@ -54,11 +59,10 @@ async function uploadFile(){
                 body: fs.createReadStream(filePath)
             }
         })
-        image.id = data.id;
         console.log(response.data);
 
     } catch (err) {
-        console.log(err.message);
+        console.log('apis:' , err.message);
     }
 }
 // uploadFile();
@@ -98,6 +102,5 @@ async function generatePublicUrl(){
         console.log(error.message);
     }
 }
-
 // generatePublicUrl();
 module.exports = image;

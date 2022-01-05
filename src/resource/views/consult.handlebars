@@ -132,12 +132,15 @@
                 </div>
                 <div class="form-group">
                     <div class="sympton">
-                        <label for="sympton">Tiền sử dị ứng</label>
+                        <label for="sympton">Tiền sử dị ứng </label>
                         <textarea name="sympton" id="sympton" rows="5"></textarea>
                     </div>
                 </div>
-                <input type="file" name="image">
-                <button class="upload-img" type="button" formmethod="POST" name="image">Tải ảnh lên <i class="fas fa-upload"></i></button>
+                <div class="upload-img">
+                    <label class="labelImg" for="image">Chọn ảnh <i class="fas fa-file-upload"></i></label>
+                    <input type="file" name="image" id="image" size="4" title=" ">
+                </div>
+                {{!-- <button class="upload-img" type="button" formmethod="POST" name="image">Tải ảnh lên <i class="fas fa-upload"></i></button> --}}
             </form>
             <div class="form-submit">
                 <button class="submit-form" type="submit" form="clt-form">Gửi yêu cầu tư vấn <i class="fas fa-paper-plane"></i></button>

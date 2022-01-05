@@ -1,6 +1,6 @@
 const path = require('path');
 const multer = require('multer');
-const image = require('../apis');
+const image = {};
 
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
@@ -8,12 +8,14 @@ const storage = multer.diskStorage({
     },
     filename: (req, file, cb) => {
       console.log(file);
-      image.name = Date.now() + file.originalname;
-      cb(null, Date.now() + file.originalname);
+      const timeNow = Date.now()
+      cb(null, timeNow + file.originalname);
+      image.name = timeNow + file.originalname;
+      console.log('name is', image.name);
     }
   });
 const upload = multer({
     storage: storage,
   });
-
-module.exports = upload;
+console.log('sad',image.name);
+module.exports = {upload, image};
