@@ -3,12 +3,11 @@ module.exports = (sequelize, Sequelize) => {
     const patient = sequelize.define('patient',{
         id_pat: {
             type: Sequelize.STRING,
-            primaryKey: true
+            primaryKey: true,
         },
         name: {
             type: Sequelize.STRING,
             notNULL: true,
-            default: 'Hai Long'
         },
         dob: {
             type: Sequelize.DATE,
@@ -24,11 +23,12 @@ module.exports = (sequelize, Sequelize) => {
 
         email: {
             type: Sequelize.STRING,
+            notNULL: true
         },
-        // citizen_id: {
-        //     type: sequelize.STRING,
-        //     notNULL: true
-        // },
+        citizen_id: {
+            type: Sequelize.STRING,
+            notNULL: true
+        },
         pass: {
             type: Sequelize.STRING,
             notNULL: true

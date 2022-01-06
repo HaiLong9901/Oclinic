@@ -15,22 +15,22 @@ class SiteController{
 
     store = async (req, res, next) => {
         try {
-            // const user = await patient.patient.create({
-            //     name: req.name,
-            //     dob: req.Dob,
-            //     phonenum: req.phoneNum,
-            //     pass: req.pass,
-            //     email: req.email,
-            //     sex: req.sex,
-            //     id_pat: 'PAT11334455'
-            //     // citizen_id: req.idNum
-            // });
-            const user = await patient.patient.findAll();
-            console.log(user);
+            const id = 'PAT'.concat((req.body.idNum.substring(req.body.idNum.length - 4).concat(req.body.phoneNum.substring(req.body.phoneNum.length - 4))));
+            const user = await patient.patient.create({
+                name: req.body.name,
+                dob: req.body.Dob,
+                phonenum: req.body.phoneNum,
+                pass: req.body.pass,
+                email: req.body.email,
+                sex: req.body.sex==true?1:0,
+                citizen_id: req.body.idNum,
+                id_pat: id,
+            });
         } catch (error) {
+            res.status(400).send('error');
             console.log(error);
         }
-        res.send(req.body);
+        res.render('home');
     }
 }
 
