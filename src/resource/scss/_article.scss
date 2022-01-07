@@ -1,0 +1,83 @@
+.article_home{
+    display: flex;
+    justify-content: center;
+
+    .content{
+        width: 96.86%;
+        display: flex;
+        justify-content: space-between;
+
+        .main_art{
+            width: 65%;
+            padding: 0 2rem 0 0;
+            border-right: .2rem solid $lightBlueColor;
+            .latest_art{
+                width: 100%;
+
+                display: flex;
+                gap: 1.6rem;
+                background: $lightSilverColor;
+                border-radius: .5rem;
+                &__img{
+                    width: 180%;
+                    img{
+                        width: 100%;
+                        height: 100%;
+                        border-radius: .5rem;
+                        object-fit: cover;
+                    }
+                }
+                &__content{
+                    h3{
+                        margin: 1rem 0;
+                        background: none;
+                        font-size: 2.2rem;
+                        color: #000;
+                        text-transform: none;
+                        
+                    }
+                    p{
+                        font-size: 1.8rem;
+                        text-transform: none;
+                    }
+                }
+            }
+            .article_list{
+                margin: 2rem 0;
+
+                .article_item{
+                    display: flex;
+                    gap: 1.6rem;
+                    border-top: .2rem solid $lightBlueColor;
+                    padding: 1.6rem 0;
+                    &__content{
+                        width: 65%;
+                        h3{
+                            background: none;
+                            font-size: 2rem;
+                            text-transform: none;
+                            color: #000;
+                        }
+                        p{
+                            font-size: 1.6rem;
+                            text-decoration: none;
+                        }
+                    }
+                    &__img{
+                        width: 30%;
+                        img{
+                            border-radius: .5rem;
+                            width: 100%;
+                            object-fit: cover;
+                        }
+                    }
+                }
+            }
+        }
+        .sub_art{
+            width: 34%;
+            border: .05rem solid $lightBlueColor;
+            padding: .5rem;
+        }
+    }
+}
