@@ -63,32 +63,27 @@
 {{!-- home starts --}}
 <section class="doctorSection home">
     <div class="doctorSection__container">
-          <div class="container">
-            <div class="dropdown">
-              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                Tất cả bác sĩ
-              </button>
-              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                <li><a class="dropdown-item" href="/doctors/surgery">Ngoại khoa</a></li>
-                <li><a class="dropdown-item" href="#">Nội khoa</a></li>
-                <li><a class="dropdown-item" href="#">Nhi khoa</a></li>
-              </ul>
-            </div>
-              <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
-                  {{#each display}}
-                <div class="col">
-                    <div class="card" style="width: 25rem;">
-                        <div class="card__img">
-                            <img src="https://drive.google.com/uc?export=view&id={{this.img}}" class="card-img-top" alt="Bac si">
-                        </div>
-                        <div class="card-body">
-                          <h5 class="card-title">{{this.name}}</h5>
-                          <a href="/doctors/{{this.id_doc}}" class="btn btn-primary seeDoc">Xem bác sĩ</a>
-                        </div>
-                      </div>
+        <div class="container">
+            {{#with display}}
+            <div class="doctorDetail">
+                <div class="doctor_img">
+                    <img src="https://drive.google.com/uc?export=view&id={{this.img}}" alt="">
                 </div>
-                {{/each}}
-              </div>
+                <div class="doctor_decription">
+                    <h3 class="doctor">Bác sĩ</h3>
+                    <h3 class="name">{{this.name}}</h3>
+                    <ul class="decription">
+                        <li><i class="far fa-calendar-minus"></i>  Ngày sinh: {{this.dob}}</li>
+                        <li><i class="fas fa-mobile-alt"></i>  Số điện thoại: {{this.phonenum}}</li>
+                        <li><i class="far fa-envelope"></i>   Email:  {{this.email}}</li>
+                        <li><i class="fas fa-user-graduate"></i>   Học vị:     Giáo sư</li>
+                        <li><i class="far fa-hospital"></i>   Khoa:     Nhi khoa</li>
+                        <li><i class="fas fa-map-marker"></i>  Vị trí:   Bác sĩ</li>
+                        <li><i class="far fa-user"></i>  Tiếu sử:    2005-2014: Theo học ngành y đa khoa tại đại học Y Hà Nội</li>
+                    </ul>
+                </div>
+            </div>
+            {{/with}}
         </div>
     </div>
 

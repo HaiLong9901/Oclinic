@@ -32,6 +32,9 @@
                 border-radius: .5rem;
                 overflow: hidden;
                 cursor: pointer;
+                .card-body{
+                    padding: 1rem 1rem .5rem;
+                }
                 &__img{
                     width: 100%;
                     height: 30rem;
@@ -49,6 +52,56 @@
                     img{
                         width: 105%;
                         object-fit: fill;
+                    }
+                }
+            }
+            .seeDoc{
+                font-size: 1.6rem;
+                background: $mediumBlueColor;
+                border: none;
+                &:focus{
+                    box-shadow: none;
+                }
+            }
+        }
+        .doctorDetail{
+            display: flex;
+            .doctor_img{
+                width: 35%;
+                img{
+                    width: 100%;
+                    border-radius: .5rem;
+                }
+            }
+            .doctor_decription{
+                width: 65%;
+                padding: 1rem;
+
+                .doctor{
+                    font-size: 3rem;
+                    color: $redColor;
+                    text-transform: none;
+                    text-align: center;
+                }
+                .name{
+                    font-size: 3rem;
+                    color: $darkBlueColor;
+                    text-transform: none;
+                    text-align: center;
+                }
+                .decription{
+                    margin-top: 4rem;
+                    list-style: none;
+                    li{
+                        font-size: 1.8rem;
+                        text-decoration: none;
+                        margin: 2rem 0;
+                        text-transform: none;
+                        i{
+                            font-size: 2rem;
+                            color: $darkBlueColor;
+                            margin-right: 1rem;
+                        }
                     }
                 }
             }

@@ -78,6 +78,36 @@
             width: 34%;
             border: .05rem solid $lightBlueColor;
             padding: .5rem;
+            height: 60rem;
+            overflow: scroll;
+            &__tit{
+                font-size: 2.2rem;
+                color: $lightBlueColor;
+                display: block;
+                text-align: center;
+                margin: .5rem;
+            }
+            &__item{
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 1rem;
+                &__img{
+                    width: 50%;
+                    img{
+                        width: 100%;
+                        border-radius: .5rem;
+                    }
+                }
+                &__tit{
+                    width: 45%;
+                    h3{
+                        font-size: 1.8rem;
+                        text-transform: none;
+                        color: #000;
+                        margin-top: 1rem;
+                    }
+                }
+            }
         }
     }
 }

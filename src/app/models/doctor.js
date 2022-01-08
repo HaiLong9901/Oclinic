@@ -1,4 +1,4 @@
-
+const db = require('../config');
 module.exports = (sequelize, Sequelize) => {
     const doctor = sequelize.define('doctor',{
         id_doc: {
@@ -34,7 +34,11 @@ module.exports = (sequelize, Sequelize) => {
         },
         id_dep: {
             type: Sequelize.STRING,
-            notNULL: true
+            notNULL: true,
+            references:{
+                model: db.department,
+                key: 'id_doc'
+            }
         },
         img: {
             type: Sequelize.STRING
@@ -52,6 +56,8 @@ module.exports = (sequelize, Sequelize) => {
         createdAt: false,
         updatedAt: false
     });
+
+    // doctor.belongsTo(db.department);
     
     return doctor;
 }

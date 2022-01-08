@@ -1,3 +1,4 @@
+const db = require('../config');
 const doctor = require('../config');
 
 class DoctorController{
@@ -9,10 +10,6 @@ class DoctorController{
             for(let value of doctors){
                 display.push(value.dataValues);
             }
-            // console.log('----------------');
-            // console.log({display});
-            // console.log('----------------');
-            // res.json({display});
             res.render('doctor', {display});
         }catch(error){
             console.log(error);
@@ -32,8 +29,27 @@ class DoctorController{
             };
             console.log({display});
             res.render('surgery', {display});
-            // res.json(display);
         }catch(error){
+            console.log(error);
+        }
+    }
+
+    showProfile = async (req, res, next) => {
+        try {
+            let seeDoctor = await doctor.doctor.findAll({
+                where: {
+                    id_doc: req.params.id_doc
+                },
+                include: [{
+                    model: db.department,
+                    require: true
+                }]
+            });
+            res.json(seeDoctor);
+            // let display = seeDoctor[0].dataValues;
+            // console.log(display);
+            // res.render('doctorDetail', {display});
+        } catch (error) {
             console.log(error);
         }
     }
