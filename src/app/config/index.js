@@ -30,6 +30,4 @@ db.patient = require('../models/patient')(sequelize, Sequelize);
 db.department = require('../models/department')(sequelize, Sequelize);
 db.connect = connect;
 
-db.doctor.belongsTo(db.department);
-db.department.hasMany(db.doctor);
 module.exports = db;

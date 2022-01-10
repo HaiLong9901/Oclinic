@@ -67,7 +67,7 @@
                 <h2 class="tit">Gửi yêu cầu tư vấn khám bệnh</h2>
             </div>
             <form action="/consultation/sent" method="POST" class="clt-form" id="clt-form" enctype="multipart/form-data">
-                <div class="form-group">
+                {{!-- <div class="form-group">
                     <div class="name">
                         <label for="name">Họ và tên</label>
                         <input type="text" id="name" name="name" placeholder="haha">
@@ -91,22 +91,12 @@
                         </div>
                         <span></span>
                     </div>
-                </div>
+                </div> --}}
                 <div class="service">
-                    <div class="form-group">
-                        <div class="department">
-                            <select class="form-select" aria-label="Default select example">
-                                <option selected>Khoa khám</option>
-                                <option value="1">Ngoại Khoa</option>
-                                <option value="2">Nội Khoa</option>
-                                <option value="3">Nhi Khoa</option>
-                            </select>
-                        </div>
-                    </div>
                     <div class="form-group">
                         <div class="degree">
                             <select class="form-select" aria-label="Default select example">
-                                <option selected>Học vị bác sĩ</option>
+                                <option selected>Dịch vụ</option>
                                 <option value="1">Tiến sĩ</option>
                                 <option value="2">Bác sĩ</option>
                                 <option value="3">Thạc sĩ</option>
@@ -132,7 +122,7 @@
                 </div>
                 <div class="form-group">
                     <div class="sympton">
-                        <label for="sympton">Tiền sử dị ứng </label>
+                        <label for="sympton">Biểu hiện bệnh </label>
                         <textarea name="sympton" id="sympton" rows="5"></textarea>
                     </div>
                 </div>

@@ -14,12 +14,7 @@ module.exports = (sequelize, Sequelize) => {
         id_head: {
             type: Sequelize.STRING,
             notNULL: true,
-            references: {
-                model: db.doctor, // 'Movies' would also work
-                key: 'id_head'
-              }
         },
-        departmentIdDep: false
     }, {
         tableName: 'department',
         timestamp: false,

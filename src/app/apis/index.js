@@ -45,13 +45,15 @@ async function print(){
     console.log('path img: ', image.name);
     console.log('path image: ', path.join(__dirname, `../../public/img/${image.name}`));
 }
-
+const image1 = {
+    name: 'doc9.png'
+}
 async function uploadFile(){
     try {
         const filePath = path.join(__dirname, `../../public/img/${image.name}`);
         const response = await drive.files.create({
             requestBody: {
-                name:   'doc6.jpg',
+                name:   image.name,
                 mimeType: 'image/jpg'
             },
             media: {

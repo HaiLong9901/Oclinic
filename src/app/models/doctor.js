@@ -35,10 +35,6 @@ module.exports = (sequelize, Sequelize) => {
         id_dep: {
             type: Sequelize.STRING,
             notNULL: true,
-            references:{
-                model: db.department,
-                key: 'id_doc'
-            }
         },
         img: {
             type: Sequelize.STRING

@@ -40,15 +40,15 @@ class DoctorController{
                 where: {
                     id_doc: req.params.id_doc
                 },
-                include: [{
-                    model: db.department,
-                    require: true
-                }]
+                // include: [{
+                //     model: db.department,
+                //     require: true
+                // }]
             });
-            res.json(seeDoctor);
-            // let display = seeDoctor[0].dataValues;
-            // console.log(display);
-            // res.render('doctorDetail', {display});
+            // res.json(seeDoctor);
+            let display = seeDoctor[0].dataValues;
+            console.log(display);
+            res.render('doctorDetail', {display});
         } catch (error) {
             console.log(error);
         }
