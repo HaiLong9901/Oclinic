@@ -4,7 +4,6 @@ const patient = require('../config');
 
 
 class SiteController{
-
     index(req, res){
         res.render('home');
     }
