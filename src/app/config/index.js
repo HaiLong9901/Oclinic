@@ -30,4 +30,16 @@ db.patient = require('../models/patient')(sequelize, Sequelize);
 db.department = require('../models/department')(sequelize, Sequelize);
 db.connect = connect;
 
+db.doctor.belongsTo(db.department, {
+    foreignKey: 'id_dep',
+    as: 'department'
+})
+// db.doctor.hasOne(db.department, {
+//     foreignKey: 'id_dep',
+//     as: 'department'
+// })
+// db.department.hasMany(db.doctor, {
+//     foreignKey: 'id_doc',
+//     as: 'role2'
+// })
 module.exports = db;

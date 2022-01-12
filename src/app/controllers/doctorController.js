@@ -1,11 +1,11 @@
 const db = require('../config');
-const doctor = require('../config');
+// const doctor = require('../config');
 
 class DoctorController{
     
     index = async (req, res) => {
         try{
-            let doctors = await doctor.doctor.findAll();
+            let doctors = await db.doctor.findAll();
             let display = [];
             for(let value of doctors){
                 display.push(value.dataValues);
@@ -18,7 +18,7 @@ class DoctorController{
 
     surgery = async (req, res) => {
         try{
-            let doctors = await doctor.doctor.findAll({
+            let doctors = await db.doctor.findAll({
                 where:{
                     id_dep:'DEP1'
                 }
@@ -27,7 +27,6 @@ class DoctorController{
             for(let value of doctors){
                 display.push(value.dataValues);
             };
-            console.log({display});
             res.render('surgery', {display});
         }catch(error){
             console.log(error);
@@ -36,18 +35,19 @@ class DoctorController{
 
     showProfile = async (req, res, next) => {
         try {
-            let seeDoctor = await doctor.doctor.findAll({
+            let seeDoctor = await db.doctor.findAll({
                 where: {
                     id_doc: req.params.id_doc
                 },
-                // include: [{
-                //     model: db.department,
-                //     require: true
-                // }]
+                include: [{
+                    model: db.department,
+                    attributes: ['name'],
+                    as: 'department',
+                    require: true
+                }]
             });
-            // res.json(seeDoctor);
             let display = seeDoctor[0].dataValues;
-            console.log(display);
+            display.department = display.department.name;
             res.render('doctorDetail', {display});
         } catch (error) {
             console.log(error);
