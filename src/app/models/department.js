@@ -1,5 +1,3 @@
-const { department } = require('../config');
-const db = require('../config');
 
 module.exports = (sequelize, Sequelize) => {
     const department = sequelize.define('department',{

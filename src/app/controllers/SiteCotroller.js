@@ -1,11 +1,21 @@
+const db = require('../config');
 const patient = require('../config');
 
 
 
 
 class SiteController{
-    index(req, res){
-        res.render('home');
+    index = async (req, res) => {
+        const articles = await db.article.findAll({
+            order: [['createdAt', 'DESC']],
+            limit: 3
+        })
+        let display = [];
+        for(let value of articles){
+            display.push(value.dataValues);
+        };
+        
+        res.render('home', {display});
     }
 
     detail(req, res){

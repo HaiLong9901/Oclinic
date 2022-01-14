@@ -202,14 +202,16 @@
                     </tr>
                 </thead>
                 <tbody>
+                    {{#each display}}
                     <tr class="table-light">
-                    <th scope="row">1</th>
-                    <td>Ngoại khoa chuyên sâu</td>
-                    <td>Ngoại khoa</td>
-                    <td>Giáo sư, Phó Giáo sư, Tiến sĩ</td>
-                    <td>100.000</td>
+                    <th scope="row">{{ @index}}</th>
+                    <td>{{this.name}}</td>
+                    <td>{{this.id_dep}}</td>
+                    <td>{{this.degree}}</td>
+                    <td>{{this.price}}</td>
                     </tr>
-                    <tr class="table-info">
+                    {{/each}}
+                    {{!-- <tr class="table-info">
                     <th scope="row">2</th>
                     <td>Ngoại khoa thường</td>
                     <td>Ngoại khoa</td>
@@ -243,7 +245,7 @@
                     <td>Nhi Khoa</td>
                     <td>Thạc sĩ</td>
                     <td>50.000</td>
-                    </tr>
+                    </tr> --}}
                 </tbody>
                 </table>
         </div>

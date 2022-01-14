@@ -131,36 +131,18 @@
             <div class="swipper article__container">
                 <div class="swiper-wrapper wrapper">
                     <div class="swiper-slide article__box">
+                        {{#each display}}
                         <div class="article__item">
                             <div class="item__image">
-                                <img src="/img/art1.jpg" alt="">
+                                <img src="{{this.img}}" alt="">
                             </div>
-                            <p>Lối sống lành mạnh phòng tránh nguy cơ đột quỵ</p>
+                            <p>{{this.title}}</p>
                             <div class="article__btn">
                                 <p>XEM</p>
                                 <div class="btn"><i class="fas fa-arrow-right"></i></div>
                             </div>
                         </div>
-                        <div class="article__item">
-                            <div class="item__image">
-                                <img src="/img/art2.jpg" alt="">
-                            </div>
-                            <p>Súc họng - xịt mũi: Củng cố phòng tuyến ngừa COVID-19</p>
-                            <div class="article__btn">
-                                <p>XEM</p>
-                                <div class="btn"><i class="fas fa-arrow-right"></i></div>
-                            </div>
-                        </div>
-                        <div class="article__item">
-                            <div class="item__image">
-                                <img src="/img/art3.jpg" alt="">
-                            </div>
-                            <p>3 lưu ý ăn uống để khỏe hơn trong mùa COVID-19</p>
-                            <div class="article__btn">
-                                <p>XEM</p>
-                                <div class="btn"><i class="fas fa-arrow-right"></i></div>
-                            </div>
-                        </div>
+                        {{/each}}
                     </div>
                     <div class="swiper-slide article__box">
                         <div class="article__item">

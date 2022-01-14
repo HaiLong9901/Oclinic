@@ -9,21 +9,6 @@ const port = 3000;
 const db = require('./app/config');
 
 const route = require('./routes');
-const googleAPIS = require('./app/apis');
-
-// const storage = multer.diskStorage({
-//   destination: (req, file, cb) => {
-//     cb(null, './app/public/img');
-//   },
-//   filename: (req, file, cb) => {
-//     console.log(file);
-//     cb(null, Date.now + path.extname(file.originalname));
-//   }
-// });
-// const upload = multer({
-//   storage: storage,
-// })
-
 
 
 
@@ -33,6 +18,12 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(morgan('combined'));
 
+
+engine.create({
+  helpers: {
+    addIndex: (index) => ++index
+  }
+})
 app.engine('handlebars', engine.engine());
 app.set('view engine', 'handlebars');
 app.set('views', path.join(__dirname, 'resource','views'));
