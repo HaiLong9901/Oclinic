@@ -203,8 +203,8 @@
                 </thead>
                 <tbody>
                     {{#each display}}
-                    <tr class="table-light">
-                    <th scope="row">{{ @index}}</th>
+                    <tr class="{{styleIndex @index}}">
+                    <th scope="row">{{addIndex @index}}</th>
                     <td>{{this.name}}</td>
                     <td>{{this.id_dep}}</td>
                     <td>{{this.degree}}</td>

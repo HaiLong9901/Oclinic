@@ -67,49 +67,26 @@
                 <h2 class="tit">Gửi yêu cầu tư vấn khám bệnh</h2>
             </div>
             <form action="/consultation/sent" method="POST" class="clt-form" id="clt-form" enctype="multipart/form-data">
-                {{!-- <div class="form-group">
-                    <div class="name">
-                        <label for="name">Họ và tên</label>
-                        <input type="text" id="name" name="name" placeholder="haha">
-                    </div>
-                </div>
-                <div class="age-sex">
-                    <div class="form-group">
-                        <div class="age">
-                            <label for="age">Tuổi</label>
-                            <input type="text" id="age" name="age">
-                        </div>
-                        <span></span>
-                    </div>
-                    <div class="form-group">
-                        <div class="sex">
-                            <label for="" class="sex__tit">Giới tính: </label>
-                            <input type="radio" id="male" name="sex" value="1">
-                            <label for="male">Nam</label>
-                            <input type="radio" id="female" name="sex" value="0">
-                            <label for="female">Nữ</label>
-                        </div>
-                        <span></span>
-                    </div>
-                </div> --}}
                 <div class="service">
                     <div class="form-group">
                         <div class="degree">
-                            <select class="form-select" aria-label="Default select example">
+                            <select class="form-select" aria-label="Default select example" name="service">
                                 <option selected>Dịch vụ</option>
-                                <option value="1">Tiến sĩ</option>
-                                <option value="2">Bác sĩ</option>
-                                <option value="3">Thạc sĩ</option>
+                                {{#each display}}
+                                <option value="{{this.id_service}}" class="{{this.id_dep}}">{{this.name}}</option>
+                                {{/each}}
                             </select>
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="doctor">
-                            <select class="form-select" aria-label="Default select example">
+                            <select class="form-select" aria-label="Default select example" name="doctor">
                                 <option selected>Chọn bác sĩ</option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
+                                {{#each display1}}
+                                <option value="{{this.id_doc}}" class="{{this.id_dep}}"> 
+                                    {{this.name}}
+                                </option>
+                                {{/each}}
                             </select>
                         </div>
                     </div>
@@ -138,3 +115,31 @@
         </div>
     </div>
 </section>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const serviceSelect = document.querySelector('#clt-form .service .degree select');
+        const dep1Select = document.querySelectorAll('#clt-form .service .doctor option.DEP1');
+        const dep2Select = document.querySelectorAll('#clt-form .service .doctor option.DEP2');
+        const dep3Select = document.querySelectorAll('#clt-form .service .doctor option.DEP3');
+        serviceSelect.addEventListener('change', () => {
+            let checked = serviceSelect.value;
+            if(checked == 'SER01' || checked == 'SER02' || checked == 'SER03'){
+                
+                dep1Select.forEach((element)=> element.style.display = 'block');
+                dep2Select.forEach((element)=> element.style.display = 'none');
+                dep3Select.forEach((element)=> element.style.display = 'none');
+            }
+            if(checked == 'SER04' || checked == 'SER05' || checked == 'SER06'){
+                dep1Select.forEach((element)=> element.style.display = 'none');
+                dep2Select.forEach((element)=> element.style.display = 'block');
+                dep3Select.forEach((element)=> element.style.display = 'none');
+            }
+            if(checked == 'SER08' || checked == 'SER09' || checked == 'SER10'){
+                dep1Select.forEach((element)=> element.style.display = 'none');
+                dep2Select.forEach((element)=> element.style.display = 'none');
+                dep3Select.forEach((element)=> element.style.display = 'block');
+            }
+            
+        })
+    })
+</script>

@@ -56,6 +56,17 @@
                     font-size: 1.8rem;
                     width: 40%;
                 }
+                .doctor{
+                    option{
+                        display: flex;
+                        padding: .5rem 1rem;
+                        justify-content: space-between;
+                        img{
+                            width: 20%;
+                            border-radius: 50%;
+                        }
+                    }
+                }
             }
             .age-sex{
                 display: flex;

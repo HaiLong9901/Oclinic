@@ -36,6 +36,10 @@ db.doctor.belongsTo(db.department, {
     foreignKey: 'id_dep',
     as: 'department'
 })
+db.service.belongsTo(db.department, {
+    foreignKey: 'id_dep',
+    as: 'department'
+})
 // db.doctor.hasOne(db.department, {
 //     foreignKey: 'id_dep',
 //     as: 'department'
