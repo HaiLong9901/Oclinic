@@ -7,6 +7,7 @@ const multer = require('multer');
 const app = express();
 const port = 3000;
 const db = require('./app/config');
+const session = require('express-session');
 
 const route = require('./routes');
 
@@ -17,6 +18,14 @@ app.use(express.json());
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(morgan('combined'));
+
+app.set('trust proxy', 1);
+app.use(session({
+  secret: 'keyboard cat',
+  resave: false,
+  saveUninitialized: true,
+  cookie: {}
+}))
 
 app.engine('handlebars', engine.engine());
 app.set('view engine', 'handlebars');

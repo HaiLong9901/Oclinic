@@ -10,12 +10,12 @@ const registerBtn = document.querySelector('.taskbar__user .regist');
 
 
 
-loginBtn.addEventListener('click', ()=>{
-  loginForm.classList.toggle('formOpen');
-});
-closeBtn.addEventListener('click', ()=>{
-  loginForm.classList.remove('formOpen');
-});
+// loginBtn.addEventListener('click', ()=>{
+//   loginForm.classList.toggle('formOpen');
+// });
+// closeBtn.addEventListener('click', ()=>{
+//   loginForm.classList.remove('formOpen');
+// });
 seeBtn.addEventListener('click', ()=>{
   if(passBox.getAttribute('type') === 'password'){
     passBox.setAttribute('type', 'text');
@@ -26,9 +26,9 @@ seeBtn.addEventListener('click', ()=>{
     seeBtn.setAttribute('class', 'far fa-eye-slash');
   }
 });
-registerBtn.addEventListener('click', ()=>{
-  registerForm.classList.toggle('formOpen');
-});
+// registerBtn.addEventListener('click', ()=>{
+//   registerForm.classList.toggle('formOpen');
+// });
 
 // seeBtn2.addEventListener('click', ()=>{
 //   if(passBox.getAttribute('type') === 'password'){

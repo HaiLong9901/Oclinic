@@ -17,18 +17,18 @@ class IntroController{
                     require: true
                 }]
             });
-            console.log(ser);
-            res.json(ser);
-            // res.render('intro', {
-            //     display,
-            //     helpers: {
-            //         addIndex: (index) => ++index,
-            //         styleIndex: (index) => {
-            //             if(index%2 == 0 ) return 'table-light';
-            //             return 'table-info';
-            //         }
-            //       }
-            // });
+            // console.log(ser);
+            // res.json(ser);
+            res.render('intro', {
+                display,
+                helpers: {
+                    addIndex: (index) => ++index,
+                    styleIndex: (index) => {
+                        if(index%2 == 0 ) return 'table-light';
+                        return 'table-info';
+                    }
+                  }
+            });
         } catch (error) {
             console.log(error);
         }

@@ -17,8 +17,8 @@
 <body>
 
     <!-- login form -->
-    <div class="loginForm">
-        <form action="" id="loginContainer" class="loginContainer">
+    <div class="loginForm {{className}}">
+        <form action="/login" method="POST" id="loginContainer" class="loginContainer">
             <header><h3>Đăng nhập</h3></header>
             <div class="name">
                 <input type="text" id="phoneNum" name="phoneNum">
@@ -48,13 +48,13 @@
             <div class="buttonBox">
                 <button type="submit" form="loginContainer" value="submit">Đăng nhập</button>
             </div>
-            <i class="fas fa-times"></i>
+            <a href="/"><i class="fas fa-times"></i></a>
         </form>
     </div>
 
     <!-- Register form -->
-    <div class="registerForm">
-        <form action="/regist" method="POST" id="registerContainer" class="registerContainer">
+    <div class="registerForm {{className1}}">
+        <form action="/register" method="POST" id="registerContainer" class="registerContainer">
             <header><h3>Đăng ký tài khoản</h3></header>
             <div class="form-group">
                 <div class="name">
@@ -121,9 +121,9 @@
                     <span class="form-message"><i class="fas fa-exclamation-triangle"></i> Nhập sai mật khẩu</span>
             </div>
             <div class="buttonBox">
-                <button type="submit" form="" value="submit">Đăng ký</button>
+                <button type="submit" form="registerContainer" value="submit">Đăng ký</button>
             </div>
-            <i class="fas fa-times"></i>
+            <a href="/"><i class="fas fa-times"></i></a>
         </form>
     </div>
 

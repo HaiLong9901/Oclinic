@@ -1,3 +1,4 @@
+const bcrypt = require('bcrypt');
 const db = require('../config');
 const patient = require('../config');
 
@@ -22,7 +23,57 @@ class SiteController{
         res.send('search');
     }
 
-    store = async (req, res, next) => {
+    login = async (req, res, next) => {
+        try {
+            // const patient = await db.patient.findOne({
+            //     where: {
+            //         phonenum: req.body.phoneNum
+            //     }
+            // });
+            // if(patient === null){
+            //     res.send('Ko ton tai so dien thoai');
+            // }
+            // console.log(patient);
+            // res.json(req.body);
+            res.render('home', {
+                className: 'formOpen',
+            })
+        } catch (error) {
+            console.log(error);
+        }
+    }
+    handleLogin = async (req, res, next) => {
+        try {
+            const patient = await db.patient.findOne({
+                where: {
+                    phonenum: req.body.phoneNum
+                }
+            });
+            if(patient === null){
+                res.send('Ko ton tai so dien thoai');
+            }
+            console.log(patient);
+            
+            req.session.isAuthenticated = true;
+            req.session.authUser = patient;
+            res.redirect('/profile');
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    register = (req, res, next) => {
+        try {
+            res.render('home', {
+                className1: 'formRegisterOpen'
+            })
+        } catch (error) {
+            res.status(400).send('error');
+            console.log(error);
+        }
+    }
+
+    hanleRegister = async (req, res, next) => {
         try {
             const id = 'PAT'.concat((req.body.idNum.substring(req.body.idNum.length - 4).concat(req.body.phoneNum.substring(req.body.phoneNum.length - 4))));
             const user = await patient.patient.create({
@@ -35,11 +86,21 @@ class SiteController{
                 citizen_id: req.body.idNum,
                 id_pat: id,
             });
+            const hashPass = bcrypt.hashSync(req.body.pass, 8);
+            console.log('hashpass:  ', hashPass);
+            res.redirect('/');
         } catch (error) {
             res.status(400).send('error');
+        }
+    }
+
+    profile = (req, res, next) => {
+        try {
+            console.log(req.session);
+            res.send('hello');
+        } catch (error) {
             console.log(error);
         }
-        res.render('home');
     }
 }
 

@@ -48,7 +48,16 @@ class DoctorController{
             });
             let display = seeDoctor[0].dataValues;
             display.department = display.department.name;
-            res.render('doctorDetail', {display});
+            res.render('doctorDetail', {
+                display,
+                helpers: {
+                    convertToVNese: (degree) => {
+                        if(degree == 'doctor') return 'Bác sĩ';
+                        if(degree == 'masters') return 'Thạc sĩ';
+                        return 'Giáo sư';
+                    }
+                }
+            });
         } catch (error) {
             console.log(error);
         }
