@@ -18,17 +18,23 @@
             </ul>
         </div>
         <div class="taskbar__user">
-            <!-- <img src="./assets/img/9long.png" alt="" class="taskbar__user__img"> -->
-            <!-- <ul class="taskbar__account">
-            
-            </ul> -->
-            <a href="#" class="user">
+            {{#if lcIsAuthenticated}}
+                <a href="#" class="user">
+                    <img src="https://drive.google.com/uc?export=view&id=1CR6iIazOdh1kdEaJXx73mIBbAKYLd39O	" alt="" class="taskbar__user__img">
+                    <ul class="user__options">
+                        <li><a href="/setting" class="login">Cài đặt</a></li>
+                        <li><a href="/logout" class="regist">Đăng xuất</a></li>
+                    </ul>
+                </a>
+            {{else}}
+                <a href="#" class="user">
                 <i class="fas fa-user"></i>
                 <ul class="user__options">
-                    <li><a href="#" class="login">Đăng nhập</a></li>
-                    <li><a href="#" class="regist">Đăng ký</a></li>
+                    <li><a href="/login" class="login">Đăng nhập</a></li>
+                    <li><a href="/register" class="regist">Đăng ký</a></li>
                 </ul>
-            </a>
+                </a>
+            {{/if}}
         </div>
     </div>
 </div>
@@ -211,41 +217,6 @@
                     <td>{{this.price}}</td>
                     </tr>
                     {{/each}}
-                    {{!-- <tr class="table-info">
-                    <th scope="row">2</th>
-                    <td>Ngoại khoa thường</td>
-                    <td>Ngoại khoa</td>
-                    <td>Thạc sĩ</td>
-                    <td>60.000</td>
-                    </tr>
-                    <tr class="table-light">
-                    <th scope="row">3</th>
-                    <td>Nội khoa chuyên sâu</td>
-                    <td>Nội khoa</td>
-                    <td>Giáo sư, Phó Giáo sư, Tiến sĩ</td>
-                    <td>120.000</td>
-                    </tr>
-                    <tr class="table-info">
-                    <th scope="row">4</th>
-                    <td>Nội khoa thường</td>
-                    <td>Nội Khoa</td>
-                    <td>Thạc sĩ</td>
-                    <td>75.000</td>
-                    </tr>
-                    <tr class="table-light">
-                    <th scope="row">5</th>
-                    <td>Nhi khoa chuyên sâu</td>
-                    <td>Nhi khoa</td>
-                    <td>Giáo sư, Phó Giáo sư, Tiến sĩ</td>
-                    <td>90.000</td>
-                    </tr>
-                    <tr class="table-info">
-                    <th scope="row">6</th>
-                    <td>Nhi khoa thường</td>
-                    <td>Nhi Khoa</td>
-                    <td>Thạc sĩ</td>
-                    <td>50.000</td>
-                    </tr> --}}
                 </tbody>
                 </table>
         </div>

@@ -6,6 +6,19 @@ const consultRouter = require('./consultation');
 const articleRouter = require('./article');
 const notifyRouter = require('./notify');
 function route(app){
+    app.use(async (req, res, next) => {
+        try {
+            if(req.session.isAuthenticated === null){
+                req.session.isAuthenticated = false;
+            }
+            res.locals.lcIsAuthenticated = req.session.isAuthenticated;
+            res.locals.lcAuthUser = req.session.authUser;
+            
+            next();
+        } catch (error) {
+            console.log(error);
+        }
+    })
     app.use('/notifications', notifyRouter);
     app.use('/articles', articleRouter);
     app.use('/consultation', consultRouter);

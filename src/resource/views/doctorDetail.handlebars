@@ -18,17 +18,23 @@
             </ul>
         </div>
         <div class="taskbar__user">
-            <!-- <img src="./assets/img/9long.png" alt="" class="taskbar__user__img"> -->
-            <!-- <ul class="taskbar__account">
-            
-            </ul> -->
-            <a href="#" class="user">
+            {{#if lcIsAuthenticated}}
+                <a href="#" class="user">
+                    <img src="https://drive.google.com/uc?export=view&id=1CR6iIazOdh1kdEaJXx73mIBbAKYLd39O	" alt="" class="taskbar__user__img">
+                    <ul class="user__options">
+                        <li><a href="/setting" class="login">Cài đặt</a></li>
+                        <li><a href="/logout" class="regist">Đăng xuất</a></li>
+                    </ul>
+                </a>
+            {{else}}
+                <a href="#" class="user">
                 <i class="fas fa-user"></i>
                 <ul class="user__options">
                     <li><a href="/login" class="login">Đăng nhập</a></li>
-                    <li><a href="#" class="regist">Đăng ký</a></li>
+                    <li><a href="/register" class="regist">Đăng ký</a></li>
                 </ul>
-            </a>
+                </a>
+            {{/if}}
         </div>
     </div>
 </div>

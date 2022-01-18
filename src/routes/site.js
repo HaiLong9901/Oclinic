@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const siteController = require('../app/controllers/SiteCotroller');
 
+router.get('/logout', siteController.logout);
 router.get('/profile', siteController.profile);
 router.post('/login', siteController.handleLogin);
 router.get('/login', siteController.login);

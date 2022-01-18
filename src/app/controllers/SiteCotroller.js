@@ -25,16 +25,6 @@ class SiteController{
 
     login = async (req, res, next) => {
         try {
-            // const patient = await db.patient.findOne({
-            //     where: {
-            //         phonenum: req.body.phoneNum
-            //     }
-            // });
-            // if(patient === null){
-            //     res.send('Ko ton tai so dien thoai');
-            // }
-            // console.log(patient);
-            // res.json(req.body);
             res.render('home', {
                 className: 'formOpen',
             })
@@ -44,19 +34,37 @@ class SiteController{
     }
     handleLogin = async (req, res, next) => {
         try {
-            const patient = await db.patient.findOne({
-                where: {
-                    phonenum: req.body.phoneNum
-                }
-            });
-            if(patient === null){
+            let user = null;
+            const role = req.body.role;
+            if(role == 'patient'){
+                user = await db.patient.findOne({
+                    where: {
+                        phonenum: req.body.phoneNum
+                    }
+                });
+            }
+            if(role == 'doctor'){
+                user = await db.doctor.findOne({
+                    where: {
+                        phonenum: req.body.phoneNum
+                    }
+                });
+            }
+            if(role == 'admin'){
+                user = await db.admin.findOne({
+                    where: {
+                        phonenum: req.body.phoneNum
+                    }
+                });
+            }
+            if(user === null){
                 res.send('Ko ton tai so dien thoai');
             }
-            console.log(patient);
+            console.log(user);
             
             req.session.isAuthenticated = true;
-            req.session.authUser = patient;
-            res.redirect('/profile');
+            req.session.authUser = user;
+            res.redirect('/');
         } catch (error) {
             console.log(error);
         }
@@ -96,8 +104,18 @@ class SiteController{
 
     profile = (req, res, next) => {
         try {
-            console.log(req.session);
+            console.log('local is', res.locals.lcAuthUser);
             res.send('hello');
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    logout = async (req, res, next) => {
+        try {
+            req.session.isAuthenticated = false;
+            req.session.authUser = null;
+            res.redirect('/');
         } catch (error) {
             console.log(error);
         }
