@@ -1,0 +1,101 @@
+{{!-- header starts --}}
+<header class="header">
+    <div class="taskbar">
+    <div class="taskbar__name">
+        <!-- <form action="" ></form> -->
+        <input type="search" name="searchBox" id="searchBox" class="taskbar__search">
+        <button class="searchBtn" form="searchBox" value="submit"><i class="fas fa-search"></i></button>
+        
+        <div href="#" class="taskbar__bell">
+            <i class="fas fa-bell">
+            </i>
+            <ul class="annouce_list">
+                <li><a href="#">Thông báo 1</a></li>
+                <li><a href="#">Thông báo 2</a></li>
+                <li><a href="#">Thông báo 3</a></li>
+                <li><a href="#">Thông báo 4</a></li>
+                <a href="#"><span>XEM TẤT CẢ</span></a>
+            </ul>
+        </div>
+        <div class="taskbar__user">
+            {{#if lcIsAuthenticated}}
+                <a href="#" class="user">
+                    <img src="https://drive.google.com/uc?export=view&id=1CR6iIazOdh1kdEaJXx73mIBbAKYLd39O	" alt="" class="taskbar__user__img">
+                    <ul class="user__options">
+                        <li><a href="/setting" class="login">Cài đặt</a></li>
+                        <li><a href="/logout" class="regist">Đăng xuất</a></li>
+                    </ul>
+                </a>
+            {{else}}
+                <a href="#" class="user">
+                <i class="fas fa-user"></i>
+                <ul class="user__options">
+                    <li><a href="/login" class="login">Đăng nhập</a></li>
+                    <li><a href="/register" class="regist">Đăng ký</a></li>
+                </ul>
+                </a>
+            {{/if}}
+        </div>
+    </div>
+</div>
+
+<div class="menu">
+    <div class="menu__main">                                              
+        <a href="/" class="logo"><i class="fas fa-capsules"></i><span>O</span>Clinic</a>
+        <ul class="menu__list">
+            <li class="menu__item"><a href="/">Trang chủ</a></li>
+            <li class="menu__item"><a href="/intro">Giới thiệu</a></li>
+            <li class="menu__item news"><a href="/news">Tin tức</a></li>
+            <li class="menu__item doctors"><a href="/doctors">Bác sĩ
+                <ul class="doctor">
+                    <li><a href="/doctors/surgery">Ngoại khoa</a></li>
+                    <li><a href="#">Nội Khoa</a></li>
+                    <li><a href="#">Nhi Khoa</a></li>
+                </ul>
+            </a></li>
+            <li class="menu__item large"><a href="/articles">Bài viết chuyên môn</a></li>
+            <li class="menu__item"><a href="/consultation">Tư vấn</a></li>
+            <li class="menu__item"><a href="#">Liên hệ</a></li>
+        </ul>
+    </div>
+</div>
+</header>
+
+{{!-- header ends --}}
+
+<!-- home starts -->
+
+<section class="home profileHome">
+    <div class="profile" id="profile">
+        <div class="content">
+            <div class="profile__content">
+                <div class="profile__content__img">
+                    <img src="https://drive.google.com/uc?export=view&id=1ljkLji_boSFtuS_L28WZ_KcZ2dkU9nnP" alt="">
+                </div>
+                <div class="profile__content__descript">
+                    <h2>Nguyễn Tuấn Hoàng</h2>
+                    <h3>Quản lý</h3>
+                    <ul>
+                        <li>Ngày sinh: 21-03-1981</li>
+                        <li>Giới tính: nam</li>
+                        <li>Số điện thoại: 0358897455</li>
+                        <li>Email: tuanhuangnguyen@gmail.com</li>
+                        
+                    </ul>
+                </div>
+            </div>
+            <div class="profile__fuction">
+                <div class="container">
+                    <div class="row row-cols-3">
+                        <div class="col"><a href="#"><i class="fas fa-plus"></i>  Chỉnh sửa thông tin</a></div>
+                        <div class="col"><a href="#"><i class="fas fa-plus"></i>  Cấp tài khoản</a></div>
+                        <div class="col"><a href="#"><i class="fas fa-plus"></i>  Đăng tin tức</a></div>
+                        <div class="col"><a href="#"><i class="fas fa-plus"></i>  Đăng bài viết</a></div>
+                        <div class="col"><a href="#"><i class="fas fa-plus"></i>  Cập nhật hiển thị</a></div>
+                        <div class="col"><a href="#"><i class="fas fa-plus"></i>  Xoá tài khoản</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -104,8 +104,7 @@ class SiteController{
 
     profile = (req, res, next) => {
         try {
-            console.log('local is', res.locals.lcAuthUser);
-            res.send('hello');
+            res.render('profile');
         } catch (error) {
             console.log(error);
         }

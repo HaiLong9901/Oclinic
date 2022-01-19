@@ -1,0 +1,80 @@
+.profileHome{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    .profile{
+        width: 100%;
+    }
+    .content{
+        width: 96.86%;
+        .profile__content{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            height: 45rem;
+            padding: 2rem 5rem;
+            &__img{
+                width: 25%;
+                height: 35rem;
+                img{
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    border-radius: .5rem;
+                }
+            }
+            &__descript{
+                width: 70%;
+                h2{
+                    font-size: 3rem;
+                    color: $lightBlueColor;
+                    text-align: center;
+                }
+                h3{
+                    font-size: 2.4rem;
+                    color: $redColor;
+                    text-align: center;
+                }
+                ul{
+                    margin: 0;
+                    li{
+                        list-style: none;
+                        color: $darkBlueColor;
+                        font-size: 2rem;
+                        text-transform: none;
+                        padding: 1.5rem;
+                    }
+                }
+            }
+        }
+
+        .profile__fuction{
+            width: 100%;
+            padding: 0 5rem 2rem;
+            .container{
+                .row{
+                    display: flex;
+                    gap: 3rem;
+                }
+                .col{
+                    background: $darkBlueColor;
+                    max-width: 30%;
+                    height: 5rem;
+                    border-radius: .5rem;
+                    a{
+                        font-size: 2rem;
+                        text-transform: none;
+                        text-align: center;
+                        display: block;
+                        color: #fff;
+                        line-height: 5rem;
+                        i{
+                            font-size: 2.4rem;
+                            margin-right: 2rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
