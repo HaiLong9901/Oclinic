@@ -29,7 +29,9 @@
                 <label for="pass">Mật khẩu</label>
                 <i class="far fa-eye-slash"></i>
             </div>
-            <p class="announcement">Sai mật khẩu hoặc tài khoản không tồn tại</p>
+            {{#if error}}
+            <p class="announcement">{{error}}</p>
+            {{/if}}
             <div class="forgetPass">
                 <a href="#">Quên mật khẩu/</a>
                 <a href="#" class="regist">Đăng ký</a>
@@ -44,9 +46,15 @@
                     <label for="female">Quản lý</label>
                 </div>
             </div>
+            {{#if error}}
+            <div class="buttonBox">
+                <button type="" form="" value="">Đăng nhập</button>
+            </div>
+            {{else}}
             <div class="buttonBox">
                 <button type="submit" form="loginContainer" value="submit">Đăng nhập</button>
             </div>
+            {{/if}}
             <a href="/"><i class="fas fa-times"></i></a>
         </form>
     </div>

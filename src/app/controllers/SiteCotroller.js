@@ -58,9 +58,13 @@ class SiteController{
                 });
             }
             if(user === null){
-                res.send('Ko ton tai so dien thoai');
+                return res.render('home', {
+                    // layout: false,
+                    className: 'formOpen',
+                    error: 'Số điện thoại không tồn tại'
+                })
+                // res.send('sai');
             }
-            console.log(user);
             
             req.session.isAuthenticated = true;
             req.session.authUser = user;

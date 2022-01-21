@@ -89,7 +89,12 @@
             }
         }
         .announcement{
-            display: none;
+            display: block;
+            font-size: 1.6rem;
+            padding: 1rem 3rem 0;
+            color: $redColor;
+            text-align: center;
+            font-style: italic;
         }
         .fail{
             margin: 0;
