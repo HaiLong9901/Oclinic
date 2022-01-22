@@ -59,13 +59,18 @@ class SiteController{
             }
             if(user === null){
                 return res.render('home', {
-                    // layout: false,
                     className: 'formOpen',
                     error: 'Số điện thoại không tồn tại'
                 })
-                // res.send('sai');
             }
-            
+            user.role = role;
+            if(req.body.pass !== user.pass){
+                return res.render('home', {
+                    className: 'formOpen',
+                    error: 'Sai mật khẩu'
+                })
+            }
+            console.log(user);
             req.session.isAuthenticated = true;
             req.session.authUser = user;
             res.redirect('/');

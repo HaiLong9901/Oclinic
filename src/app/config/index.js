@@ -30,6 +30,7 @@ db.patient = require('../models/patient')(sequelize, Sequelize);
 db.department = require('../models/department')(sequelize, Sequelize);
 db.article = require('../models/article')(sequelize, Sequelize);
 db.service = require('../models/services')(sequelize, Sequelize);
+db.consultation = require('../models/consultation')(sequelize, Sequelize);
 db.connect = connect;
 
 db.doctor.belongsTo(db.department, {

@@ -18,12 +18,6 @@ class ConsultController{
         res.render('consult', {
             display,
             display1,
-            // Helpers: {
-            //     loadDoctor: () => {
-            //         const option = document.querySelectorAll('#clt-form .service option');
-            //         const selected = option.filter((value) => value.checked == true)
-            //     }
-            // }
         });
         } catch (error) {
             console.log(error);
@@ -33,11 +27,16 @@ class ConsultController{
     detail(req, res){
         res.render('news');
     }
-    sent = (req, res) => {
-        image.name = req.file.filename;
-        image.print();
-        image.uploadFile();
-        res.send(req.body);
+    sent = (req, res, next) => {
+        try {
+            if(req.file == null) return res.send(req.body);
+            image.name = req.file.filename;
+            image.print();
+            image.uploadFile();
+            res.send(req.body);
+        } catch (error) {
+            console.log(error);
+        }
     }
 
 }
