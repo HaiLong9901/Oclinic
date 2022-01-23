@@ -27,12 +27,18 @@ class ConsultController{
     detail(req, res){
         res.render('news');
     }
-    sent = (req, res, next) => {
+    sent = async (req, res, next) => {
         try {
-            if(req.file == null) return res.send(req.body);
-            image.name = req.file.filename;
-            image.print();
-            image.uploadFile();
+            const now = Date.now().toString();
+            const user = req.session.authUser.id_pat;
+            console.log(user);
+            const id = 'CLT'.concat(now.substring(now.length - 4).concat(user.substring(user.length - 4)));
+            console.log('date is' , id);
+            // const consultation = await db.consultation.create()
+            // if(req.file == null) return res.send(req.body);
+            // image.name = req.file.filename;
+            // image.print();
+            // image.uploadFile();
             res.send(req.body);
         } catch (error) {
             console.log(error);

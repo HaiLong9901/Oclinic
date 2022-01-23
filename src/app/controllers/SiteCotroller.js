@@ -63,7 +63,7 @@ class SiteController{
                     error: 'Số điện thoại không tồn tại'
                 })
             }
-            user.role = role;
+            user.dataValues.role = role;
             if(req.body.pass !== user.pass){
                 return res.render('home', {
                     className: 'formOpen',
@@ -111,7 +111,7 @@ class SiteController{
         }
     }
 
-    profile = (req, res, next) => {
+    setting = async (req, res, next) => {
         try {
             res.render('profile');
         } catch (error) {

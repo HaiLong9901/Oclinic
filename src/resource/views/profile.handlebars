@@ -20,7 +20,7 @@
         <div class="taskbar__user">
             {{#if lcIsAuthenticated}}
                 <a href="#" class="user">
-                    <img src="https://drive.google.com/uc?export=view&id=1CR6iIazOdh1kdEaJXx73mIBbAKYLd39O	" alt="" class="taskbar__user__img">
+                    <img src="https://drive.google.com/uc?export=view&id={{lcAuthUser.img}}	" alt="" class="taskbar__user__img">
                     <ul class="user__options">
                         <li><a href="/setting" class="login">Cài đặt</a></li>
                         <li><a href="/logout" class="regist">Đăng xuất</a></li>
@@ -70,16 +70,16 @@
         <div class="content">
             <div class="profile__content">
                 <div class="profile__content__img">
-                    <img src="https://drive.google.com/uc?export=view&id=1ljkLji_boSFtuS_L28WZ_KcZ2dkU9nnP" alt="">
+                    <img src="https://drive.google.com/uc?export=view&id={{lcAuthUser.img}}" alt="">
                 </div>
                 <div class="profile__content__descript">
-                    <h2>Nguyễn Tuấn Hoàng</h2>
+                    <h2>{{lcAuthUser.name}}</h2>
                     <h3>Quản lý</h3>
                     <ul>
-                        <li>Ngày sinh: 21-03-1981</li>
-                        <li>Giới tính: nam</li>
-                        <li>Số điện thoại: 0358897455</li>
-                        <li>Email: tuanhuangnguyen@gmail.com</li>
+                        <li>Ngày sinh: {{lcAuthUser.dob}}</li>
+                        <li>Giới tính: {{lcAuthUser.sex}}</li>
+                        <li>Số điện thoại: {{lcAuthUser.phonenum}}</li>
+                        <li>Email: {{lcAuthUser.email}}</li>
                         
                     </ul>
                 </div>

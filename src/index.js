@@ -24,7 +24,9 @@ app.use(session({
   secret: 'keyboard cat',
   resave: false,
   saveUninitialized: true,
-  cookie: {}
+  cookie: {
+    maxAge: 360000
+  }
 }))
 
 app.engine('handlebars', engine.engine());
