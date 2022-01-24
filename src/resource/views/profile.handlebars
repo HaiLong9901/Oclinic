@@ -74,12 +74,25 @@
                 </div>
                 <div class="profile__content__descript">
                     <h2>{{lcAuthUser.name}}</h2>
+                    {{#if doctor}}
+                    <h3>Bác sĩ</h3>
+                    {{/if}}
+                    {{#if patient}}
+                    <h3>Bệnh nhân</h3>
+                    {{/if}}
+                    {{#if admin}}
                     <h3>Quản lý</h3>
+                    {{/if}}
                     <ul>
                         <li>Ngày sinh: {{lcAuthUser.dob}}</li>
-                        <li>Giới tính: {{lcAuthUser.sex}}</li>
+                        <li>Giới tính: {{sexDisplay lcAuthUser.sex}}</li>
                         <li>Số điện thoại: {{lcAuthUser.phonenum}}</li>
                         <li>Email: {{lcAuthUser.email}}</li>
+                        {{#if doctor}}
+                        <li>Học vị: {{convertToVNese lcAuthUser.degree}}</li>
+                        <li>Vị trí: {{lcAuthUser.postition}}</li>
+                        <li>Khoa: {{lcAuthUser.email}}</li>
+                        {{/if}}
                         
                     </ul>
                 </div>
@@ -88,11 +101,17 @@
                 <div class="container">
                     <div class="row row-cols-3">
                         <div class="col"><a href="#"><i class="fas fa-plus"></i>  Chỉnh sửa thông tin</a></div>
+                        {{#if patient}}
+                        <div class="col"><a href="#"><i class="fas fa-plus"></i>  Xoá tài khoản</a></div>
+                        <div class="col"><a href="#"><i class="fas fa-plus"></i>  Đánh giá</a></div>
+                        {{/if}}
+                        {{#if admin}}
                         <div class="col"><a href="#"><i class="fas fa-plus"></i>  Cấp tài khoản</a></div>
                         <div class="col"><a href="#"><i class="fas fa-plus"></i>  Đăng tin tức</a></div>
                         <div class="col"><a href="#"><i class="fas fa-plus"></i>  Đăng bài viết</a></div>
                         <div class="col"><a href="#"><i class="fas fa-plus"></i>  Cập nhật hiển thị</a></div>
                         <div class="col"><a href="#"><i class="fas fa-plus"></i>  Xoá tài khoản</a></div>
+                        {{/if}}
                     </div>
                 </div>
             </div>

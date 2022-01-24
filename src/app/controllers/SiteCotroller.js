@@ -111,13 +111,13 @@ class SiteController{
         }
     }
 
-    setting = async (req, res, next) => {
-        try {
-            res.render('profile');
-        } catch (error) {
-            console.log(error);
-        }
-    }
+    // setting = async (req, res, next) => {
+    //     try {
+    //         res.render('profile');
+    //     } catch (error) {
+    //         console.log(error);
+    //     }
+    // }
 
     logout = async (req, res, next) => {
         try {

@@ -5,6 +5,7 @@ const doctorRouter = require('./doctor');
 const consultRouter = require('./consultation');
 const articleRouter = require('./article');
 const notifyRouter = require('./notify');
+const settingRouter = require('./setting');
 function route(app){
     app.use(async (req, res, next) => {
         try {
@@ -19,6 +20,7 @@ function route(app){
             console.log(error);
         }
     })
+    app.get('/setting', settingRouter);
     app.use('/notifications', notifyRouter);
     app.use('/articles', articleRouter);
     app.use('/consultation', consultRouter);

@@ -15,10 +15,13 @@
             padding: 2rem 5rem;
             &__img{
                 width: 25%;
-                height: 35rem;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
                 img{
                     width: 100%;
-                    height: 100%;
+                    height: 35rem;
                     object-fit: cover;
                     border-radius: .5rem;
                 }
@@ -42,7 +45,7 @@
                         color: $darkBlueColor;
                         font-size: 2rem;
                         text-transform: none;
-                        padding: 1.5rem;
+                        padding: 1rem 1.5rem;
                     }
                 }
             }
