@@ -4,6 +4,7 @@ const settingController = require('../app/controllers/settingController');
 const settingMdw = require('../app/middlewares/setting.mdw');
 
 
-router.use('/',settingMdw, settingController.index);
+router.use('/update', settingController.update);
+router.use('/', settingController.index);
 
 module.exports = router;

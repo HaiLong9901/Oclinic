@@ -35,19 +35,30 @@ class SettingController {
                     }
                 })
             }
-            res.render('profile', {
-                admin: true,
-                helpers: {
-                    sexDisplay: (sex) => {
-                        if(sex == true) return 'Nam';
-                        return 'Nữ';
+            if(role == 'admin'){
+
+                return res.render('profile', {
+                    admin: true,
+                    helpers: {
+                        sexDisplay: (sex) => {
+                            if(sex == true) return 'Nam';
+                            return 'Nữ';
+                        }
                     }
-                }
-            });
+                });
+            }
+            
         } catch (error) {
             console.log(error);
         }
     }
 
+    update = async (req, res, next) => {
+        try {
+            res.send('infor')
+        } catch (error) {
+            console.log(error);
+        }
+    }
 }
 module.exports = new SettingController;

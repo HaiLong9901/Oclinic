@@ -27,6 +27,7 @@ db.news = require('../models/news')(sequelize, Sequelize);
 db.user = require('../models/user')(sequelize, Sequelize);
 db.doctor = require('../models/doctor')(sequelize, Sequelize);
 db.patient = require('../models/patient')(sequelize, Sequelize);
+db.admin = require('../models/admin')(sequelize, Sequelize);
 db.department = require('../models/department')(sequelize, Sequelize);
 db.article = require('../models/article')(sequelize, Sequelize);
 db.service = require('../models/services')(sequelize, Sequelize);
