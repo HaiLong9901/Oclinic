@@ -82,6 +82,9 @@
                                 <option value="{{this.id_service}}" class="{{this.id_dep}}">{{this.name}}</option>
                                 {{/each}}
                             </select>
+                            {{#if errorService}}
+                            <span>Bạn chưa chọn dịch vụ </span>
+                            {{/if}}
                         </div>
                     </div>
                     <div class="form-group">
@@ -94,6 +97,9 @@
                                 </option>
                                 {{/each}}
                             </select>
+                            {{#if errorDoctor}}
+                            <span>Bạn chưa chọn bác sĩ</span>
+                            {{/if}}
                         </div>
                     </div>
                 </div>

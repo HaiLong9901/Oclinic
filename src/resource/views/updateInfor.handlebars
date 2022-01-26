@@ -1,1 +1,135 @@
 
+{{!-- header starts --}}
+<header class="header">
+    <div class="taskbar">
+    <div class="taskbar__name">
+        <!-- <form action="" ></form> -->
+        <input type="search" name="searchBox" id="searchBox" class="taskbar__search">
+        <button class="searchBtn" form="searchBox" value="submit"><i class="fas fa-search"></i></button>
+        
+        <div href="#" class="taskbar__bell">
+            <i class="fas fa-bell">
+            </i>
+            <ul class="annouce_list">
+                <li><a href="#">Thông báo 1</a></li>
+                <li><a href="#">Thông báo 2</a></li>
+                <li><a href="#">Thông báo 3</a></li>
+                <li><a href="#">Thông báo 4</a></li>
+                <a href="#"><span>XEM TẤT CẢ</span></a>
+            </ul>
+        </div>
+        <div class="taskbar__user">
+            {{#if lcIsAuthenticated}}
+                <a href="#" class="user">
+                    <img src="https://drive.google.com/uc?export=view&id={{lcAuthUser.img}}	" alt="" class="taskbar__user__img">
+                    <ul class="user__options">
+                        <li><a href="/setting" class="login">Cài đặt</a></li>
+                        <li><a href="/logout" class="regist">Đăng xuất</a></li>
+                    </ul>
+                </a>
+            {{else}}
+                <a href="#" class="user">
+                <i class="fas fa-user"></i>
+                <ul class="user__options">
+                    <li><a href="/login" class="login">Đăng nhập</a></li>
+                    <li><a href="/register" class="regist">Đăng ký</a></li>
+                </ul>
+                </a>
+            {{/if}}
+        </div>
+    </div>
+</div>
+
+<div class="menu">
+    <div class="menu__main">                                              
+        <a href="/" class="logo"><i class="fas fa-capsules"></i><span>O</span>Clinic</a>
+        <ul class="menu__list">
+            <li class="menu__item"><a href="/">Trang chủ</a></li>
+            <li class="menu__item"><a href="/intro">Giới thiệu</a></li>
+            <li class="menu__item news"><a href="/news">Tin tức</a></li>
+            <li class="menu__item doctors"><a href="/doctors">Bác sĩ
+                <ul class="doctor">
+                    <li><a href="/doctors/surgery">Ngoại khoa</a></li>
+                    <li><a href="#">Nội Khoa</a></li>
+                    <li><a href="#">Nhi Khoa</a></li>
+                </ul>
+            </a></li>
+            <li class="menu__item large"><a href="/articles">Bài viết chuyên môn</a></li>
+            <li class="menu__item"><a href="/consultation">Tư vấn</a></li>
+            <li class="menu__item"><a href="#">Liên hệ</a></li>
+        </ul>
+    </div>
+</div>
+</header>
+
+{{!-- header ends --}}
+
+<!-- home starts -->
+
+<section class="home inforHome">
+    <div class="infor" id="infor">
+        <div class="content">
+            <form method="POST" action="/" class="infor__content">
+                <div class="input-group flex-nowrap">
+                    <span class="input-group-text" id="addon-wrapping">Họ và tên</span>
+                    <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping" name="name">
+                </div>
+                <div class="input-group flex-nowrap">
+                    <span class="input-group-text" id="addon-wrapping">Ngày sinh</span>
+                    <input type="date" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping" name="dob">
+                </div>
+                <div class="input-group mb-3">
+                    <label class="input-group-text" for="inputGroupSelect01">Giới tính</label>
+                    <select class="form-select" id="inputGroupSelect01" name="sex">
+                        <option selected>Choose...</option>
+                        <option value="1">Nam</option>
+                        <option value="0">Nữ</option>
+                    </select>
+                </div>
+                <div class="input-group flex-nowrap">
+                    <span class="input-group-text" id="addon-wrapping">Số điện thoại</span>
+                    <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping" name="phonenum">
+                </div>
+                <div class="input-group flex-nowrap">
+                    <span class="input-group-text" id="addon-wrapping">Email</span>
+                    <input type="email" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping" name="email">
+                </div>
+                <div class="input-group flex-nowrap">
+                    <span class="input-group-text" id="addon-wrapping">CCCD</span>
+                    <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping" name="citizen_id">
+                </div>
+                <div class="input-group flex-nowrap">
+                    <span class="input-group-text" id="addon-wrapping">Khoa</span>
+                    <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping" name="department">
+                </div>
+                <div class="input-group flex-nowrap">
+                    <span class="input-group-text" id="addon-wrapping">Chức vụ</span>
+                    <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping" name="pos">
+                </div>
+                <div class="input-group flex-nowrap">
+                    <span class="input-group-text" id="addon-wrapping">Học vị</span>
+                    <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping" name="degree">
+                </div>
+                <div class="input-group flex-nowrap">
+                    <span class="input-group-text" id="addon-wrapping">Mật khẩu</span>
+                    <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping" name="pass">
+                </div>
+                <div class="input-group flex-nowrap">
+                    <span class="input-group-text" id="addon-wrapping">Mật khẩu mới</span>
+                    <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping" name="newpass">
+                </div>
+                <div class="input-group flex-nowrap">
+                    <span class="input-group-text" id="addon-wrapping">Xác nhận mật khẩu mới</span>
+                    <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping" name="retype">
+                </div>
+                <div class="input-group flex-nowrap">
+                    <span class="input-group-text" id="addon-wrapping">Ảnh đại diện</span>
+                    <input type="file" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping" name="img">
+                </div>
+                <div class="d-grid gap-2 col-6 mx-auto">
+                    <button class="btn btn-primary" type="button">Cập nhật</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>

@@ -128,6 +128,14 @@ class SiteController{
             console.log(error);
         }
     }
+
+    test = (req, res, next) => {
+        try {
+            res.render('updateInfor');
+        } catch (error) {
+            console.log(error);
+        }
+    }
 }
 
 module.exports = new SiteController;

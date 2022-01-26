@@ -1,0 +1,50 @@
+.inforHome{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    .infor{
+        width: 100%;
+        .content{
+            width: 96.86%;
+            padding: 2rem 10rem;
+
+            .infor__content{
+                .input-group{
+                    margin-bottom: 2rem;
+                    .input-group-text{
+                        display: block;
+                        font-size: 1.6rem;
+                        background: $darkBlueColor;
+                        color: #fff;
+                        width: 25rem;
+                        text-align: center;
+                        text-transform: none;
+                    }
+                    .form-control{
+                        font-size: 1.6rem;
+                        text-transform: none;
+                        &:focus{
+                            box-shadow: none;
+                        }
+                    }
+                }
+                button{
+                    background: $redColor;
+                    font-size: 1.6rem;
+                    transition: .2s;
+                    border: none;
+
+                    &:focus{
+                        border: none;
+                        box-shadow: none;
+                    }
+
+                    &:hover{
+                        background: $darkBlueColor;
+                    }
+                }
+            }
+        }
+    }
+}

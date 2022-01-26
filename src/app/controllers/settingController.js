@@ -55,7 +55,7 @@ class SettingController {
 
     update = async (req, res, next) => {
         try {
-            res.send('infor')
+            res.render('updateInfor')
         } catch (error) {
             console.log(error);
         }

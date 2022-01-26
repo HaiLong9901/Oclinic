@@ -20,14 +20,14 @@ function route(app){
             console.log(error);
         }
     })
-    app.get('/setting', settingRouter);
+    app.use('/setting', settingRouter);
     app.use('/notifications', notifyRouter);
     app.use('/articles', articleRouter);
     app.use('/consultation', consultRouter);
     app.use('/doctors', doctorRouter);
     app.use('/intro', introRouter);
     app.use('/news', newsRouter);
-    app.use('/gioi-thieu', introRouter);
+    // app.use('/gioi-thieu', introRouter);
     app.use('/', siteRouter);
 }
 

@@ -7,7 +7,7 @@ const CLIENT_ID = '798560757553-gg7dtcootapeqnuun3g2h0dt2ft5qbj4.apps.googleuser
 const CLIENT_SECRET = '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';
 const REDIRECT_URI = 'https://developers.google.com/oauthplayground';
 
-const REFREST_TOKEN = '1//04rZtsMNUe7YjCgYIARAAGAQSNwF-L9IrHt8QyiIRQGCbqFUnIwAj_34FEb1MR3lUYVkSSDfb-Pxi6qORtX3pXum7IPKELurtNPQ';
+const REFREST_TOKEN = '1//04CZ2Fx9dcXckCgYIARAAGAQSNwF-L9IrcX6FaapA4qYZdx2YvqG760RN8mP0CxEXqhguetKe59DfWn9LHps8xrdwUPXRxcJ5HEo';
 
 const oauth2Client = new google.auth.OAuth2(
     CLIENT_ID,
@@ -61,6 +61,7 @@ async function uploadFile(){
                 body: fs.createReadStream(filePath)
             }
         })
+        image.id = response.data.id;
         console.log(response.data);
 
     } catch (err) {
