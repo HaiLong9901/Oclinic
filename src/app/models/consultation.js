@@ -15,6 +15,10 @@ module.exports = (sequelize, Sequelize) => {
         },
         _sensitive: {
             type: Sequelize.STRING,
+            alowNull: true
+        },
+        sympton: {
+            type: Sequelize.STRING,
             alowNull: false
         },
         img: {

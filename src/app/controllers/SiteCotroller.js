@@ -131,7 +131,7 @@ class SiteController{
 
     test = (req, res, next) => {
         try {
-            res.render('updateInfor');
+            res.render('evaluation');
         } catch (error) {
             console.log(error);
         }

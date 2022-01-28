@@ -1,0 +1,101 @@
+{{!-- header starts --}}
+<header class="header">
+    <div class="taskbar">
+    <div class="taskbar__name">
+        <!-- <form action="" ></form> -->
+        <input type="search" name="searchBox" id="searchBox" class="taskbar__search">
+        <button class="searchBtn" form="searchBox" value="submit"><i class="fas fa-search"></i></button>
+        
+        <div href="#" class="taskbar__bell">
+            <i class="fas fa-bell">
+            </i>
+            <ul class="annouce_list">
+                <li><a href="#">Thông báo 1</a></li>
+                <li><a href="#">Thông báo 2</a></li>
+                <li><a href="#">Thông báo 3</a></li>
+                <li><a href="#">Thông báo 4</a></li>
+                <a href="#"><span>XEM TẤT CẢ</span></a>
+            </ul>
+        </div>
+        <div class="taskbar__user">
+            {{#if lcIsAuthenticated}}
+                <a href="#" class="user">
+                    <img src="https://drive.google.com/uc?export=view&id={{lcAuthUser.img}}" alt="" class="taskbar__user__img">
+                    <ul class="user__options">
+                        <li><a href="/setting" class="login">Cài đặt</a></li>
+                        <li><a href="/logout" class="regist">Đăng xuất</a></li>
+                    </ul>
+                </a>
+            {{else}}
+                <a href="#" class="user">
+                <i class="fas fa-user"></i>
+                <ul class="user__options">
+                    <li><a href="/login" class="login">Đăng nhập</a></li>
+                    <li><a href="/register" class="regist">Đăng ký</a></li>
+                </ul>
+                </a>
+            {{/if}}
+        </div>
+    </div>
+</div>
+
+<div class="menu">
+    <div class="menu__main">                                              
+        <a href="/" class="logo"><i class="fas fa-capsules"></i><span>O</span>Clinic</a>
+        <ul class="menu__list">
+            <li class="menu__item"><a href="/">Trang chủ</a></li>
+            <li class="menu__item"><a href="/intro">Giới thiệu</a></li>
+            <li class="menu__item news"><a href="/news">Tin tức</a></li>
+            <li class="menu__item doctors"><a href="/doctors">Bác sĩ
+                <ul class="doctor">
+                    <li><a href="/doctors/surgery">Ngoại khoa</a></li>
+                    <li><a href="#">Nội Khoa</a></li>
+                    <li><a href="#">Nhi Khoa</a></li>
+                </ul>
+            </a></li>
+            <li class="menu__item large active"><a href="/articles">Bài viết chuyên môn</a></li>
+            <li class="menu__item"><a href="/consultation">Tư vấn</a></li>
+            <li class="menu__item"><a href="#">Liên hệ</a></li>
+        </ul>
+    </div>
+</div>
+</header>
+
+{{!-- header ends --}}
+
+
+
+<section class="evaluationHome home">
+    
+    <div class="evaluation_home">
+        <div class="content">
+            <h2>Đánh giá dịch vụ tư vấn khám bệnh online</h2>
+            <form method="post" action="/" class="evaluation_form">
+            <div class="evaluation_form__stars">
+                <div class="stars_list">
+                    <i class="fas fa-star star1"></i>
+                    <i class="fas fa-star star2"></i>
+                    <i class="fas fa-star star3"></i>
+                    <i class="fas fa-star star4"></i>
+                    <i class="fas fa-star star5"></i>
+                </div>
+                <div class="stars_option">
+                    <input type="radio" id="star1" name="star" value="1">
+                    <input type="radio" id="star2" name="star" value="2">
+                    <input type="radio" id="star3" name="star" value="3">
+                    <input type="radio" id="star4" name="star" value="4">
+                    <input type="radio" id="star5" name="star" value="5">
+                </div>
+            </div>
+            <div class="evaluation_form__content">
+                <label for="evaluation">Đánh giá</label>
+                <textarea name="evaluation" id="" cols="30" rows="10"></textarea>
+            </div>
+            <div class="evaluation_form__submit">
+                <button type="submit" form="evaluation_form"></button>
+            </div>
+            </form>
+        </div>
+    </div>
+
+</section>

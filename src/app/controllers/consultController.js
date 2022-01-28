@@ -34,15 +34,28 @@ class ConsultController{
             console.log(user);
             const id = 'CLT'.concat(now.substring(now.length - 4).concat(user.substring(user.length - 4)));
             console.log('date is' , id);
-            // const consultation = await db.consultation.create()
-            if(req.file == null) return res.send(req.body);
-            image.name = req.file.filename;
-            image.print();
-            await image.uploadFile();
             const body = req.body;
-            body.id = await image.id;
+            if(req.file != null){
+                image.name = req.file.filename;
+                image.print();
+                await image.uploadFile();
+                body.idImg = await image.id;
+            }
+            else body.idImg = '';
+            body.id_consult = id;
+            body.id_service = req.body.service;
+            body.id_pat = req.session.authUser.id_pat;
+            const consultation = await db.consultation.create({
+                id_consult: body.id_consult,
+                id_doc: body.id_doc,
+                id_pat: body.id_pat,
+                _sensitive: body.sensitive,
+                sympton: body.sympton,
+                img: body.idImg,
+                service: body.id_service
+            })
             console.log(body);
-            await res.send(req.body);
+            res.send(req.body);
         } catch (error) {
             console.log(error);
         }
