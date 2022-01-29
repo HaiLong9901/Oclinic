@@ -71,31 +71,180 @@
         <div class="content">
             <h2>Đánh giá dịch vụ tư vấn khám bệnh online</h2>
             <form method="post" action="/" class="evaluation_form">
+                <h3>Chọn số sao</h3>
             <div class="evaluation_form__stars">
                 <div class="stars_list">
-                    <i class="fas fa-star star1"></i>
-                    <i class="fas fa-star star2"></i>
-                    <i class="fas fa-star star3"></i>
-                    <i class="fas fa-star star4"></i>
-                    <i class="fas fa-star star5"></i>
+                    <div class="stars_option">
+                        <label for="star1" class="far fa-star star1"></label>
+                        <input type="radio" id="star1" name="star" value="1">
+                    </div>
+                    <div class="stars_option">
+                        <label for="star2" class="far fa-star star2"></label>
+                        <input type="radio" id="star2" name="star" value="2">
+                    </div>
+                    <div class="stars_option">
+                        <label for="star3" class="far fa-star star3"></label>
+                        <input type="radio" id="star3" name="star" value="3">
+                    </div>
+                    <div class="stars_option">
+                        <label for="star4" class="far fa-star star4"></label>
+                        <input type="radio" id="star4" name="star" value="4">
+                    </div>
+                    <div class="stars_option">
+                        <label for="star5" class="far fa-star star5"></label>
+                        <input type="radio" id="star5" name="star" value="5">
+                    </div>
                 </div>
-                <div class="stars_option">
-                    <input type="radio" id="star1" name="star" value="1">
-                    <input type="radio" id="star2" name="star" value="2">
-                    <input type="radio" id="star3" name="star" value="3">
-                    <input type="radio" id="star4" name="star" value="4">
-                    <input type="radio" id="star5" name="star" value="5">
-                </div>
+                <span>.</span>
             </div>
             <div class="evaluation_form__content">
                 <label for="evaluation">Đánh giá</label>
                 <textarea name="evaluation" id="" cols="30" rows="10"></textarea>
             </div>
             <div class="evaluation_form__submit">
-                <button type="submit" form="evaluation_form"></button>
+                <button type="submit" form="evaluation_form" value="submit">Đánh giá</button>
             </div>
+                
             </form>
         </div>
     </div>
 
 </section>
+
+<script>
+    const star1 = document.querySelector('.evaluation_form__stars .stars_list .stars_option .star1');
+    const star2 = document.querySelector('.evaluation_form__stars .stars_list .stars_option .star2');
+    const star3 = document.querySelector('.evaluation_form__stars .stars_list .stars_option .star3');
+    const star4 = document.querySelector('.evaluation_form__stars .stars_list .stars_option .star4');
+    const star5 = document.querySelector('.evaluation_form__stars .stars_list .stars_option .star5');
+    const evaluate = document.querySelector('.evaluation_form__stars span');
+    const lightBlueColor = '#009ABB';
+    const redColor = '#D00303';
+    const yellowColor = '#ff9900'
+    console.log(evaluate)
+    star1.addEventListener('mouseover', () => {
+        star1.classList.remove('far');
+        star1.classList.toggle('fas');
+        star1.style.color = redColor;
+        evaluate.innerHTML = 'Tệ';
+        evaluate.style.color = redColor;
+    })
+    star1.addEventListener('mouseout', () => {
+        star1.classList.remove('fas');
+        star1.classList.toggle('far');
+        star1.style.color = lightBlueColor;
+        evaluate.style.color = '#fff';
+    })
+    star2.addEventListener('mouseover', () => {
+        star1.classList.remove('far');
+        star1.classList.toggle('fas');
+        star1.style.color = yellowColor;
+        star2.classList.remove('far');
+        star2.classList.toggle('fas');
+        star2.style.color = yellowColor;
+        evaluate.innerHTML = 'Bình thường';
+        evaluate.style.color = yellowColor;
+    })
+    star2.addEventListener('mouseout', () => {
+        star1.classList.remove('fas');
+        star1.classList.toggle('far');
+        star1.style.color = lightBlueColor;
+        star2.classList.remove('fas');
+        star2.classList.toggle('far');
+        star2.style.color = lightBlueColor;
+        evaluate.style.color = '#fff';
+    })
+    star3.addEventListener('mouseover', () => {
+        star1.classList.remove('far');
+        star1.classList.toggle('fas');
+        star1.style.color = yellowColor;
+        star2.classList.remove('far');
+        star2.classList.toggle('fas');
+        star2.style.color = yellowColor;
+        star3.classList.remove('far');
+        star3.classList.toggle('fas');
+        star3.style.color = yellowColor;
+        evaluate.innerHTML = 'Khá tốt'
+        evaluate.style.color = yellowColor;
+    })
+    star3.addEventListener('mouseout', () => {
+        star1.classList.remove('fas');
+        star1.classList.toggle('far');
+        star1.style.color = lightBlueColor;
+        star2.classList.remove('fas');
+        star2.classList.toggle('far');
+        star2.style.color = lightBlueColor;
+        star3.classList.remove('fas');
+        star3.classList.toggle('far');
+        star3.style.color = lightBlueColor;
+        evaluate.style.color = '#fff';
+    })
+    star4.addEventListener('mouseover', () => {
+        star1.classList.remove('far');
+        star1.classList.toggle('fas');
+        star1.style.color = lightBlueColor;
+        star2.classList.remove('far');
+        star2.classList.toggle('fas');
+        star2.style.color = lightBlueColor;
+        star3.classList.remove('far');
+        star3.classList.toggle('fas');
+        star3.style.color = lightBlueColor;
+        star4.classList.remove('far');
+        star4.classList.toggle('fas');
+        star4.style.color = lightBlueColor;
+        evaluate.innerHTML = 'Tốt'
+        evaluate.style.color = lightBlueColor;
+    })
+    star4.addEventListener('mouseout', () => {
+        star1.classList.remove('fas');
+        star1.classList.toggle('far');
+        star1.style.color = lightBlueColor;
+        star2.classList.remove('fas');
+        star2.classList.toggle('far');
+        star2.style.color = lightBlueColor;
+        star3.classList.remove('fas');
+        star3.classList.toggle('far');
+        star3.style.color = lightBlueColor;
+        star4.classList.remove('fas');
+        star4.classList.toggle('far');
+        star4.style.color = lightBlueColor;
+        evaluate.style.color = '#fff';
+    })
+    star5.addEventListener('mouseover', () => {
+        star1.classList.remove('far');
+        star1.classList.toggle('fas');
+        star1.style.color = lightBlueColor;
+        star2.classList.remove('far');
+        star2.classList.toggle('fas');
+        star2.style.color = lightBlueColor;
+        star3.classList.remove('far');
+        star3.classList.toggle('fas');
+        star3.style.color = lightBlueColor;
+        star4.classList.remove('far');
+        star4.classList.toggle('fas');
+        star4.style.color = lightBlueColor;
+        star5.classList.remove('far');
+        star5.classList.toggle('fas');
+        star4.style.color = lightBlueColor;
+        evaluate.innerHTML = 'Rất tốt'
+        evaluate.style.color = lightBlueColor;
+    })
+    star5.addEventListener('mouseout', () => {
+        star1.classList.remove('fas');
+        star1.classList.toggle('far');
+        star1.style.color = lightBlueColor;
+        star2.classList.remove('fas');
+        star2.classList.toggle('far');
+        star2.style.color = lightBlueColor;
+        star3.classList.remove('fas');
+        star3.classList.toggle('far');
+        star3.style.color = lightBlueColor;
+        star4.classList.remove('fas');
+        star4.classList.toggle('far');
+        star4.style.color = lightBlueColor;
+        star5.classList.remove('fas');
+        star5.classList.toggle('far');
+        star5.style.color = lightBlueColor;
+        evaluate.style.color = '#fff';
+    })
+</script>

@@ -1,0 +1,96 @@
+.evaluationHome{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    .evaluation_home{
+        width: 100%;
+        .content{
+            width: 96.86%;
+
+            h2{
+                font-size: 3rem;
+                color: $lightBlueColor;
+                text-align: center;
+                text-decoration: none;
+                text-transform: none;
+                padding: 2rem;
+                box-sizing: content-box;
+            }
+
+            .evaluation_form{
+                width: 100%;
+                padding: 2rem 20rem;
+
+                h3{
+                    font-size: 2.4rem;
+                    color: $darkBlueColor;
+                    text-transform: none;
+                    margin-bottom: 1rem;
+                    color: $lightBlueColor;
+                }
+                &__stars{
+                    span{
+                        font-size: 1.8rem;
+                        font-style: italic;
+                        color: #fff;
+                        text-transform: none;
+                        margin: 2rem 0;
+                    }
+                    .stars_list{
+                        display: flex;
+                        gap: 1.5rem;
+                        margin-bottom: 1rem;
+                        .stars_option{
+                            position: relative;
+                            label{
+                                font-size: 3rem;
+                                color: $lightBlueColor;
+                                cursor: pointer;
+                            }
+                            input{
+                                position: absolute;
+                                top: 1rem;
+                                left: 1rem;
+                                display: none;
+                            }
+                        }
+                        
+                    }
+                }
+
+                &__content{
+                    display: flex;
+                    margin-top: 2rem;
+                    label{
+                        font-size: 2.4rem;
+                        color: $lightBlueColor;
+                        font-weight: 500;
+                        margin-right: 2rem;
+                    }
+                    textarea{
+                        font-size: 1.6rem;
+                        border-color: $lightBlueColor;
+                        width: 40rem;
+                        border-radius: .5rem;
+                    }
+                }
+
+                &__submit{
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                    margin-top: 2rem;
+                    button{
+                        font-size: 2rem;
+                        background: $darkBlueColor;
+                        border: none;
+                        color: #fff;
+                        padding: .5rem 2rem;
+                        border-radius: .5rem;
+                    }
+                }
+            }
+        }
+    }
+}
