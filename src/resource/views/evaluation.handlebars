@@ -121,130 +121,186 @@
     const lightBlueColor = '#009ABB';
     const redColor = '#D00303';
     const yellowColor = '#ff9900'
-    console.log(evaluate)
+    const star1Fuction = () => {
+        star1.classList.remove('fas');
+        star1.classList.toggle('far');
+        star1.style.color = lightBlueColor;
+        evaluate.style.color = '#fff';
+    }
+    let test1 = false,
+        test2 = false,
+        test3 = false,
+        test4 = false,
+        test5 = false;
     star1.addEventListener('mouseover', () => {
-        star1.classList.remove('far');
-        star1.classList.toggle('fas');
-        star1.style.color = redColor;
-        evaluate.innerHTML = 'Tệ';
-        evaluate.style.color = redColor;
+        if(!test1){
+            star1.classList.remove('far');
+            star1.classList.toggle('fas');
+            star1.style.color = redColor;
+            evaluate.innerHTML = 'Tệ';
+            evaluate.style.color = redColor;
+        }
     })
     star1.addEventListener('mouseout', () => {
-        star1.classList.remove('fas');
-        star1.classList.toggle('far');
-        star1.style.color = lightBlueColor;
-        evaluate.style.color = '#fff';
+        if(!test1){
+            star1.classList.remove('fas');
+            star1.classList.toggle('far');
+            star1.style.color = lightBlueColor;
+            evaluate.style.color = '#fff';
+        }
+    })
+    star1.addEventListener('click', () => {
+        if(!test1) test1 = true;
+        else test1 = false;
     })
     star2.addEventListener('mouseover', () => {
-        star1.classList.remove('far');
-        star1.classList.toggle('fas');
-        star1.style.color = yellowColor;
-        star2.classList.remove('far');
-        star2.classList.toggle('fas');
-        star2.style.color = yellowColor;
-        evaluate.innerHTML = 'Bình thường';
-        evaluate.style.color = yellowColor;
+        if(!test2){
+            star1.classList.remove('far');
+            star1.classList.toggle('fas');
+            star1.style.color = yellowColor;
+            star2.classList.remove('far');
+            star2.classList.toggle('fas');
+            star2.style.color = yellowColor;
+            evaluate.innerHTML = 'Bình thường';
+            evaluate.style.color = yellowColor;
+        }
     })
     star2.addEventListener('mouseout', () => {
-        star1.classList.remove('fas');
-        star1.classList.toggle('far');
-        star1.style.color = lightBlueColor;
-        star2.classList.remove('fas');
-        star2.classList.toggle('far');
-        star2.style.color = lightBlueColor;
-        evaluate.style.color = '#fff';
+        if(!test2){
+            star1.classList.remove('fas');
+            star1.classList.toggle('far');
+            star1.style.color = lightBlueColor;
+            star2.classList.remove('fas');
+            star2.classList.toggle('far');
+            star2.style.color = lightBlueColor;
+            evaluate.style.color = '#fff';
+        }
+    })
+    star2.addEventListener('click', () => {
+        if(!test2){
+            test1 = true;
+            test2 = true;
+        } 
+        else{
+            test2 = false;
+            test1 = false;
+        } 
     })
     star3.addEventListener('mouseover', () => {
-        star1.classList.remove('far');
-        star1.classList.toggle('fas');
-        star1.style.color = yellowColor;
-        star2.classList.remove('far');
-        star2.classList.toggle('fas');
-        star2.style.color = yellowColor;
-        star3.classList.remove('far');
-        star3.classList.toggle('fas');
-        star3.style.color = yellowColor;
-        evaluate.innerHTML = 'Khá tốt'
-        evaluate.style.color = yellowColor;
+        if(!test3){
+            star1.classList.remove('far');
+            star1.classList.toggle('fas');
+            star1.style.color = yellowColor;
+            star2.classList.remove('far');
+            star2.classList.toggle('fas');
+            star2.style.color = yellowColor;
+            star3.classList.remove('far');
+            star3.classList.toggle('fas');
+            star3.style.color = yellowColor;
+            evaluate.innerHTML = 'Khá tốt'
+            evaluate.style.color = yellowColor;
+        }
     })
     star3.addEventListener('mouseout', () => {
-        star1.classList.remove('fas');
-        star1.classList.toggle('far');
-        star1.style.color = lightBlueColor;
-        star2.classList.remove('fas');
-        star2.classList.toggle('far');
-        star2.style.color = lightBlueColor;
-        star3.classList.remove('fas');
-        star3.classList.toggle('far');
-        star3.style.color = lightBlueColor;
-        evaluate.style.color = '#fff';
+        if(!test3){
+            star1.classList.remove('fas');
+            star1.classList.toggle('far');
+            star1.style.color = lightBlueColor;
+            star2.classList.remove('fas');
+            star2.classList.toggle('far');
+            star2.style.color = lightBlueColor;
+            star3.classList.remove('fas');
+            star3.classList.toggle('far');
+            star3.style.color = lightBlueColor;
+            evaluate.style.color = '#fff';
+        }
+    })
+    star3.addEventListener('click', () => {
+        if(!test3) test3 = true;
+        else test3 = false;
     })
     star4.addEventListener('mouseover', () => {
-        star1.classList.remove('far');
-        star1.classList.toggle('fas');
-        star1.style.color = lightBlueColor;
-        star2.classList.remove('far');
-        star2.classList.toggle('fas');
-        star2.style.color = lightBlueColor;
-        star3.classList.remove('far');
-        star3.classList.toggle('fas');
-        star3.style.color = lightBlueColor;
-        star4.classList.remove('far');
-        star4.classList.toggle('fas');
-        star4.style.color = lightBlueColor;
-        evaluate.innerHTML = 'Tốt'
-        evaluate.style.color = lightBlueColor;
+        if(!test4){
+            star1.classList.remove('far');
+            star1.classList.toggle('fas');
+            star1.style.color = lightBlueColor;
+            star2.classList.remove('far');
+            star2.classList.toggle('fas');
+            star2.style.color = lightBlueColor;
+            star3.classList.remove('far');
+            star3.classList.toggle('fas');
+            star3.style.color = lightBlueColor;
+            star4.classList.remove('far');
+            star4.classList.toggle('fas');
+            star4.style.color = lightBlueColor;
+            evaluate.innerHTML = 'Tốt'
+            evaluate.style.color = lightBlueColor;
+        }
     })
     star4.addEventListener('mouseout', () => {
-        star1.classList.remove('fas');
-        star1.classList.toggle('far');
-        star1.style.color = lightBlueColor;
-        star2.classList.remove('fas');
-        star2.classList.toggle('far');
-        star2.style.color = lightBlueColor;
-        star3.classList.remove('fas');
-        star3.classList.toggle('far');
-        star3.style.color = lightBlueColor;
-        star4.classList.remove('fas');
-        star4.classList.toggle('far');
-        star4.style.color = lightBlueColor;
-        evaluate.style.color = '#fff';
+        if(!test4){
+            star1.classList.remove('fas');
+            star1.classList.toggle('far');
+            star1.style.color = lightBlueColor;
+            star2.classList.remove('fas');
+            star2.classList.toggle('far');
+            star2.style.color = lightBlueColor;
+            star3.classList.remove('fas');
+            star3.classList.toggle('far');
+            star3.style.color = lightBlueColor;
+            star4.classList.remove('fas');
+            star4.classList.toggle('far');
+            star4.style.color = lightBlueColor;
+            evaluate.style.color = '#fff';
+        }
+    })
+    star4.addEventListener('click', () => {
+        if(!test4) test4 = true;
+        else test4 = false;
     })
     star5.addEventListener('mouseover', () => {
-        star1.classList.remove('far');
-        star1.classList.toggle('fas');
-        star1.style.color = lightBlueColor;
-        star2.classList.remove('far');
-        star2.classList.toggle('fas');
-        star2.style.color = lightBlueColor;
-        star3.classList.remove('far');
-        star3.classList.toggle('fas');
-        star3.style.color = lightBlueColor;
-        star4.classList.remove('far');
-        star4.classList.toggle('fas');
-        star4.style.color = lightBlueColor;
-        star5.classList.remove('far');
-        star5.classList.toggle('fas');
-        star4.style.color = lightBlueColor;
-        evaluate.innerHTML = 'Rất tốt'
-        evaluate.style.color = lightBlueColor;
+        if(!test5){
+            star1.classList.remove('far');
+            star1.classList.toggle('fas');
+            star1.style.color = lightBlueColor;
+            star2.classList.remove('far');
+            star2.classList.toggle('fas');
+            star2.style.color = lightBlueColor;
+            star3.classList.remove('far');
+            star3.classList.toggle('fas');
+            star3.style.color = lightBlueColor;
+            star4.classList.remove('far');
+            star4.classList.toggle('fas');
+            star4.style.color = lightBlueColor;
+            star5.classList.remove('far');
+            star5.classList.toggle('fas');
+            star5.style.color = lightBlueColor;
+            evaluate.innerHTML = 'Rất tốt'
+            evaluate.style.color = lightBlueColor;
+        }
     })
     star5.addEventListener('mouseout', () => {
-        star1.classList.remove('fas');
-        star1.classList.toggle('far');
-        star1.style.color = lightBlueColor;
-        star2.classList.remove('fas');
-        star2.classList.toggle('far');
-        star2.style.color = lightBlueColor;
-        star3.classList.remove('fas');
-        star3.classList.toggle('far');
-        star3.style.color = lightBlueColor;
-        star4.classList.remove('fas');
-        star4.classList.toggle('far');
-        star4.style.color = lightBlueColor;
-        star5.classList.remove('fas');
-        star5.classList.toggle('far');
-        star5.style.color = lightBlueColor;
-        evaluate.style.color = '#fff';
+        if(!test5){
+            star1.classList.remove('fas');
+            star1.classList.toggle('far');
+            star1.style.color = lightBlueColor;
+            star2.classList.remove('fas');
+            star2.classList.toggle('far');
+            star2.style.color = lightBlueColor;
+            star3.classList.remove('fas');
+            star3.classList.toggle('far');
+            star3.style.color = lightBlueColor;
+            star4.classList.remove('fas');
+            star4.classList.toggle('far');
+            star4.style.color = lightBlueColor;
+            star5.classList.remove('fas');
+            star5.classList.toggle('far');
+            star5.style.color = lightBlueColor;
+            evaluate.style.color = '#fff';
+        }
+    })
+    star5.addEventListener('click', () => {
+        if(!test5) test5 = true;
+        else test5 = false;
     })
 </script>
