@@ -73,9 +73,11 @@
                     <i class="far fa-check-circle"></i>
                 </div>
                 <div class="content__box__right">
-                    <h2>Gửi yêu cầu tư vấn thành công</h2>
+                    <h2>{{quote}}</h2>
+                    {{#if consult}}
                     <p>Bác sĩ của chúng tôi sẽ sớm tư vấn cho bạn</p>
-                    <span>Cảm ơn đã sử dụng dịch vụ của chúng tôi!!!</span>
+                    {{/if}}
+                    <span>{{thanks}}</span>
                 </div>
             </div>
         </div>

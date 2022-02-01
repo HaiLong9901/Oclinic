@@ -60,5 +60,33 @@ class SettingController {
             console.log(error);
         }
     }
+
+    evaluation = async (req, res, next) => {
+        try {
+            res.render('evaluation');
+        } catch (error) {
+            console.log(error);
+        }
+    }
+    result = async (req, res, next) => {
+        try {
+            const id = req.session.authUser.id_pat;
+            let body = {};
+            body.id = id;
+            body.star = req.body.star;
+            body.eval = req.body.evaluation;
+            const data = await db.evaluation.create({
+                id_pat: body.id,
+                starNum: body.star,
+                evaluate: body.eval
+            })
+            res.render('sent', {
+                quote: 'Đánh giá thành công',
+                thanks: 'Cảm ơn bạn đã đánh giá dịch vụ của chúng tôi'
+            })
+        } catch (error) {
+            console.log(error);
+        }
+    }
 }
 module.exports = new SettingController;
