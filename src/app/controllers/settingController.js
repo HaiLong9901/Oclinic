@@ -1,6 +1,6 @@
 const db = require('../config');
 const bcrypt = require('bcrypt');
-
+const image = require('../apis');
 
 class SettingController {
 
@@ -86,6 +86,16 @@ class SettingController {
             })
         } catch (error) {
             console.log(error);
+        }
+    }
+
+    resultInfor = async (req, res, next) => {
+        try {
+            const data = req.body;
+            data;
+            res.json(req.body);
+        } catch (error) {
+            console.log(error)
         }
     }
 }

@@ -64,7 +64,7 @@ class SiteController{
                 })
             }
             user.dataValues.role = role;
-            if(req.body.pass !== user.pass){
+            if(!bcrypt.compareSync(req.body.pass, user.pass)){
                 return res.render('home', {
                     className: 'formOpen',
                     error: 'Sai mật khẩu'
@@ -93,31 +93,22 @@ class SiteController{
     hanleRegister = async (req, res, next) => {
         try {
             const id = 'PAT'.concat((req.body.idNum.substring(req.body.idNum.length - 4).concat(req.body.phoneNum.substring(req.body.phoneNum.length - 4))));
+            const hashedPass = bcrypt.hashSync(req.body.pass, 10);
             const user = await patient.patient.create({
                 name: req.body.name,
                 dob: req.body.Dob,
                 phonenum: req.body.phoneNum,
-                pass: req.body.pass,
+                pass: hashedPass,
                 email: req.body.email,
                 sex: req.body.sex==true?1:0,
                 citizen_id: req.body.idNum,
                 id_pat: id,
             });
-            const hashPass = bcrypt.hashSync(req.body.pass, 8);
-            console.log('hashpass:  ', hashPass);
             res.redirect('/');
         } catch (error) {
             res.status(400).send('error');
         }
     }
-
-    // setting = async (req, res, next) => {
-    //     try {
-    //         res.render('profile');
-    //     } catch (error) {
-    //         console.log(error);
-    //     }
-    // }
 
     logout = async (req, res, next) => {
         try {
@@ -129,9 +120,16 @@ class SiteController{
         }
     }
 
-    test = (req, res, next) => {
+    test = async (req, res, next) => {
         try {
-            res.render('evaluation');
+            // const data = await db.patient.findAll();
+            // for(let i = 0 ; i  <data.length; ++i){
+            //     let pass = bcrypt.hashSync(data[i].pass, 10);
+            //     console.log(pass);
+            //     data[i].pass = pass;
+            //     await data[i].save();
+            // }
+            // res.json(data);
         } catch (error) {
             console.log(error);
         }

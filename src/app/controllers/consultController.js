@@ -31,9 +31,7 @@ class ConsultController{
         try {
             const now = Date.now().toString();
             const user = req.session.authUser.id_pat;
-            console.log(user);
             const id = 'CLT'.concat(now.substring(now.length - 4).concat(user.substring(user.length - 4)));
-            console.log('date is' , id);
             const body = req.body;
             if(req.file != null){
                 image.name = req.file.filename;
@@ -41,7 +39,7 @@ class ConsultController{
                 await image.uploadFile();
                 body.idImg = await image.id;
             }
-            else body.idImg = '';
+            else body.idImg = null;
             body.id_consult = id;
             body.id_service = req.body.service;
             body.id_pat = req.session.authUser.id_pat;
@@ -54,8 +52,12 @@ class ConsultController{
                 img: body.idImg,
                 service: body.id_service
             })
-            console.log(body);
-            res.send(req.body);
+            res.render('sent', {
+                quote: 'Gửi yêu cầu tư vấn thành công',
+                thanks: 'Cảm ơn bạn đã sử dụng dịch vụ của chúng tôi',
+                consult: true
+
+            });
         } catch (error) {
             console.log(error);
         }
