@@ -20,7 +20,7 @@
         <div class="taskbar__user">
             {{#if lcIsAuthenticated}}
                 <a href="#" class="user">
-                    <img src="https://drive.google.com/uc?export=view&id={{lcAuthUser.img}}	" alt="" class="taskbar__user__img">
+                    <img src="/img/{{lcAuthUser.img}}" alt="" class="taskbar__user__img">
                     <ul class="user__options">
                         <li><a href="/setting" class="login">Cài đặt</a></li>
                         <li><a href="/logout" class="regist">Đăng xuất</a></li>
@@ -108,7 +108,7 @@
                         <label for="sensitive">Tiền sử dị ứng</label>
                         <textarea name="sensitive" id="sensitive" rows="5"></textarea>
                     </div>
-                </div>
+                </div>  
                 <div class="form-group">
                     <div class="sympton">
                         <label for="sympton">Biểu hiện bệnh </label>

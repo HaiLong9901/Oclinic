@@ -17,5 +17,5 @@ const storage = multer.diskStorage({
 const upload = multer({
     storage: storage,
   });
-console.log('sad',image.name);
+console.log('Ten anh day nay',image.name);
 module.exports = {upload, image};

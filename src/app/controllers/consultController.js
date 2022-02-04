@@ -34,12 +34,13 @@ class ConsultController{
             const id = 'CLT'.concat(now.substring(now.length - 4).concat(user.substring(user.length - 4)));
             const body = req.body;
             if(req.file != null){
-                image.name = req.file.filename;
-                image.print();
-                await image.uploadFile();
-                body.idImg = await image.id;
+                // image.name = req.file.filename;
+                // image.print();
+                // await image.uploadFile();
+                // body.idImg = await image.id;
+                body.img = req.file.filename;
             }
-            else body.idImg = null;
+            else body.img = null;
             body.id_consult = id;
             body.id_service = req.body.service;
             body.id_pat = req.session.authUser.id_pat;
@@ -49,7 +50,7 @@ class ConsultController{
                 id_pat: body.id_pat,
                 _sensitive: body.sensitive,
                 sympton: body.sympton,
-                img: body.idImg,
+                img: body.img,
                 service: body.id_service
             })
             res.render('sent', {

@@ -15,13 +15,13 @@
                 <li><a href="#">Thông báo 2</a></li>
                 <li><a href="#">Thông báo 3</a></li>
                 <li><a href="#">Thông báo 4</a></li>
-                <a href="#"><span>XEM TẤT CẢ</span></a>
+                <a href="#"><label>XEM TẤT CẢ</label></a>
             </ul>
         </div>
         <div class="taskbar__user">
             {{#if lcIsAuthenticated}}
                 <a href="#" class="user">
-                    <img src="https://drive.google.com/uc?export=view&id={{lcAuthUser.img}}	" alt="" class="taskbar__user__img">
+                    <img src="/img/{{lcAuthUser.img}}	" alt="" class="taskbar__user__img">
                     <ul class="user__options">
                         <li><a href="/setting" class="login">Cài đặt</a></li>
                         <li><a href="/logout" class="regist">Đăng xuất</a></li>
@@ -42,7 +42,7 @@
 
 <div class="menu">
     <div class="menu__main">                                              
-        <a href="/" class="logo"><i class="fas fa-capsules"></i><span>O</span>Clinic</a>
+        <a href="/" class="logo"><i class="fas fa-capsules"></i><label>O</label>Clinic</a>
         <ul class="menu__list">
             <li class="menu__item"><a href="/">Trang chủ</a></li>
             <li class="menu__item"><a href="/intro">Giới thiệu</a></li>
@@ -69,14 +69,14 @@
 <section class="home inforHome">
     <div class="infor" id="infor">
         <div class="content">
-            <form method="POST" action="/setting/update/result" class="infor__content">
+            <form method="POST" action="/setting/update/result" class="infor__content" id="infor__content" enctype="multipart/form-data">
                 <div class="input-group flex-nowrap">
-                    <span class="input-group-text" id="addon-wrapping">Họ và tên</span>
-                    <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping" name="name">
+                    <label class="input-group-text" id="addon-wrapping">Họ và tên</label>
+                    <input type="text" class="form-control" placeholder="{{lcAuthUser.name}}" aria-label="Username" aria-describedby="addon-wrapping" name="name">
                 </div>
                 <div class="input-group flex-nowrap">
-                    <span class="input-group-text" id="addon-wrapping">Ngày sinh</span>
-                    <input type="date" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping" name="dob">
+                    <label class="input-group-text" id="addon-wrapping">Ngày sinh</label>
+                    <input type="date" class="form-control" placeholder="{{lcAuthUser.dob}}" aria-label="Username" aria-describedby="addon-wrapping" name="dob">
                 </div>
                 <div class="input-group mb-3">
                     <label class="input-group-text" for="inputGroupSelect01">Giới tính</label>
@@ -87,47 +87,47 @@
                     </select>
                 </div>
                 <div class="input-group flex-nowrap">
-                    <span class="input-group-text" id="addon-wrapping">Số điện thoại</span>
-                    <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping" name="phonenum">
+                    <label class="input-group-text" id="addon-wrapping">Số điện thoại</label>
+                    <input type="text" class="form-control" placeholder="{{lcAuthUser.phonenum}}" aria-label="Username" aria-describedby="addon-wrapping" name="phonenum" id="name">
                 </div>
                 <div class="input-group flex-nowrap">
-                    <span class="input-group-text" id="addon-wrapping">Email</span>
-                    <input type="email" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping" name="email">
+                    <label class="input-group-text" id="addon-wrapping">Email</label>
+                    <input type="email" class="form-control" placeholder="{{lcAuthUser.email}}" aria-label="Username" aria-describedby="addon-wrapping" name="email" id="email">
                 </div>
                 <div class="input-group flex-nowrap">
-                    <span class="input-group-text" id="addon-wrapping">CCCD</span>
-                    <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping" name="citizen_id">
+                    <label class="input-group-text" id="addon-wrapping">CCCD</label>
+                    <input type="text" class="form-control" placeholder="{{lcAuthUser.citizen_id}}" aria-label="Username" aria-describedby="addon-wrapping" name="citizen_id" id="citizen_id">
                 </div>
                 <div class="input-group flex-nowrap">
-                    <span class="input-group-text" id="addon-wrapping">Khoa</span>
-                    <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping" name="department">
+                    <label class="input-group-text" id="addon-wrapping">Khoa</label>
+                    <input type="text" class="form-control" placeholder="{{lcAuthUser.department}}" aria-label="Username" aria-describedby="addon-wrapping" name="department" id="department">
                 </div>
                 <div class="input-group flex-nowrap">
-                    <span class="input-group-text" id="addon-wrapping">Chức vụ</span>
-                    <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping" name="pos">
+                    <label class="input-group-text" id="addon-wrapping">Chức vụ</label>
+                    <input type="text" class="form-control" placeholder="{{lcAuthUser.postition}}" aria-label="Username" aria-describedby="addon-wrapping" name="postition" id="postition">
                 </div>
                 <div class="input-group flex-nowrap">
-                    <span class="input-group-text" id="addon-wrapping">Học vị</span>
-                    <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping" name="degree">
+                    <label class="input-group-text" id="addon-wrapping">Học vị</label>
+                    <input type="text" class="form-control" placeholder="{{lcAuthUser.degree}}" aria-label="Username" aria-describedby="addon-wrapping" name="degree" id="degree">
                 </div>
                 <div class="input-group flex-nowrap">
-                    <span class="input-group-text" id="addon-wrapping">Mật khẩu</span>
-                    <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping" name="pass">
+                    <label class="input-group-text" id="addon-wrapping">Mật khẩu</label>
+                    <input type="password" class="form-control" aria-label="Username" aria-describedby="addon-wrapping" name="pass" id="pass">
                 </div>
                 <div class="input-group flex-nowrap">
-                    <span class="input-group-text" id="addon-wrapping">Mật khẩu mới</span>
-                    <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping" name="newpass">
+                    <label class="input-group-text" id="addon-wrapping">Mật khẩu mới</label>
+                    <input type="password" class="form-control" aria-label="Username" aria-describedby="addon-wrapping" name="newpass" id="newpass">
                 </div>
                 <div class="input-group flex-nowrap">
-                    <span class="input-group-text" id="addon-wrapping">Xác nhận mật khẩu mới</span>
-                    <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping" name="retype">
+                    <label class="input-group-text" id="addon-wrapping">Xác nhận mật khẩu mới</label>
+                    <input type="password" class="form-control"aria-label="Username" aria-describedby="addon-wrapping" name="retype" id="retype">
                 </div>
                 <div class="input-group flex-nowrap">
-                    <span class="input-group-text" id="addon-wrapping">Ảnh đại diện</span>
-                    <input type="file" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping" name="img">
+                    <label class="input-group-text" id="addon-wrapping" for="image">Ảnh đại diện</label>
+                    <input type="file" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping" name="image" id="image">
                 </div>
                 <div class="d-grid gap-2 col-6 mx-auto">
-                    <button class="btn btn-primary" type="submit" value="submit">Cập nhật</button>
+                    <button class="btn btn-primary" type="submit" form="infor__content">Cập nhật</button>
                 </div>
             </form>
         </div>

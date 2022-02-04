@@ -2,6 +2,7 @@ const db = require('../config');
 const bcrypt = require('bcrypt');
 const image = require('../apis');
 
+
 class SettingController {
 
     index = async (req, res, next) => {
@@ -92,8 +93,42 @@ class SettingController {
     resultInfor = async (req, res, next) => {
         try {
             const data = req.body;
-            data;
-            res.json(req.body);
+            console.log(req.file);
+            if(req.file != null){
+                // image.name = req.file.filename;
+                // image.print();
+                // await image.uploadFile();
+                data.img = req.file.filename;
+            }
+            else data.img = null;
+            console.log(req.session.authUser);
+            let user;
+            if(req.session.authUser.role == 'patient'){
+                console.log('day la user');
+                user = await db.patient.findOne({
+                    where: {
+                        id_pat: req.session.authUser.id_pat
+                    }
+                })
+                console.log(user);
+                if(req.body.name.length){
+                    user.name = req.body.name;
+                }
+                if(req.body.phonenum.length){
+                    user.phonenum = req.body.name;
+                }
+                if(req.body.email.length){
+                    user.email = req.body.name;
+                }
+                if(req.body.pass.length){
+                    user.pass = bcrypt.hashSync(req.body.pass, 10);
+                }
+                if(data.img){
+                    user.img = data.img;
+                }
+                await user.save();
+            }
+            res.json(data);
         } catch (error) {
             console.log(error)
         }

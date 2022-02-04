@@ -20,7 +20,7 @@
         <div class="taskbar__user">
             {{#if lcIsAuthenticated}}
                 <a href="#" class="user">
-                    <img src="https://drive.google.com/uc?export=view&id={{lcAuthUser.img}}	" alt="" class="taskbar__user__img">
+                    <img src="/img/{{lcAuthUser.img}}	" alt="" class="taskbar__user__img">
                     <ul class="user__options">
                         <li><a href="/setting" class="login">Cài đặt</a></li>
                         <li><a href="/logout" class="regist">Đăng xuất</a></li>
@@ -73,7 +73,8 @@
             {{#with display}}
             <div class="doctorDetail">
                 <div class="doctor_img">
-                    <img src="https://drive.google.com/uc?export=view&id={{this.img}}" alt="">
+                    {{!-- <img src="https://drive.google.com/uc?export=view&id={{this.img}}" alt=""> --}}
+                    <img src="/img/{{this.img}}" alt="{{this.name}}">
                 </div>
                 <div class="doctor_decription">
                     <h3 class="doctor">Bác sĩ</h3>
