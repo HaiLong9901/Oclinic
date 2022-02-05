@@ -122,7 +122,7 @@ class SiteController{
 
     test = async (req, res, next) => {
         try {
-            // const data = await db.patient.findAll();
+            // const data = await db.admin.findAll();
             // for(let i = 0 ; i  <data.length; ++i){
             //     let pass = bcrypt.hashSync(data[i].pass, 10);
             //     console.log(pass);
@@ -130,6 +130,7 @@ class SiteController{
             //     await data[i].save();
             // }
             // res.json(data);
+            res.render('profile');
         } catch (error) {
             console.log(error);
         }

@@ -106,7 +106,7 @@
                         <div class="col"><a href="/setting/evaluation"><i class="fas fa-plus"></i>  Đánh giá</a></div>
                         {{/if}}
                         {{#if admin}}
-                        <div class="col"><a href="#"><i class="fas fa-plus"></i>  Cấp tài khoản</a></div>
+                        <div class="col addAccBtn"><a href="#"><i class="fas fa-plus"></i>  Cấp tài khoản</a></div>
                         <div class="col"><a href="#"><i class="fas fa-plus"></i>  Đăng tin tức</a></div>
                         <div class="col"><a href="#"><i class="fas fa-plus"></i>  Đăng bài viết</a></div>
                         <div class="col"><a href="#"><i class="fas fa-plus"></i>  Cập nhật hiển thị</a></div>
@@ -118,3 +118,29 @@
         </div>
     </div>
 </section>
+
+<div class="addAccount">
+    <div class="addAccount__box">
+        <h3>Loại tài khoản</h3>
+        <div class="addAccount__box__btn">
+            <a href="#"><span>Bác sĩ</span></a>
+            <a href="#"><span>Quản lý</span></a>
+        </div>
+        <i class="fas fa-times-circle"></i>
+    </div>
+</div>
+
+
+<script>
+    const getAddAccBtn = document.querySelector('.addAccBtn');
+    const getAddAccount = document.querySelector('.addAccount');
+    const getCloseBoxAccBtn = getAddAccount.querySelector('i');
+    console.log(getAddAccount);
+    getAddAccBtn.addEventListener('click', () => {
+        console.log('click');
+        getAddAccount.classList.toggle('addAccOpen');
+    })
+    getCloseBoxAccBtn.addEventListener('click', () => {
+        getAddAccount.classList.remove('addAccOpen');
+    })
+</script>

@@ -81,3 +81,75 @@
         }
     }
 }
+
+.addAccount{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 1020;
+    background: transparent;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    right: -200%;
+    transition: .4s;
+    &__box{
+        width: 30rem;
+        height: 10rem;
+        background-color: #fff;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        border-radius: .5rem;
+        overflow: hidden;
+        border: .1rem $lightBlueColor solid;
+        position: relative;
+        h3{
+            font-size: 2.4rem;
+            color: $darkBlueColor;
+            text-transform: none;
+            text-align: center;
+            padding: .5rem;
+        }
+        &__btn{
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+           
+            a{
+                display: block;
+                width: 49.8%;
+                padding: .5rem 0;
+                box-sizing: border-box;
+                background: $lightBlueColor;
+                transition: .2s;
+                &:hover{
+                    background: $redColor;
+                }
+            }
+            span{
+                display: block;
+                width: 100%;
+                font-size: 1.8rem;
+                color: #fff;
+                text-align: center;
+                text-transform: none;
+            }
+        }
+        i{
+            position: absolute;
+            z-index: 1050;
+            top: .5rem;
+            right: .5rem;
+            font-size: 2rem;
+            color: $redColor;
+            cursor: pointer;
+        }
+    }
+}
+
+.addAccOpen{
+    right: 0;
+}
