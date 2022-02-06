@@ -14,7 +14,8 @@ function route(app){
             }
             res.locals.lcIsAuthenticated = req.session.isAuthenticated;
             res.locals.lcAuthUser = req.session.authUser;
-            
+            res.locals.lcAnnouce = req.session.annouce;
+            console.log('this is annouce:', res.locals.lcAnnouce);
             next();
         } catch (error) {
             console.log(error);

@@ -24,9 +24,14 @@ class ConsultController{
         }
     }
 
-    detail(req, res){
-        res.render('news');
+    detail = async(req, res, next) => {
+        try {
+            res.send(req.params.id_clt);
+        } catch (error) {
+            console.log(error);
+        }
     }
+
     sent = async (req, res, next) => {
         try {
             const now = Date.now().toString();
@@ -45,8 +50,8 @@ class ConsultController{
             body.id_service = req.body.service;
             body.id_pat = req.session.authUser.id_pat;
             const consultation = await db.consultation.create({
-                id_consult: body.id_consult,
-                id_doc: body.id_doc,
+                id_consult: body.id_consult, 
+                id_doc: body.doctor,
                 id_pat: body.id_pat,
                 _sensitive: body.sensitive,
                 sympton: body.sympton,

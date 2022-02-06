@@ -35,6 +35,7 @@ class SiteController{
     handleLogin = async (req, res, next) => {
         try {
             let user = null;
+            let annouce = null;
             const role = req.body.role;
             if(role == 'patient'){
                 user = await db.patient.findOne({
@@ -49,6 +50,20 @@ class SiteController{
                         phonenum: req.body.phoneNum
                     }
                 });
+
+                annouce = await db.consultation.findAll({
+                    where: {
+                        id_doc: user.id_doc,
+                        seen: '0'
+                    },
+                    include: [{
+                        model: db.patient,
+                        attributes: ['name', 'img', 'id_pat'],
+                        as: 'consult',
+                        require: true
+                    }
+                    ]
+                })
             }
             if(role == 'admin'){
                 user = await db.admin.findOne({
@@ -56,6 +71,7 @@ class SiteController{
                         phonenum: req.body.phoneNum
                     }
                 });
+
             }
             if(user === null){
                 return res.render('home', {
@@ -70,10 +86,20 @@ class SiteController{
                     error: 'Sai mật khẩu'
                 })
             }
-            console.log(user);
+            let display = [];
+            for(let value of annouce){
+                display.push(value.dataValues.consult);
+            }
+            console.log('annouce', annouce);
+            for(let i = 0; i < display.length; ++i){
+                display[i].dataValues.id = annouce[i].dataValues.id_consult;
+            }
             req.session.isAuthenticated = true;
             req.session.authUser = user;
+            req.session.annouce = {display};
+            req.session.consultations = annouce;
             res.redirect('/');
+            // res.json(display);
         } catch (error) {
             console.log(error);
         }

@@ -43,6 +43,10 @@ db.service.belongsTo(db.department, {
     foreignKey: 'id_dep',
     as: 'department'
 })
+db.consultation.belongsTo(db.patient, {
+    foreignKey: 'id_pat',
+    as: 'consult'
+})
 // db.doctor.hasOne(db.department, {
 //     foreignKey: 'id_dep',
 //     as: 'department'
