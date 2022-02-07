@@ -56,6 +56,8 @@ class SiteController{
                         id_doc: user.id_doc,
                         seen: '0'
                     },
+                    order: [['createdAt', 'DESC']],
+                    limit: 4,
                     include: [{
                         model: db.patient,
                         attributes: ['name', 'img', 'id_pat'],
@@ -87,8 +89,12 @@ class SiteController{
                 })
             }
             let display = [];
-            for(let value of annouce){
-                display.push(value.dataValues.consult);
+            
+            if(annouce != null){
+                for(let value of annouce){
+                    display.push(value.dataValues.consult);
+                }
+                req.session.consultations = annouce;
             }
             console.log('annouce', annouce);
             for(let i = 0; i < display.length; ++i){
@@ -97,7 +103,7 @@ class SiteController{
             req.session.isAuthenticated = true;
             req.session.authUser = user;
             req.session.annouce = {display};
-            req.session.consultations = annouce;
+            
             res.redirect('/');
             // res.json(display);
         } catch (error) {
@@ -156,7 +162,7 @@ class SiteController{
             //     await data[i].save();
             // }
             // res.json(data);
-            res.render('profile');
+            res.render('replyConsult');
         } catch (error) {
             console.log(error);
         }

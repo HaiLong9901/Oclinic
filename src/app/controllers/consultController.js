@@ -26,7 +26,22 @@ class ConsultController{
 
     detail = async(req, res, next) => {
         try {
-            res.send(req.params.id_clt);
+            const data = await db.consultation.findOne({
+                where: {
+                    id_consult: req.params.id_clt,
+                },
+                include: [{
+                    model: db.patient,
+                    attributes: ['name'],
+                    as: 'consult',
+                    require: true
+                }]
+            })
+            data.dataValues.namePatient = data.consult.name;
+            const load = data.dataValues;
+            // res.json(data);
+            console.log(data);
+            res.render('replyConsult', {load});
         } catch (error) {
             console.log(error);
         }

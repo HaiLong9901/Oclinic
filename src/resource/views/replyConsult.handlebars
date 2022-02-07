@@ -1,0 +1,104 @@
+{{!-- header starts --}}
+<header class="header">
+    <div class="taskbar">
+    <div class="taskbar__name">
+        <!-- <form action="" ></form> -->
+        <input type="search" name="searchBox" id="searchBox" class="taskbar__search">
+        <button class="searchBtn" form="searchBox" value="submit"><i class="fas fa-search"></i></button>
+        
+        <div href="#" class="taskbar__bell">
+            <i class="fas fa-bell">
+            </i>
+            <ul class="annouce_list">
+                <li><a href="#">Thông báo 1</a></li>
+                <li><a href="#">Thông báo 2</a></li>
+                <li><a href="#">Thông báo 3</a></li>
+                <li><a href="#">Thông báo 4</a></li>
+                <a href="#"><span>XEM TẤT CẢ</span></a>
+            </ul>
+        </div>
+        <div class="taskbar__user">
+            {{#if lcIsAuthenticated}}
+                <a href="#" class="user">
+                    <img src="/img/{{lcAuthUser.img}}" alt="" class="taskbar__user__img">
+                    <ul class="user__options">
+                        <li><a href="/setting" class="login">Cài đặt</a></li>
+                        <li><a href="/logout" class="regist">Đăng xuất</a></li>
+                    </ul>
+                </a>
+            {{else}}
+                <a href="#" class="user">
+                <i class="fas fa-user"></i>
+                <ul class="user__options">
+                    <li><a href="/login" class="login">Đăng nhập</a></li>
+                    <li><a href="/register" class="regist">Đăng ký</a></li>
+                </ul>
+                </a>
+            {{/if}}
+        </div>
+    </div>
+</div>
+
+<div class="menu">
+    <div class="menu__main">                                              
+        <a href="/" class="logo"><i class="fas fa-capsules"></i><span>O</span>Clinic</a>
+        <ul class="menu__list">
+            <li class="menu__item"><a href="/">Trang chủ</a></li>
+            <li class="menu__item"><a href="/intro">Giới thiệu</a></li>
+            <li class="menu__item news"><a href="/news">Tin tức</a></li>
+            <li class="menu__item doctors"><a href="/doctors">Bác sĩ
+                <ul class="doctor">
+                    <li><a href="/doctors/surgery">Ngoại khoa</a></li>
+                    <li><a href="#">Nội Khoa</a></li>
+                    <li><a href="#">Nhi Khoa</a></li>
+                </ul>
+            </a></li>
+            <li class="menu__item large"><a href="/articles">Bài viết chuyên môn</a></li>
+            <li class="menu__item active"><a href="/consultation">Tư vấn</a></li>
+            <li class="menu__item"><a href="#">Liên hệ</a></li>
+        </ul>
+    </div>
+</div>
+</header>
+
+{{!-- header ends --}}
+
+<!-- home starts -->
+
+<section class="home replyHome">
+    <div class="replyClt" id="replyClt">
+        {{#with load}}
+        <div class="content">
+            <div class="content__tit">
+                <span>Người yêu cầu</span>
+                <h3>{{namePatient}}</h3>
+            </div>
+        <div class="content__main">
+            <div class="sensitive">
+                <span>Dị ứng</span>
+                <p>{{_sensitive}}</p>
+            </div>
+            <div class="sympton">
+                <span>Triệu chứng</span>
+                <p>{{sympton}}</p>
+            </div>
+            {{#if img}}
+            <div class="image">
+                <span>Ảnh</span>
+                <img src="/img/{{img}}" alt="anh">
+            </div>
+            {{/if}}
+        </div>
+        <div class="content__reply_clt">
+            <form action="/" method="post" id="reply__form" class="reply__form">
+                <label for="reply">Trả lời</label>
+                <textarea name="reply" id="reply" cols="30" rows="10"></textarea>
+            </form>
+        </div>
+        <div class="content__submit_form">
+            <button class="" form="reply__form" type="submit" value="submit">Gửi</button>
+        </div>
+        </div>
+        {{/with}}
+    </div>
+</section> 

@@ -1,0 +1,113 @@
+
+.replyHome{
+    width: 100%;
+
+    .replyClt{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        .content{
+            margin: 2rem 0;
+            width: 96.86%;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            &__tit{
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                gap: 2rem;
+
+                span{
+                    font-size: 2.4rem;
+                    color: $redColor;
+                    text-transform: none;
+                    font-weight: 500;
+                    font-style: italic;
+                }
+                h3{
+                    font-size: 2.4rem;
+                    color: $darkBlueColor;
+                    text-transform: none;
+                    margin: 0;
+                    padding: 0;
+                }
+            }
+
+            &__main{
+                width: 100%;
+                .sensitive, .sympton, .image{
+                    width: 100%;
+                    display: flex;
+                    gap: 2rem;
+                    span{
+                        font-size: 2rem;
+                        color: $darkBlueColor;
+                        font-style: italic;
+                        text-transform: none;
+                        font-weight: 500;
+                    }
+                    p{
+                        font-size: 1.8rem;
+                        color: #000;
+                        text-transform: none;
+                    }
+                }
+
+                .image{
+                    img{
+                        width: 70%;
+                        border-radius: .5rem;
+                    }
+                }
+
+            }
+
+            &__reply_clt{
+                width: 100%;
+                form{
+                    width: 100%;
+                    display: flex;
+                    gap: 2rem;
+                    label{
+                        font-size: 2rem;
+                        color: $darkBlueColor;
+                        font-style: italic;
+                        text-transform: none;
+                        font-weight: 500;
+                    }
+
+                    textarea{
+                        width: 70rem;
+                        font-size: 1.8rem;
+                        color: #000;
+                        text-transform: none;
+                        border-radius: .5rem;
+                        border: .1rem solid $darkBlueColor;
+                        padding: 1rem;
+                    }
+                }
+            }
+
+            &__submit_form{
+                width: 100%;
+                display: flex;
+                justify-content: center;
+
+                button{
+                    font-size: 2rem;
+                    color: #fff;
+                    background: $darkBlueColor;
+                    border-radius: .5rem;
+                    width: 20rem;
+                    border: none;
+                    transition: .2s;
+                    padding: 1rem;
+                    &:hover{
+                        background: $redColor;
+                    }
+                }
+            }
+        }
+    }
+}

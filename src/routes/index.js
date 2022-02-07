@@ -19,7 +19,7 @@ function route(app){
             next();
         } catch (error) {
             console.log(error);
-        }
+        } 
     })
     app.use('/setting', settingRouter);
     app.use('/notifications', notifyRouter);
