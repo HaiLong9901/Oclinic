@@ -43,6 +43,22 @@ class SiteController{
                         phonenum: req.body.phoneNum
                     }
                 });
+
+                // annouce = await db.consultation.findAll({
+                //     where: {
+                //         id_doc: user.id_doc,
+                //         seen: '0'
+                //     },
+                //     order: [['createdAt', 'DESC']],
+                //     limit: 4,
+                //     include: [{
+                //         model: db.patient,
+                //         attributes: ['name', 'img', 'id_pat'],
+                //         as: 'consult',
+                //         require: true
+                //     }
+                //     ]
+                // })
             }
             if(role == 'doctor'){
                 user = await db.doctor.findOne({

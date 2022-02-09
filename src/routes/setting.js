@@ -4,7 +4,8 @@ const settingController = require('../app/controllers/settingController');
 const settingMdw = require('../app/middlewares/setting.mdw');
 const multer = require('../app/multer');
 
-
+router.post('/addAcc/doctor', multer.upload.single('image'), settingController.addAccToDb)
+router.get('/addAcc/doctor', settingController.addAcc);
 router.use('/update/result',multer.upload.single('image'), settingController.resultInfor);
 router.get('/evaluation', settingController.evaluation);
 router.post('/result', settingController.result);

@@ -133,5 +133,42 @@ class SettingController {
             console.log(error)
         }
     }
+
+    addAcc = async (req, res, next) => {
+        try {
+            const selectDepartment = await db.department.findAll();
+            const department = [];
+            for(let value of selectDepartment){
+                department.push(value.dataValues);
+            }
+            res.render('addAcc', {department});
+        } catch (error) {
+            console.log(error);
+        }
+    }
+    addAccToDb = async (req, res, next) => {
+        try {
+            const getId = req.body.phonenum
+            const id_doc = 'DOC'.concat(getId.substring(getId.length - 8));
+            const doctor = await db.doctor.create({
+                id_doc: id_doc,
+                name: req.body.name,
+                dob: req.body.dob,
+                sex: req.body.sex==true?1:0,
+                phonenum: req.body.phonenum,
+                degree: req.body.degree,
+                postition: req.body.postition,
+                id_dep: req.body.department,
+                pass: bcrypt.hashSync(req.body.phonenum, 10),
+                email: req.body.email,
+                img: (req.file)?req.file.filename:null,
+                description: req.body.description
+            })
+            console.log(id_doc)
+            res.json(req.body);
+        } catch (error) {
+            console.log(error);
+        }
+    }
 }
 module.exports = new SettingController;

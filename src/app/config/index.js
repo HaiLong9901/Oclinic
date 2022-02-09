@@ -33,6 +33,7 @@ db.article = require('../models/article')(sequelize, Sequelize);
 db.service = require('../models/services')(sequelize, Sequelize);
 db.consultation = require('../models/consultation')(sequelize, Sequelize);
 db.evaluation = require('../models/evaluation')(sequelize, Sequelize);
+db.reply = require('../models/reply')(sequelize, Sequelize);
 db.connect = connect;
 
 db.doctor.belongsTo(db.department, {

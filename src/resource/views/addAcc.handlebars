@@ -1,0 +1,169 @@
+
+{{!-- header starts --}}
+<header class="header">
+    <div class="taskbar">
+    <div class="taskbar__name">
+        <!-- <form action="" ></form> -->
+        <input type="search" name="searchBox" id="searchBox" class="taskbar__search">
+        <button class="searchBtn" form="searchBox" value="submit"><i class="fas fa-search"></i></button>
+        
+        <div href="#" class="taskbar__bell">
+            <i class="fas fa-bell">
+            </i>
+            <ul class="annouce_list">
+                <li><a href="#" class="annouce__item">
+                    <div class="item__img">
+                        <img src="#" alt="">
+                    </div>
+                    <div class="item__content">
+                        <i>Yêu cầu tư vấn</i>
+                        <p>Nguyễn Văn A</p>
+                    </div>
+                </a></li>
+                <li><a href="#" class="annouce__item">
+                    <div class="item__img">
+                        <img src="#" alt="">
+                    </div>
+                    <div class="item__content">
+                        <i>Yêu cầu tư vấn</i>
+                        <p>Nguyễn Văn A</p>
+                    </div>
+                </a></li>
+                <li><a href="#" class="annouce__item">
+                    <div class="item__img">
+                        <img src="#" alt="">
+                    </div>
+                    <div class="item__content">
+                        <i>Yêu cầu tư vấn</i>
+                        <p>Nguyễn Văn A</p>
+                    </div>
+                </a></li>
+                <li><a href="#" class="annouce__item">
+                    <div class="item__img">
+                        <img src="#" alt="">
+                    </div>
+                    <div class="item__content">
+                        <i>Yêu cầu tư vấn</i>
+                        <p>Nguyễn Văn A</p>
+                    </div>
+                </a></li>
+                <a href="#"><label>XEM TẤT CẢ</label></a>
+            </ul>
+        </div>
+        <div class="taskbar__user">
+            {{#if lcIsAuthenticated}}
+                <a href="#" class="user">
+                    <img src="/img/{{lcAuthUser.img}}	" alt="" class="taskbar__user__img">
+                    <ul class="user__options">
+                        <li><a href="/setting" class="login">Cài đặt</a></li>
+                        <li><a href="/logout" class="regist">Đăng xuất</a></li>
+                    </ul>
+                </a>
+            {{else}}
+                <a href="#" class="user">
+                <i class="fas fa-user"></i>
+                <ul class="user__options">
+                    <li><a href="/login" class="login">Đăng nhập</a></li>
+                    <li><a href="/register" class="regist">Đăng ký</a></li>
+                </ul>
+                </a>
+            {{/if}}
+        </div>
+    </div>
+</div>
+
+<div class="menu">
+    <div class="menu__main">                                              
+        <a href="/" class="logo"><i class="fas fa-capsules"></i><label>O</label>Clinic</a>
+        <ul class="menu__list">
+            <li class="menu__item"><a href="/">Trang chủ</a></li>
+            <li class="menu__item"><a href="/intro">Giới thiệu</a></li>
+            <li class="menu__item news"><a href="/news">Tin tức</a></li>
+            <li class="menu__item doctors"><a href="/doctors">Bác sĩ
+                <ul class="doctor">
+                    <li><a href="/doctors/surgery">Ngoại khoa</a></li>
+                    <li><a href="#">Nội Khoa</a></li>
+                    <li><a href="#">Nhi Khoa</a></li>
+                </ul>
+            </a></li>
+            <li class="menu__item large"><a href="/articles">Bài viết chuyên môn</a></li>
+            <li class="menu__item"><a href="/consultation">Tư vấn</a></li>
+            <li class="menu__item"><a href="#">Liên hệ</a></li>
+        </ul>
+    </div>
+</div>
+</header>
+
+{{!-- header ends --}}
+
+<!-- home starts -->
+
+<section class="home inforHome">
+    <div class="infor" id="infor">
+        <div class="content">
+            <form method="POST" action="/setting/addAcc/doctor" class="infor__content" id="infor__content" enctype="multipart/form-data">
+                <div class="input-group flex-nowrap">
+                    <label class="input-group-text" id="addon-wrapping">Họ và tên</label>
+                    <input type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="addon-wrapping" name="name">
+                </div>
+                <div class="input-group flex-nowrap">
+                    <label class="input-group-text" id="addon-wrapping">Ngày sinh</label>
+                    <input type="date" class="form-control" placeholder="" aria-label="Username" aria-describedby="addon-wrapping" name="dob">
+                </div>
+                <div class="input-group mb-3">
+                    <label class="input-group-text" for="inputGroupSelect01">Giới tính</label>
+                    <select class="form-select" id="inputGroupSelect01" name="sex">
+                        <option selected>Choose...</option>
+                        <option value="1">Nam</option>
+                        <option value="0">Nữ</option>
+                    </select>
+                </div>
+                <div class="input-group flex-nowrap">
+                    <label class="input-group-text" id="addon-wrapping">Số điện thoại</label>
+                    <input type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="addon-wrapping" name="phonenum" id="phone">
+                </div>
+                <div class="input-group flex-nowrap">
+                    <label class="input-group-text" id="addon-wrapping">Email</label>
+                    <input type="email" class="form-control" placeholder="" aria-label="Username" aria-describedby="addon-wrapping" name="email" id="email">
+                </div>
+                <div class="input-group flex-nowrap">
+                    <label class="input-group-text" id="addon-wrapping">Miêu tả</label>
+                    <textarea type="email" class="form-control" placeholder="" aria-label="Username" aria-describedby="addon-wrapping" name="description" id="description"></textarea>
+                </div>
+                <div class="input-group flex-nowrap">
+                    <label class="input-group-text" id="addon-wrapping">Khoa</label>
+                    <select class="form-select" id="inputGroupSelect01" name="department">
+                        <option selected>Choose...</option>
+                        {{#each department}}
+                        <option value="{{this.id_dep}}">{{this.name}}</option>
+                        {{/each}}
+                    </select>
+                </div>
+                <div class="input-group flex-nowrap">
+                    <label class="input-group-text" id="addon-wrapping">Chức vụ</label>
+                    <select class="form-select" id="inputGroupSelect01" name="postition">
+                        <option selected>Choose...</option>
+                        <option value="bác sĩ">bác sĩ</option>
+                        <option value="trưởn khoa">trưởng khoa</option>
+                    </select>
+                </div>
+                <div class="input-group flex-nowrap">
+                    <label class="input-group-text" id="addon-wrapping">Học vị</label>
+                    <select class="form-select" id="inputGroupSelect01" name="degree">
+                        <option selected>Choose...</option>
+                        <option value="doctor">Bác sĩ</option>
+                        <option value="masters">Thạc sĩ</option>
+                        <option value="professor">Giáo sư</option>
+                    </select>
+                </div>
+                <div class="input-group flex-nowrap">
+                    <label class="input-group-text" id="addon-wrapping" for="image">Ảnh đại diện</label>
+                    <input type="file" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping" name="image" id="image">
+                </div>
+                <div class="d-grid gap-2 col-6 mx-auto">
+                    <button class="btn btn-primary" type="submit" form="infor__content">Thêm tài khoản</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>

@@ -5,7 +5,7 @@ const multer = require('../app/multer');
 const image = require('../app/apis');
 const restrict = require('../app/middlewares/consultation.mdw');
 
-
+router.post('/reply', consultController.reply);
 router.get('/detail/:id_clt', consultController.detail);
 router.use('/sent', multer.upload.single('image'),consultController.sent);
 router.get('/',restrict, consultController.index);

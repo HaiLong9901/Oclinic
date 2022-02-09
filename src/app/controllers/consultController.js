@@ -37,6 +37,7 @@ class ConsultController{
                     require: true
                 }]
             })
+            req.session.id_clt = req.params.id_clt;
             data.dataValues.namePatient = data.consult.name;
             const load = data.dataValues;
             // res.json(data);
@@ -79,6 +80,37 @@ class ConsultController{
                 consult: true
 
             });
+
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    reply = async (req, res, next) => {
+        try {
+            const data = {};
+            const now = Date.now().toString();
+            const user = req.session.authUser.id_doc;
+            const id_rep = 'REP'.concat(now.substring(now.length - 4).concat(user.substring(user.length - 4)));
+            console.log(id_rep);
+            data.id_clt = req.session.id_clt;
+            data.id_rep = id_rep;
+            const reply = db.reply.create({
+                id_reply: data.id_rep,
+                id_consult: data.id_clt,
+                content: req.body.reply
+            })
+            const consult = await db.consultation.findOne({
+                where:{
+                    id_consult: req.session.id_clt
+                }
+            })
+            consult.seen = 1;
+            await consult.save();
+            delete req.session.id_clt;
+            res.render('sent', {
+                quote: 'Gửi yêu kết quả tư vấn thành công'
+            })
         } catch (error) {
             console.log(error);
         }
