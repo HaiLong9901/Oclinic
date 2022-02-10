@@ -144,7 +144,35 @@
             <div class="swipper article__container">
                 <div class="swiper-wrapper wrapper">
                     <div class="swiper-slide article__box">
-                        {{#each display}}
+                        {{#each display1}}
+                        <div class="article__item">
+                            <div class="item__image">
+                                <img src="{{this.img}}" alt="">
+                            </div>
+                            <p>{{this.title}}</p>
+                            <div class="article__btn">
+                                <p>XEM</p>
+                                <div class="btn"><i class="fas fa-arrow-right"></i></div>
+                            </div>
+                        </div>
+                        {{/each}}
+                    </div>
+                    <div class="swiper-slide article__box">
+                        {{#each display2}}
+                        <div class="article__item">
+                            <div class="item__image">
+                                <img src="{{this.img}}" alt="">
+                            </div>
+                            <p>{{this.title}}</p>
+                            <div class="article__btn">
+                                <p>XEM</p>
+                                <div class="btn"><i class="fas fa-arrow-right"></i></div>
+                            </div>
+                        </div>
+                        {{/each}}
+                    </div>
+                    <div class="swiper-slide article__box">
+                        {{#each display3}}
                         <div class="article__item">
                             <div class="item__image">
                                 <img src="{{this.img}}" alt="">

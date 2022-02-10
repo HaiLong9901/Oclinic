@@ -9,14 +9,24 @@ class SiteController{
     index = async (req, res) => {
         const articles = await db.article.findAll({
             order: [['createdAt', 'DESC']],
-            limit: 3
+            limit: 9
         })
-        let display = [];
-        for(let value of articles){
-            display.push(value.dataValues);
-        };
-        
-        res.render('home', {display});
+        let display1 = [];
+        let display2 = [];
+        let display3 = [];
+        // for(let value of articles){
+        //     display.push(value.dataValues);
+        // };
+        for(let i = 0; i < articles.length ; ++i){
+            if(i < 3) display1.push(articles[i].dataValues);
+            if(i < 6 && i >= 3) display2.push(articles[i].dataValues);
+            if(i >= 6 && i < 9) display3.push(articles[i].dataValues);
+        }
+        res.render('home', {
+            display1,
+            display2,
+            display3
+        });
     }
 
     detail(req, res){
@@ -36,6 +46,8 @@ class SiteController{
         try {
             let user = null;
             let annouce = null;
+            let idCltForUser = null;
+            let test = null;
             const role = req.body.role;
             if(role == 'patient'){
                 user = await db.patient.findOne({
@@ -44,21 +56,39 @@ class SiteController{
                     }
                 });
 
-                // annouce = await db.consultation.findAll({
-                //     where: {
-                //         id_doc: user.id_doc,
-                //         seen: '0'
-                //     },
-                //     order: [['createdAt', 'DESC']],
-                //     limit: 4,
-                //     include: [{
-                //         model: db.patient,
-                //         attributes: ['name', 'img', 'id_pat'],
-                //         as: 'consult',
-                //         require: true
-                //     }
-                //     ]
-                // })
+                idCltForUser = await db.consultation.findAll({
+                    where: {
+                        id_consult: 'CLT82738745',
+                        seen: '1'
+                    },
+                    order: [['createdAt', 'ASC']],
+                    limit: 4,
+                    include: [{
+                        model: db.doctor,
+                        attributes: ['name'],
+                        as: 'doctor',
+                        require: true
+                    }, {
+                        model: db.reply,
+                        attributes: ['id_reply'],
+                        as: 'reply',
+                        require: true
+                    }]
+                })
+                test = idCltForUser[0].dataValues;
+                test.doctor = test.doctor.dataValues.name;
+                test.id_rep = test.reply[0].dataValues.id_reply;
+                // for(let value of idCltForUser){
+                //     let a = await db.reply.findAll({
+                //         attributes: ['id_reply'],
+                //         where: {
+                //             id_consult: value.dataValues.id_consult,
+                //             seen: 0
+                //         }
+                //     });
+                //     console.log(a);
+                //     test.push(a);
+                // }
             }
             if(role == 'doctor'){
                 user = await db.doctor.findOne({
@@ -105,14 +135,13 @@ class SiteController{
                 })
             }
             let display = [];
-            
+            console.log('id clt is: ', test);
             if(annouce != null){
                 for(let value of annouce){
                     display.push(value.dataValues.consult);
                 }
                 req.session.consultations = annouce;
             }
-            console.log('annouce', annouce);
             for(let i = 0; i < display.length; ++i){
                 display[i].dataValues.id = annouce[i].dataValues.id_consult;
             }
