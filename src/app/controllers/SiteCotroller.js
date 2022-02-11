@@ -11,9 +11,22 @@ class SiteController{
             order: [['createdAt', 'DESC']],
             limit: 9
         })
+        const stars = await db.evaluation.findAll({
+            order: [['createdAt', 'DESC']],
+            limit: 9,
+            include: [{
+                model: db.patient,
+                attributes: ['name', 'img'],
+                as: 'star',
+                require: true
+            }]
+        })
         let display1 = [];
         let display2 = [];
         let display3 = [];
+        let star1 = [];
+        let star2 = [];
+        let star3 = [];
         // for(let value of articles){
         //     display.push(value.dataValues);
         // };
@@ -22,10 +35,24 @@ class SiteController{
             if(i < 6 && i >= 3) display2.push(articles[i].dataValues);
             if(i >= 6 && i < 9) display3.push(articles[i].dataValues);
         }
+        for(let i = 0; i < stars.length ; ++i){
+            const starData = {};
+            starData.name = stars[i].dataValues.star.dataValues.name;
+            starData.img = stars[i].dataValues.star.dataValues.img;
+            starData.starNum = stars[i].dataValues.starNum;
+            starData.evaluate = stars[i].dataValues.evaluate;
+            if(i < 3) star1.push(starData);
+            if(i < 6 && i >= 3) star2.push(starData);
+            if(i >= 6 && i < 9) star3.push(starData);
+        }
+        console.log(star1);
         res.render('home', {
             display1,
             display2,
-            display3
+            display3,
+            star1,
+            star2,
+            star3
         });
     }
 
@@ -47,7 +74,8 @@ class SiteController{
             let user = null;
             let annouce = null;
             let idCltForUser = null;
-            let test = null;
+            let test = {};
+            let annouceForPatient = [];
             const role = req.body.role;
             if(role == 'patient'){
                 user = await db.patient.findOne({
@@ -56,28 +84,59 @@ class SiteController{
                     }
                 });
 
-                idCltForUser = await db.consultation.findAll({
+                // idCltForUser = await db.consultation.findAll({
+                //     where: {
+                //         // id_consult: 'CLT82738745',
+                //         id_pat: 'PAT12588745',
+                //         seen: '1'
+                //     },
+                //     order: [['createdAt', 'ASC']],
+                //     limit: 4,
+                //     include: [{
+                //         model: db.doctor,
+                //         attributes: ['name'],
+                //         as: 'doctor',
+                //         require: true
+                //     }, {
+                //         model: db.reply,
+                //         attributes: ['id_reply'],
+                //         as: 'reply',
+                //         require: true
+                //     }]
+                // })
+                // test = idCltForUser[0].dataValues;
+                // test.doctor = test.doctor.dataValues.name;
+                // test.id_rep = test.reply[0].dataValues.id_reply;
+
+                idCltForUser = await db.reply.findAll({
                     where: {
-                        id_consult: 'CLT82738745',
-                        seen: '1'
+                        seen: '0'
                     },
-                    order: [['createdAt', 'ASC']],
                     limit: 4,
+                    order: [['createdAt', 'DESC']],
                     include: [{
-                        model: db.doctor,
-                        attributes: ['name'],
-                        as: 'doctor',
-                        require: true
-                    }, {
-                        model: db.reply,
-                        attributes: ['id_reply'],
-                        as: 'reply',
-                        require: true
+                        model: db.consultation,
+                        as: 'reply1',
+                        require: true,
+                        where: {
+                            id_pat: user.id_pat,
+                        },
+                        include: [{
+                            model: db.doctor,
+                            as: 'doctor',
+                            require: true,
+                            // attributes: ['name, img']
+                        }]
                     }]
                 })
-                test = idCltForUser[0].dataValues;
-                test.doctor = test.doctor.dataValues.name;
-                test.id_rep = test.reply[0].dataValues.id_reply;
+                for(let value of idCltForUser){
+
+                    test.id_rep = idCltForUser[0].dataValues.id_reply;
+                    test.name = idCltForUser[0].dataValues.reply1.doctor.dataValues.name;
+                    test.img = idCltForUser[0].dataValues.reply1.doctor.dataValues.img;
+
+                    annouceForPatient.push(test);
+                }
                 // for(let value of idCltForUser){
                 //     let a = await db.reply.findAll({
                 //         attributes: ['id_reply'],
@@ -135,7 +194,7 @@ class SiteController{
                 })
             }
             let display = [];
-            console.log('id clt is: ', test);
+            console.log('id clt is: ', annouceForPatient);
             if(annouce != null){
                 for(let value of annouce){
                     display.push(value.dataValues.consult);
@@ -148,6 +207,7 @@ class SiteController{
             req.session.isAuthenticated = true;
             req.session.authUser = user;
             req.session.annouce = {display};
+            req.session.annouceForPAtient = {annouceForPatient};
             
             res.redirect('/');
             // res.json(display);

@@ -56,6 +56,14 @@ db.consultation.hasMany(db.reply, {
     foreignKey: 'id_consult',
     as: 'reply'
 })
+db.reply.belongsTo(db.consultation, {
+    foreignKey: 'id_consult',
+    as: 'reply1'
+})
+db.evaluation.belongsTo(db.patient, {
+    foreignKey: 'id_pat',
+    as: 'star'
+})
 // db.doctor.hasOne(db.department, {
 //     foreignKey: 'id_dep',
 //     as: 'department'

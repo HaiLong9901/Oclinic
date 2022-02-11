@@ -21,6 +21,17 @@
                     </div>
                 </a></li>
                 {{/each}}
+                {{#each lcAnnouceForPatient.annouceForPatient}}
+                <li><a href="/consultation/reply/{{this.id_rep}}" class="annouce__item ">
+                    <div class="item__img">
+                        <img src="/img/{{this.img}}" alt="">
+                    </div>
+                    <div class="item__content">
+                        <i>Trả lời tư vấn</i>
+                        <p>{{this.name}}</p>
+                    </div>
+                </a></li>
+                {{/each}}
                 <a href="#"><span>XEM TẤT CẢ</span></a>
             </ul>
         </div>
@@ -269,78 +280,90 @@
         <div class="swipper reviews__container">
             <div class="swiper-wrapper reviews__wrapper">
                 <div class="swiper-slide reviews__slide">
+                    {{#each star1}}
                     <div class="reviews__box">
                         <div class="reviews__header">
                             <div class="name">
                                 <div class="name__img">
-                                    <img src="/img/avt1.jpg" alt="">
+                                    <img src="/img/{{this.img}}" alt="">
                                 </div>
                                 <div class="name__name">
-                                    <p>Nguyễn Văn A</p>
+                                    <p>{{this.name}}</p>
                                     <div class="name__stars">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star-half-alt"></i>
+                                        <i class="far fas fa-star st1"></i>
+                                        <i class="far fas fa-star st2"></i>
+                                        <i class="far fas fa-star st3"></i>
+                                        <i class="far fas fa-star st4"></i>
+                                        <i class="far fas fa-star st5"></i>
+                                        <span style="color: transparent;">{{this.starNum}}</span>
                                     </div>
                                 </div>
                             </div>
                             <i class="fas fa-quote-right"></i>
                         </div>
                         <p class="content">
-                            Tôi bị đau lưng, do dãn cách xã hội theo chỉ thị 16 tôi chưa thể đi khám, may mắn được người bạn giới thiệu tôi đã đăng kí tư vấn khám bệnh online tại Oclinic. Sau 1 tháng bệnh đau lưng của tôi đã hết.
+                            {{this.evaluate}}
                         </p>
-                    </div>
-                    <div class="reviews__box">
-                        <div class="reviews__header">
-                            <div class="name">
-                                <div class="name__img">
-                                    <img src="/img/avt3.jpg" alt="">
-                                </div>
-                                <div class="name__name">
-                                    <p>Nguyễn Văn Mỹ</p>
-                                    <div class="name__stars">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star-half-alt"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <i class="fas fa-quote-right"></i>
-                        </div>
-                        <p class="content">
-                            Các bác sĩ có chuyên môn cao và tư vấn rất nhiệt tình. 5 sao cho Oclinic
-                        </p>
-                    </div>
-                    <div class="reviews__box">
-                        <div class="reviews__header">
-                            <div class="name">
-                                <div class="name__img">
-                                    <img src="/img/avt5.jpg" alt="">
-                                </div>
-                                <div class="name__name">
-                                    <p>Phụ Thị Đen</p>
-                                    <div class="name__stars">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star-half-alt"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <i class="fas fa-quote-right"></i>
-                        </div>
-                        <p class="content">
-                            Dịch vụ tư vấn rất tuyệt vời, bệnh dị ứng da của tôi đã giảm đi nhiều. Thật sự cảm ơn Oclinic
-                        </p>
-                    </div>
-                    
+                    </div>                 
+                    {{/each}}
                 </div>
                 <div class="swiper-slide reviews__slide">
+                    {{#each star2}}
+                    <div class="reviews__box">
+                        <div class="reviews__header">
+                            <div class="name">
+                                <div class="name__img">
+                                    <img src="/img/{{this.img}}" alt="">
+                                </div>
+                                <div class="name__name">
+                                    <p>{{this.name}}</p>
+                                    <div class="name__stars">
+                                        <i class="far fas fa-star st1"></i>
+                                        <i class="far fas fa-star st2"></i>
+                                        <i class="far fas fa-star st3"></i>
+                                        <i class="far fas fa-star st4"></i>
+                                        <i class="far fas fa-star st5"></i>
+                                        <span style="color: transparent;">{{this.starNum}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <i class="fas fa-quote-right"></i>
+                        </div>
+                        <p class="content">
+                            {{this.evaluate}}
+                        </p>
+                    </div>                 
+                    {{/each}}
+                </div>
+                <div class="swiper-slide reviews__slide">
+                    {{#each star3}}
+                    <div class="reviews__box">
+                        <div class="reviews__header">
+                            <div class="name">
+                                <div class="name__img">
+                                    <img src="/img/{{this.img}}" alt="">
+                                </div>
+                                <div class="name__name">
+                                    <p>{{this.name}}</p>
+                                    <div class="name__stars">
+                                        <i class="far fas fa-star st1"></i>
+                                        <i class="far fas fa-star st2"></i>
+                                        <i class="far fas fa-star st3"></i>
+                                        <i class="far fas fa-star st4"></i>
+                                        <i class="far fas fa-star st5"></i>
+                                        <span style="color: transparent;">{{this.starNum}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <i class="fas fa-quote-right"></i>
+                        </div>
+                        <p class="content">
+                            {{this.evaluate}}
+                        </p>
+                    </div>                 
+                    {{/each}}
+                </div>
+                {{!-- <div class="swiper-slide reviews__slide">
                     <div class="reviews__box">
                         <div class="reviews__header">
                             <div class="name">
@@ -350,11 +373,11 @@
                                 <div class="name__name">
                                     <p>Trần Văn Sao</p>
                                     <div class="name__stars">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star-half-alt"></i>
+                                        <i class="far fas fa-star"></i>
+                                        <i class="far fas fa-star"></i>
+                                        <i class="far fas fa-star"></i>
+                                        <i class="far fas fa-star"></i>
+                                        <i class="far fas fa-star-half-alt"></i>
                                     </div>
                                 </div>
                             </div>
@@ -373,11 +396,11 @@
                                 <div class="name__name">
                                     <p>Hoàng Thị Na</p>
                                     <div class="name__stars">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star-half-alt"></i>
+                                        <i class="far fas fa-star"></i>
+                                        <i class="far fas fa-star"></i>
+                                        <i class="far fas fa-star"></i>
+                                        <i class="far fas fa-star"></i>
+                                        <i class="far fas fa-star-half-alt"></i>
                                     </div>
                                 </div>
                             </div>
@@ -396,11 +419,11 @@
                                 <div class="name__name">
                                     <p>Phạm Thu Chan</p>
                                     <div class="name__stars">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star-half-alt"></i>
+                                        <i class="far fas fa-star"></i>
+                                        <i class="far fas fa-star"></i>
+                                        <i class="far fas fa-star"></i>
+                                        <i class="far fas fa-star"></i>
+                                        <i class="far fas fa-star-half-alt"></i>
                                     </div>
                                 </div>
                             </div>
@@ -422,11 +445,11 @@
                                 <div class="name__name">
                                     <p>Nguyễn Thị Sần</p>
                                     <div class="name__stars">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star-half-alt"></i>
+                                        <i class="far fas fa-star"></i>
+                                        <i class="far fas fa-star"></i>
+                                        <i class="far fas fa-star"></i>
+                                        <i class="far fas fa-star"></i>
+                                        <i class="far fas fa-star-half-alt"></i>
                                     </div>
                                 </div>
                             </div>
@@ -445,11 +468,11 @@
                                 <div class="name__name">
                                     <p>Nguyễn Văn Mỹ</p>
                                     <div class="name__stars">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star-half-alt"></i>
+                                        <i class="far fas fa-star"></i>
+                                        <i class="far fas fa-star"></i>
+                                        <i class="far fas fa-star"></i>
+                                        <i class="far fas fa-star"></i>
+                                        <i class="far fas fa-star-half-alt"></i>
                                     </div>
                                 </div>
                             </div>
@@ -468,11 +491,11 @@
                                 <div class="name__name">
                                     <p>Phụ Thị Đen</p>
                                     <div class="name__stars">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star-half-alt"></i>
+                                        <i class="far fas fa-star"></i>
+                                        <i class="far fas fa-star"></i>
+                                        <i class="far fas fa-star"></i>
+                                        <i class="far fas fa-star"></i>
+                                        <i class="far fas fa-star-half-alt"></i>
                                     </div>
                                 </div>
                             </div>
@@ -483,46 +506,36 @@
                         </p>
                     </div>
                     
-                </div>
+                </div> --}}
             </div>
             <div class="swiper-button-next"></div>
             <div class="swiper-button-prev"></div>
         </div>
     </div>
 </div>
-
-{{!-- <div class="free_consultant">
-    <div class="free_consultant__content">
-        <div class="free_consultant__title title"><span>Tư vấn miễn phí</span></div>
-        <form action="#" class="mainform" id="form">
-            <div class="mainform__main">
-                <div class="mainform__left">
-                    <div class="mainform__left__name input">
-                        <input type="text" placeholder="Nhập tên của bạn" id="name" name="name">
-                        <label for="name">Họ và tên</label>
-                    </div>
-                    <div class="mainform__left__phonenum input">
-                        <input type="text" placeholder="(+84)" id="phone" name="phone">
-                        <label for="phone">Số điện thoại</label>
-                    </div>
-                    <div class="mainform__left__mail input">
-                        <input type="email" placeholder="Nhập email của bạn" id="mail" name="mail">
-                        <label for="mail">Email</label>
-                    </div>
-                    <div class="mainform__left__sensitive input">
-                        <textarea name="sensitive" id="sensitive" cols="30" rows="10" ></textarea>
-                        <label for="sensitive">Tiền sử mẫn cảm</label>
-                    </div>
-                </div>
-                <div class="mainform__right input">
-                    <textarea name="symptom" id="symptom" cols="30" rows="10"></textarea>
-                    <label for="sympton">Triệu chứng</label>
-                </div>
-            </div>
-            <div class="mainform__submit">
-                <button type="submit" form="form" value="submit">Gửi</button>
-            </div>
-        </form>
-    </div>
-</div> --}}
 </section>
+
+<script>
+    const getStarNum = document.querySelectorAll('.name__stars');
+    for(let element of getStarNum){
+        console.log(element.querySelector('span').innerText);
+        if(element.querySelector('span').innerText == 4){
+            element.querySelector('.st5').classList.remove('fas');
+        }
+        if(element.querySelector('span').innerText == 3){
+            element.querySelector('.st5').classList.remove('fas');
+            element.querySelector('.st4').classList.remove('fas');
+        }
+        if(element.querySelector('span').innerText == 2){
+            element.querySelector('.st5').classList.remove('fas');
+            element.querySelector('.st4').classList.remove('fas');
+            element.querySelector('.st3').classList.remove('fas');
+        }
+        if(element.querySelector('span').innerText == 1){
+            element.querySelector('.st5').classList.remove('fas');
+            element.querySelector('.st4').classList.remove('fas');
+            element.querySelector('.st3').classList.remove('fas');
+            element.querySelector('.st2').classList.remove('fas');
+        }
+    }
+</script>

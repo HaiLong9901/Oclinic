@@ -66,7 +66,9 @@
 <!-- home starts -->
 
 <section class="home replyHome">
+    {{#if doctor}}
     <div class="replyClt" id="replyClt">
+        
         {{#with load}}
         <div class="content">
             <div class="content__tit">
@@ -101,4 +103,35 @@
         </div>
         {{/with}}
     </div>
+    {{/if}}
+    {{#if patient}}
+    <div class="replyClt" id="replyClt">
+        
+        {{#with load}}
+        <div class="content">
+        <div class="content__main">
+            <div class="sensitive">
+                <span>Dị ứng</span>
+                <p>{{_sensitive}}</p>
+            </div>
+            <div class="sympton">
+                <span>Triệu chứng</span>
+                <p>{{sympton}}</p>
+            </div>
+            {{#if img}}
+            <div class="image">
+                <span>Ảnh</span>
+                <img src="/img/{{img}}" alt="anh">
+            </div>
+            {{/if}}
+        </div>
+            <div class="content__reply_clt">
+                <h3>Hello</h3>
+                <p>{{this.content}}</p>
+            </div>
+
+        </div>
+        {{/with}}
+    </div>
+    {{/if}}
 </section> 
