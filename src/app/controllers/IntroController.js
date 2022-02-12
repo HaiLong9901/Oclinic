@@ -4,12 +4,7 @@ class IntroController{
 
     index = async (req, res) =>{
         try {
-            const services = await db.service.findAll();
-            let display = [];
-            for(let value of services){
-                display.push(value.dataValues);
-            };
-            const  ser = await db.service.findAll({
+            const  services = await db.service.findAll({
                 include: [{
                     model: db.department,
                     attributes: ['name'],
@@ -17,7 +12,13 @@ class IntroController{
                     require: true
                 }]
             });
-            // console.log(ser);
+            let display = [];
+            for(let value of services){
+                let data = value.dataValues;
+                data.department = value.dataValues.department.name;
+                display.push(data);
+            };
+            console.log(display);
             // res.json(ser);
             res.render('intro', {
                 display,

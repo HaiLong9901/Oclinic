@@ -72,8 +72,8 @@
                 </ul>
             </a></li>
             <li class="menu__item large"><a href="/articles">Bài viết chuyên môn</a></li>
-            <li class="menu__item active"><a href="/consultation">Tư vấn</a></li>
-            <li class="menu__item"><a href="/contact">Liên hệ</a></li>
+            <li class="menu__item"><a href="/consultation">Tư vấn</a></li>
+            <li class="menu__item  active"><a href="/contact">Liên hệ</a></li>
         </ul>
     </div>
 </div>
@@ -83,73 +83,15 @@
 
 <!-- home starts -->
 
-<section class="home replyHome">
-    {{#if doctor}}
-    <div class="replyClt" id="replyClt">
-        
-        {{#with load}}
-        <div class="content">
-            <div class="content__tit">
-                <span>Người yêu cầu</span>
-                <h3>{{namePatient}}</h3>
-            </div>
+<section class="home contactHome">
+    <div class="content">
         <div class="content__main">
-            <div class="sensitive">
-                <span>Dị ứng</span>
-                <p>{{_sensitive}}</p>
-            </div>
-            <div class="sympton">
-                <span>Triệu chứng</span>
-                <p>{{sympton}}</p>
-            </div>
-            {{#if img}}
-            <div class="image">
-                <span>Ảnh</span>
-                <img src="/img/{{img}}" alt="anh">
-            </div>
-            {{/if}}
+            <p><i class="fab fa-facebook"></i> Facebook: https://facebook.com/oclinic</p>
+            <p><i class="fab fa-instagram"></i> Instagram: https://instagram.com/oclinic</p>
+            <p><i class="fab fa-twitter"></i> Twitter: https://twitter.com/oclinic</p>
+            <p><i class="far fa-envelope"></i> Mail: oclinic@mail.com</p>
+            <p><i class="fas fa-phone"></i> Phone: 0339988998</p>
+            <p><i class="fas fa-map-marker"></i> Địa chỉ: Số 3 - Giải Phóng - Hà Nội</p>
         </div>
-        <div class="content__reply_clt">
-            <form action="/consultation/reply" method="post" id="reply__form" class="reply__form">
-                <label for="reply">Trả lời</label>
-                <textarea name="reply" id="reply" cols="30" rows="10"></textarea>
-            </form>
-        </div>
-        <div class="content__submit_form">
-            <button class="" form="reply__form" type="submit" value="submit">Gửi</button>
-        </div>
-        </div>
-        {{/with}}
     </div>
-    {{/if}}
-    {{#if patient}}
-    <div class="replyClt" id="replyClt">
-        
-        {{#with load}}
-        <div class="content">
-        <div class="content__main">
-            <div class="sensitive">
-                <span>Dị ứng</span>
-                <p>{{_sensitive}}</p>
-            </div>
-            <div class="sympton">
-                <span>Triệu chứng</span>
-                <p>{{sympton}}</p>
-            </div>
-            {{#if img}}
-            <div class="image">
-                <span>Ảnh</span>
-                <img src="/img/{{img}}" alt="anh">
-            </div>
-            {{/if}}
-        </div>
-            <div class="content__reply_clt">
-                <h3>Trả lời</h3>
-                <p>{{this.content}}</p>
-            </div>
-
-        </div>
-        {{/with}}
-    </div>
-    {{/if}}
 </section> 

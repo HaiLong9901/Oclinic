@@ -107,4 +107,17 @@
             }
         }
     }
+
+    .dropdown{
+        .dropDownDoctor{
+            font-size: 1.6rem;
+        }
+        button{
+            font-size: 1.6rem;
+            background: $darkBlueColor;
+            outline: none;
+            border: none;
+        }
+    }
 }
+

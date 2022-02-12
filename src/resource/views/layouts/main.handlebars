@@ -92,7 +92,7 @@
             <div class="form-group">
                 <div class="sex">
                     <label for="" class="sex__tit">Giới tính: </label>
-                    <input type="radio" id="male" name="sex" value="1">
+                    <input type="radio" id="male" name="sex" value="1" checked>
                     <label for="male">Nam</label>
                     <input type="radio" id="female" name="sex" value="0">
                     <label for="female">Nữ</label>
@@ -118,7 +118,7 @@
                     <label for="pass">Mật khẩu</label>
                     <i class="far fa-eye-slash"></i>
                 </div>
-                    <span class="form-message"><i class="fas fa-exclamation-triangle"></i> Mật khẩu ít nhất 9 ký tự và không bao gồm ký tự đặc biệt</span>
+                <span class="form-message"><i class="fas fa-exclamation-triangle"></i> Mật khẩu ít nhất 9 ký tự và không bao gồm ký tự đặc biệt</span>
             </div>
             <div class="form-group">
                 <div class="retype">
@@ -126,7 +126,9 @@
                     <label for="retype">Mật khẩu</label>
                     <i class="far fa-eye-slash"></i>
                 </div>
-                    <span class="form-message"><i class="fas fa-exclamation-triangle"></i> Nhập sai mật khẩu</span>
+                {{#if retypeFail}}
+                <span class="form-message" style="display: block;"><i class="fas fa-exclamation-triangle"></i> Nhập sai mật khẩu</span>
+                {{/if}}
             </div>
             <div class="buttonBox">
                 <button type="submit" form="registerContainer" value="submit">Đăng ký</button>

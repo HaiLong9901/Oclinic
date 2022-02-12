@@ -222,7 +222,6 @@ class SiteController{
                 className1: 'formRegisterOpen'
             })
         } catch (error) {
-            res.status(400).send('error');
             console.log(error);
         }
     }
@@ -243,7 +242,7 @@ class SiteController{
             });
             res.redirect('/');
         } catch (error) {
-            res.status(400).send('error');
+            console.log(error);
         }
     }
 

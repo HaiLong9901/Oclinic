@@ -1,3 +1,24 @@
+<div class="addAccount addAcc" id="addAccount">
+    <div class="addAccount__box">
+        <h3>Loại tài khoản</h3>
+        <div class="addAccount__box__btn">
+            <a href="/setting/addAcc/doctor"><span>Bác sĩ</span></a>
+            <a href="#"><span>Quản lý</span></a>
+        </div>
+        <i class="fas fa-times-circle"></i>
+    </div>
+</div>
+<div class="deleteAccount">
+    <div class="deleteAccount__box">
+        <h3>Bạn muốn xoá tài khoản?</h3>
+        <div class="deleteAccount__box__btn">
+            <a href="/setting/deleteAcc"><span>Xoá</span></a>
+            <a href="#" class="DltCloseAccBtn"><span>Cancel</span></a>
+        </div>
+    </div>
+</div>
+
+
 {{!-- header starts --}}
 <header class="header">
     <div class="taskbar">
@@ -66,9 +87,9 @@
             <li class="menu__item news"><a href="/news">Tin tức</a></li>
             <li class="menu__item doctors"><a href="/doctors">Bác sĩ
                 <ul class="doctor">
-                    <li><a href="/doctors/surgery">Ngoại khoa</a></li>
-                    <li><a href="#">Nội Khoa</a></li>
-                    <li><a href="#">Nhi Khoa</a></li>
+                    <li><a href="/doctors/department/DEP1">Ngoại khoa</a></li>
+                    <li><a href="/doctors/department/DEP2">Nội Khoa</a></li>
+                    <li><a href="/doctors/department/DEP3">Nhi Khoa</a></li>
                 </ul>
             </a></li>
             <li class="menu__item large"><a href="/articles">Bài viết chuyên môn</a></li>
@@ -125,6 +146,20 @@
                         {{#if patient}}
                         <div class="col deleteAccBtn"><a href="#"><i class="fas fa-plus"></i>  Xoá tài khoản</a></div>
                         <div class="col"><a href="/setting/evaluation"><i class="fas fa-plus"></i>  Đánh giá</a></div>
+                        <script>
+    
+                            const getDltAccBtn = document.querySelector('.deleteAccBtn');
+                            const getDltAccount = document.querySelector('.deleteAccount');
+                            const getDltCloseAccBtn = getDltAccount.querySelector('.DltCloseAccBtn');
+                            console.log(getDltAccBtn);
+                            getDltAccBtn.addEventListener('click', () => {
+                                console.log('click');
+                                getDltAccount.classList.toggle('deleteAccOpen');
+                            })
+                            getDltCloseAccBtn.addEventListener('click', () => {
+                                getDltAccount.classList.remove('deleteAccOpen');
+                            })
+                        </script>
                         {{/if}}
                         {{#if admin}}
                         <div class="col addAccBtn"><a href="#"><i class="fas fa-plus"></i>  Cấp tài khoản</a></div>
@@ -134,8 +169,11 @@
                         <div class="col"><a href="#"><i class="fas fa-plus"></i>  Xoá tài khoản</a></div>
                         <script>
                             const getAddAccBtn = document.querySelector('.addAccBtn');
-                            const getAddAccount = document.querySelector('.addAccount');
-                            const getCloseBoxAccBtn = getAddAccount.querySelector('i');
+                            const getAddAccount = document.getElementById('addAccount');
+                            const getCloseBoxAccBtn = document.querySelector('.addAccBtn i');
+                            console.log(getCloseBoxAccBtn);
+                            console.log('1:', getAddAccBtn);
+                            console.log('2: ',getAddAccount);
                             getAddAccBtn.addEventListener('click', () => {
                                 console.log('click');
                                 getAddAccount.classList.toggle('addAccOpen');
@@ -152,7 +190,7 @@
     </div>
 </section>
 
-<div class="addAccount">
+{{!-- <div class="addAccount addAcc" id="addAccount">
     <div class="addAccount__box">
         <h3>Loại tài khoản</h3>
         <div class="addAccount__box__btn">
@@ -170,20 +208,6 @@
             <a href="#" class="DltCloseAccBtn"><span>Cancel</span></a>
         </div>
     </div>
-</div>
+</div> --}}
 
 
-<script>
-    
-    const getDltAccBtn = document.querySelector('.deleteAccBtn');
-    const getDltAccount = document.querySelector('.deleteAccount');
-    const getDltCloseAccBtn = getDltAccount.querySelector('.DltCloseAccBtn');
-    console.log(getDltAccBtn);
-    getDltAccBtn.addEventListener('click', () => {
-        console.log('click');
-        getDltAccount.classList.toggle('deleteAccOpen');
-    })
-    getDltCloseAccBtn.addEventListener('click', () => {
-        getDltAccount.classList.remove('deleteAccOpen');
-    })
-</script>

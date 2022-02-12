@@ -16,18 +16,18 @@ class DoctorController{
         }
     }
 
-    surgery = async (req, res) => {
+    getDoctorOfDepartment = async (req, res , next) => {
         try{
             let doctors = await db.doctor.findAll({
                 where:{
-                    id_dep:'DEP1'
+                    id_dep: req.params.id_dep,
                 }
             });
             let display = [];
             for(let value of doctors){
                 display.push(value.dataValues);
             };
-            res.render('surgery', {display});
+            res.render('doctor', {display});
         }catch(error){
             console.log(error);
         }

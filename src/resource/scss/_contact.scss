@@ -1,0 +1,30 @@
+.contactHome{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    .content{
+        padding: 2rem 5rem;
+        width: 96.86%;
+        display: flex;
+        justify-content: center;
+        &__main{
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+
+            p{
+                font-size: 2rem;
+                text-transform: none;
+                color: $darkBlueColor;
+                padding: 0;
+                margin: 0;
+            }
+            i{
+                font-size: 2.4rem;
+                color: $darkBlueColor;
+                margin-right: 1.5rem;
+            }
+        }
+
+    }
+}

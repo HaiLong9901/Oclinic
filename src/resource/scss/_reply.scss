@@ -86,7 +86,7 @@
                         border: .1rem solid $darkBlueColor;
                         padding: 1rem;
                     }
-                }
+                } 
             }
 
             &__submit_form{
@@ -108,6 +108,24 @@
                     }
                 }
             }
+
+            .content__reply_clt{
+                h3{
+                    font-size: 2.4rem;
+                    color: $darkBlueColor;
+                    text-transform: none;
+                    margin: 0;
+                    padding: 0;
+                }
+                p{
+                    font-size: 2.4rem;
+                    color: $redColor;
+                    text-transform: none;
+                    margin: 0;
+                    padding: 0;
+                }
+            }
+
         }
     }
 }

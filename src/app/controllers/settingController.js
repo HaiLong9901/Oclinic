@@ -183,9 +183,11 @@ class SettingController {
                 email: req.body.email,
                 img: (req.file)?req.file.filename:null,
                 description: req.body.description
+            });
+            console
+            res.render('sent',{
+                quote: 'Thêm bác sĩ thành công',
             })
-            console.log(id_doc)
-            res.json(req.body);
         } catch (error) {
             console.log(error);
         }
