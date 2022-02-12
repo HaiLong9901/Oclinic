@@ -6,14 +6,32 @@
         <input type="search" name="searchBox" id="searchBox" class="taskbar__search">
         <button class="searchBtn" form="searchBox" value="submit"><i class="fas fa-search"></i></button>
         
-        <div href="#" class="taskbar__bell">
+         <div href="#" class="taskbar__bell">
             <i class="fas fa-bell">
             </i>
             <ul class="annouce_list">
-                <li><a href="#">Thông báo 1</a></li>
-                <li><a href="#">Thông báo 2</a></li>
-                <li><a href="#">Thông báo 3</a></li>
-                <li><a href="#">Thông báo 4</a></li>
+                {{#each lcAnnouce.display}}
+                <li><a href="/consultation/detail/{{this.id}}" class="annouce__item ">
+                    <div class="item__img">
+                        <img src="/img/{{this.img}}" alt="">
+                    </div>
+                    <div class="item__content">
+                        <i>Yêu cầu tư vấn</i>
+                        <p>{{this.name}}</p>
+                    </div>
+                </a></li>
+                {{/each}}
+                {{#each lcAnnouceForPatient.annouceForPatient}}
+                <li><a href="/consultation/reply/{{this.id_rep}}" class="annouce__item ">
+                    <div class="item__img">
+                        <img src="/img/{{this.img}}" alt="">
+                    </div>
+                    <div class="item__content">
+                        <i>Trả lời tư vấn</i>
+                        <p>{{this.name}}</p>
+                    </div>
+                </a></li>
+                {{/each}}
                 <a href="#"><span>XEM TẤT CẢ</span></a>
             </ul>
         </div>

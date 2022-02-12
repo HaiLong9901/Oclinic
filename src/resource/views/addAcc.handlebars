@@ -7,47 +7,33 @@
         <input type="search" name="searchBox" id="searchBox" class="taskbar__search">
         <button class="searchBtn" form="searchBox" value="submit"><i class="fas fa-search"></i></button>
         
-        <div href="#" class="taskbar__bell">
+         <div href="#" class="taskbar__bell">
             <i class="fas fa-bell">
             </i>
             <ul class="annouce_list">
-                <li><a href="#" class="annouce__item">
+                {{#each lcAnnouce.display}}
+                <li><a href="/consultation/detail/{{this.id}}" class="annouce__item ">
                     <div class="item__img">
-                        <img src="#" alt="">
+                        <img src="/img/{{this.img}}" alt="">
                     </div>
                     <div class="item__content">
                         <i>Yêu cầu tư vấn</i>
-                        <p>Nguyễn Văn A</p>
+                        <p>{{this.name}}</p>
                     </div>
                 </a></li>
-                <li><a href="#" class="annouce__item">
+                {{/each}}
+                {{#each lcAnnouceForPatient.annouceForPatient}}
+                <li><a href="/consultation/reply/{{this.id_rep}}" class="annouce__item ">
                     <div class="item__img">
-                        <img src="#" alt="">
+                        <img src="/img/{{this.img}}" alt="">
                     </div>
                     <div class="item__content">
-                        <i>Yêu cầu tư vấn</i>
-                        <p>Nguyễn Văn A</p>
+                        <i>Trả lời tư vấn</i>
+                        <p>{{this.name}}</p>
                     </div>
                 </a></li>
-                <li><a href="#" class="annouce__item">
-                    <div class="item__img">
-                        <img src="#" alt="">
-                    </div>
-                    <div class="item__content">
-                        <i>Yêu cầu tư vấn</i>
-                        <p>Nguyễn Văn A</p>
-                    </div>
-                </a></li>
-                <li><a href="#" class="annouce__item">
-                    <div class="item__img">
-                        <img src="#" alt="">
-                    </div>
-                    <div class="item__content">
-                        <i>Yêu cầu tư vấn</i>
-                        <p>Nguyễn Văn A</p>
-                    </div>
-                </a></li>
-                <a href="#"><label>XEM TẤT CẢ</label></a>
+                {{/each}}
+                <a href="#"><span>XEM TẤT CẢ</span></a>
             </ul>
         </div>
         <div class="taskbar__user">

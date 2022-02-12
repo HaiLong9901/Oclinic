@@ -64,13 +64,13 @@ class ConsultController{
             data.dataValues.img = data.reply1.img;
             data.dataValues.sympton = data.reply1.sympton;
             const load = data.dataValues;
-            // req.session.id_clt = req.params.id_clt;
-            // data.dataValues.namePatient = data.consult.name;
-            // const load = data.dataValues;
-            // // res.json(data);
-            // console.log(data);
-            // res.render('replyConsult', {load});
-            // res.send(req.params.id_reply);
+            const dataSeen = await db.reply.findOne({
+                where: {
+                    id_reply: req.params.id_reply
+                }
+            })
+            dataSeen.seen = '1';
+            await dataSeen.save();
             res.render('replyConsult', {load, patient: true});
         } catch (error) {
             console.log(error);

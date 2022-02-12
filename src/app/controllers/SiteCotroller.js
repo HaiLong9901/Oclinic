@@ -131,9 +131,9 @@ class SiteController{
                 })
                 for(let value of idCltForUser){
 
-                    test.id_rep = idCltForUser[0].dataValues.id_reply;
-                    test.name = idCltForUser[0].dataValues.reply1.doctor.dataValues.name;
-                    test.img = idCltForUser[0].dataValues.reply1.doctor.dataValues.img;
+                    test.id_rep = value.dataValues.id_reply;
+                    test.name = value.dataValues.reply1.doctor.dataValues.name;
+                    test.img = value.dataValues.reply1.doctor.dataValues.img;
 
                     annouceForPatient.push(test);
                 }
@@ -249,6 +249,8 @@ class SiteController{
 
     logout = async (req, res, next) => {
         try {
+            delete req.session.annouce;
+            delete req.session.annouceForPAtient;
             req.session.isAuthenticated = false;
             req.session.authUser = null;
             res.redirect('/');

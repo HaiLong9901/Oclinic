@@ -56,6 +56,23 @@ class SettingController {
 
     update = async (req, res, next) => {
         try {
+            const role = req.session.authUser.role;
+            if(role == 'patient'){
+                return res.render('updateInfor', {
+                    patient: true,
+                })
+            }
+            if(role == 'doctor'){
+                return res.render('updateInfor', {
+                    doctor: true,
+                })
+            }
+            if(role == 'admin'){
+
+                return res.render('updateInfor', {
+                    admin: true,
+                });
+            }
             res.render('updateInfor')
         } catch (error) {
             console.log(error);
@@ -128,7 +145,10 @@ class SettingController {
                 }
                 await user.save();
             }
-            res.json(data);
+            res.render('sent', {
+                quote: 'Cập nhật thông tin thành công',
+                thanks: 'Vui lòng đăng nhập lại để kiểm tra thông tin cập nhật'
+            })
         } catch (error) {
             console.log(error)
         }
@@ -166,6 +186,48 @@ class SettingController {
             })
             console.log(id_doc)
             res.json(req.body);
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    deleteAcc = async (req, res, next) =>{
+        try {
+            const role = req.session.authUser.role;
+            if(role == 'patient'){
+                const user = await db.patient.destroy({
+                    where: {
+                        id_pat: req.session.authUser.id_pat
+                    }
+                });
+                return res.render({
+                    quote: 'Cập nhật thông tin thành công',
+                    thanks: 'Vui lòng đăng nhập lại để kiểm tra thông tin cập nhật'
+                })
+            }
+            if(role == 'doctor'){
+                const user = await db.doctor.destroy({
+                    where: {
+                        id_doc: req.session.authUser.id_doc
+                    }
+                });
+                return res.render({
+                    quote: 'Cập nhật thông tin thành công',
+                    thanks: 'Vui lòng đăng nhập lại để kiểm tra thông tin cập nhật'
+                })
+            }
+            if(role == 'admin'){
+
+                const user = await db.patient.destroy({
+                    where: {
+                        id_ad: req.session.authUser.id_ad
+                    }
+                });
+                return res.render({
+                    quote: 'Cập nhật thông tin thành công',
+                    thanks: 'Vui lòng đăng nhập lại để kiểm tra thông tin cập nhật'
+                })
+            }
         } catch (error) {
             console.log(error);
         }

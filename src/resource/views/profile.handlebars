@@ -6,14 +6,32 @@
         <input type="search" name="searchBox" id="searchBox" class="taskbar__search">
         <button class="searchBtn" form="searchBox" value="submit"><i class="fas fa-search"></i></button>
         
-        <div href="#" class="taskbar__bell">
+         <div href="#" class="taskbar__bell">
             <i class="fas fa-bell">
             </i>
             <ul class="annouce_list">
-                <li><a href="#">Thông báo 1</a></li>
-                <li><a href="#">Thông báo 2</a></li>
-                <li><a href="#">Thông báo 3</a></li>
-                <li><a href="#">Thông báo 4</a></li>
+                {{#each lcAnnouce.display}}
+                <li><a href="/consultation/detail/{{this.id}}" class="annouce__item ">
+                    <div class="item__img">
+                        <img src="/img/{{this.img}}" alt="">
+                    </div>
+                    <div class="item__content">
+                        <i>Yêu cầu tư vấn</i>
+                        <p>{{this.name}}</p>
+                    </div>
+                </a></li>
+                {{/each}}
+                {{#each lcAnnouceForPatient.annouceForPatient}}
+                <li><a href="/consultation/reply/{{this.id_rep}}" class="annouce__item ">
+                    <div class="item__img">
+                        <img src="/img/{{this.img}}" alt="">
+                    </div>
+                    <div class="item__content">
+                        <i>Trả lời tư vấn</i>
+                        <p>{{this.name}}</p>
+                    </div>
+                </a></li>
+                {{/each}}
                 <a href="#"><span>XEM TẤT CẢ</span></a>
             </ul>
         </div>
@@ -88,6 +106,9 @@
                         <li>Giới tính: {{sexDisplay lcAuthUser.sex}}</li>
                         <li>Số điện thoại: {{lcAuthUser.phonenum}}</li>
                         <li>Email: {{lcAuthUser.email}}</li>
+                        {{#if patient}}
+                        <li>CCCD: {{lcAuthUser.citizen_id}}</li>
+                        {{/if}}
                         {{#if doctor}}
                         <li>Học vị: {{convertToVNese lcAuthUser.degree}}</li>
                         <li>Vị trí: {{lcAuthUser.postition}}</li>
@@ -102,7 +123,7 @@
                     <div class="row row-cols-3">
                         <div class="col"><a href="/setting/update"><i class="fas fa-plus"></i>  Chỉnh sửa thông tin</a></div>
                         {{#if patient}}
-                        <div class="col"><a href="#"><i class="fas fa-plus"></i>  Xoá tài khoản</a></div>
+                        <div class="col deleteAccBtn"><a href="#"><i class="fas fa-plus"></i>  Xoá tài khoản</a></div>
                         <div class="col"><a href="/setting/evaluation"><i class="fas fa-plus"></i>  Đánh giá</a></div>
                         {{/if}}
                         {{#if admin}}
@@ -111,6 +132,18 @@
                         <div class="col"><a href="#"><i class="fas fa-plus"></i>  Đăng bài viết</a></div>
                         <div class="col"><a href="#"><i class="fas fa-plus"></i>  Cập nhật hiển thị</a></div>
                         <div class="col"><a href="#"><i class="fas fa-plus"></i>  Xoá tài khoản</a></div>
+                        <script>
+                            const getAddAccBtn = document.querySelector('.addAccBtn');
+                            const getAddAccount = document.querySelector('.addAccount');
+                            const getCloseBoxAccBtn = getAddAccount.querySelector('i');
+                            getAddAccBtn.addEventListener('click', () => {
+                                console.log('click');
+                                getAddAccount.classList.toggle('addAccOpen');
+                            })
+                            getCloseBoxAccBtn.addEventListener('click', () => {
+                                getAddAccount.classList.remove('addAccOpen');
+                            })
+                        </script>
                         {{/if}}
                     </div>
                 </div>
@@ -129,18 +162,28 @@
         <i class="fas fa-times-circle"></i>
     </div>
 </div>
+<div class="deleteAccount">
+    <div class="deleteAccount__box">
+        <h3>Bạn muốn xoá tài khoản?</h3>
+        <div class="deleteAccount__box__btn">
+            <a href="/setting/deleteAcc"><span>Xoá</span></a>
+            <a href="#" class="DltCloseAccBtn"><span>Cancel</span></a>
+        </div>
+    </div>
+</div>
 
 
 <script>
-    const getAddAccBtn = document.querySelector('.addAccBtn');
-    const getAddAccount = document.querySelector('.addAccount');
-    const getCloseBoxAccBtn = getAddAccount.querySelector('i');
-    console.log(getAddAccount);
-    getAddAccBtn.addEventListener('click', () => {
+    
+    const getDltAccBtn = document.querySelector('.deleteAccBtn');
+    const getDltAccount = document.querySelector('.deleteAccount');
+    const getDltCloseAccBtn = getDltAccount.querySelector('.DltCloseAccBtn');
+    console.log(getDltAccBtn);
+    getDltAccBtn.addEventListener('click', () => {
         console.log('click');
-        getAddAccount.classList.toggle('addAccOpen');
+        getDltAccount.classList.toggle('deleteAccOpen');
     })
-    getCloseBoxAccBtn.addEventListener('click', () => {
-        getAddAccount.classList.remove('addAccOpen');
+    getDltCloseAccBtn.addEventListener('click', () => {
+        getDltAccount.classList.remove('deleteAccOpen');
     })
 </script>
